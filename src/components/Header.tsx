@@ -12,8 +12,10 @@ function Header() {
     function handleScroll() {
       const currentScrollPos = window.scrollY;
       const isScrolledDown = prevScrollPos < currentScrollPos;
+      const isTop = currentScrollPos === 0;
+      const isBelowThreshold = currentScrollPos < 50;
 
-      setVisible(isScrolledDown ? false : true);
+      setVisible(isTop || isBelowThreshold || !isScrolledDown);
       setPrevScrollPos(currentScrollPos);
     }
 
