@@ -204,3 +204,9 @@ export const MobileMenuIcon = styled.div<{ isOpen: boolean }>`
     font-size: 30px;
   }
 `;
+
+export const StLink = styled(Link)`
+  color: hsl(var(--clr-dark));
+  font-weight: 300;
+  text-decoration: none;
+`;
