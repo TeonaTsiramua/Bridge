@@ -91,7 +91,7 @@ function Nav() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={closeMenu}
-            to='Bridge/'
+            to='/'
           >
             <NavLi>{t('nav.home')}</NavLi>
           </StyledLink>
@@ -99,7 +99,7 @@ function Nav() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={closeMenu}
-            to='Bridge/contact'
+            to='/contact'
           >
             <NavLi>{t('nav.contact')}</NavLi>
           </StyledLink>
@@ -107,7 +107,7 @@ function Nav() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={closeMenu}
-            to='Bridge/products'
+            to='/products'
           >
             <NavLi>{t('nav.products')}</NavLi>
           </StyledLink>
