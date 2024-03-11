@@ -51,7 +51,7 @@ export default function NewProducts() {
             info: 'info',
           },
         ]}
-        visibleItems={isMobile ? 2 : isTablet ? 3 : 4}
+        visibleItems={isMobile ? 1 : isTablet ? 2 : 3}
       />
     </motion.div>
   );

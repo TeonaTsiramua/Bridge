@@ -7,8 +7,11 @@ export const Main = styled.main`
   align-items: center;
   justify-content: center;
   margin-top: clamp(5rem, 13vw, 7rem);
-  position: relative;
+
   width: 100%;
+  @media (max-width: 768px) {
+    margin-top: 0;
+  }
 `;
 
 export const HeroImg = styled.img`
@@ -16,13 +19,19 @@ export const HeroImg = styled.img`
   border-radius: 8px;
   height: 80vh;
   object-fit: cover;
+  position: relative;
+  @media (max-width: 768px) {
+    width: 100vw;
+    border-radius: 0px;
+    height: 90vh;
+  }
 `;
 
 export const HeroText = styled.div`
   color: white;
   text-align: center;
   position: absolute;
-  top: 20%;
+  top: 50%;
   left: 50%;
   width: 80%;
   transform: translate(-50%, -50%);
@@ -30,6 +39,9 @@ export const HeroText = styled.div`
   & h1 {
     font-size: var(--fs-800);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+    @media (max-height: 320px) {
+      display: none;
+    }
   }
 
   & h2 {

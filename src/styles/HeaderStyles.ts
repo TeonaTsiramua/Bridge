@@ -20,15 +20,12 @@ export const StyledHeader = styled.header`
     4px 4px 12px -2.5px rgba(85, 166, 246, 0.15);
   border-radius: 999px;
   border: 1px solid hsl(var(--clr-blue), 0.3);
-
-  @media (max-width: 768px) {
-  }
 `;
 
 export const Logo = styled.img`
   width: 9rem;
   @media (max-width: 768px) {
-    width: 5rem;
+    width: 6rem;
   }
 `;
 
@@ -47,11 +44,11 @@ export const NavUl = styled.ul`
 
   @media (max-width: 768px) {
     flex-direction: column;
-    gap: 4rem;
+    justify-content: space-evenly;
     position: absolute;
     z-index: 4;
     right: -7%;
-    top: -38%;
+    top: -32%;
 
     background: rgba(15, 82, 124, 0.95);
     border-radius: 16px 0 0 16px;
@@ -195,7 +192,7 @@ export const MobileMenuIcon = styled.div<{ isOpen: boolean }>`
     position: absolute;
     z-index: 4000;
     right: 4%;
-    top: 0rem;
+    top: 0.3rem;
     background: transparent;
     border: 0;
     width: 2rem;
