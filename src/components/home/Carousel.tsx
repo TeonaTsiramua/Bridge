@@ -23,7 +23,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const containerRef = useRef<HTMLUListElement>(null);
   const totalItems = items.length;
-  const touchStartX = useRef<number | null>(null);
 
   useEffect(() => {
     const interval = setInterval(goToNextItem, 10000);
@@ -41,26 +40,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
     );
   };
 
-  const handleTouchStart = (event: React.TouchEvent<HTMLUListElement>) => {
-    touchStartX.current = event.touches[0].clientX;
-  };
-
-  const handleTouchMove = (event: React.TouchEvent<HTMLUListElement>) => {
-    if (touchStartX.current !== null) {
-      const touchEndX = event.touches[0].clientX;
-      const deltaX = touchEndX - touchStartX.current;
-      const sensitivity = 50; // Adjust sensitivity as needed
-
-      if (deltaX > sensitivity) {
-        goToPrevItem();
-      } else if (deltaX < -sensitivity) {
-        goToNextItem();
-      }
-
-      touchStartX.current = null;
-    }
-  };
-
   return (
     <Container>
       <h2>{header}</h2>
@@ -70,8 +49,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
           visibleItems={visibleItems}
           totalItems={totalItems}
           currentIndex={currentIndex}
-          onTouchStart={handleTouchStart}
-          onTouchMove={handleTouchMove}
         >
           {items.map((item, index) => (
             <Item visibleItems={visibleItems} key={index}>

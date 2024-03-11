@@ -11,6 +11,14 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  ::-webkit-scrollbar {
+    width: 0;
+  }
+  @media (max-width: 768px) {
+    overflow-x: scroll;
+  }
 `;
 
 export const Ul = styled.ul<{
