@@ -73,8 +73,6 @@ function Nav() {
         isOpen={isMenuOpen}
         onClick={toggleMenu}
         ref={mobileMenuIconRef}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
         animate={isMenuOpen ? 'open' : 'closed'}
         variants={iconVariants}
       >
@@ -93,7 +91,7 @@ function Nav() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={closeMenu}
-            to='/'
+            to='Bridge/'
           >
             <NavLi>{t('nav.home')}</NavLi>
           </StyledLink>
@@ -101,7 +99,7 @@ function Nav() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={closeMenu}
-            to='/contact'
+            to='Bridge/contact'
           >
             <NavLi>{t('nav.contact')}</NavLi>
           </StyledLink>
@@ -109,7 +107,7 @@ function Nav() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={closeMenu}
-            to='/products'
+            to='Bridge/products'
           >
             <NavLi>{t('nav.products')}</NavLi>
           </StyledLink>
