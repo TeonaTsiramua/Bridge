@@ -31,7 +31,7 @@ export const HeroText = styled.div`
   color: white;
   text-align: center;
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   width: 80%;
   transform: translate(-50%, -50%);
@@ -39,7 +39,7 @@ export const HeroText = styled.div`
   & h1 {
     font-size: var(--fs-800);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
-    @media (max-height: 320px) {
+    @media (max-height: 430px) {
       display: none;
     }
   }
