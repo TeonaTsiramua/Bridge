@@ -25,7 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
   const totalItems = items.length;
 
   useEffect(() => {
-    const interval = setInterval(goToNextItem, 10000);
+    const interval = setInterval(goToNextItem, 5000);
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -45,13 +45,18 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
       <h2>{header}</h2>
       <Wrapper>
         <Ul
+          as={motion.ul}
           ref={containerRef}
-          visibleItems={visibleItems}
-          totalItems={totalItems}
-          currentIndex={currentIndex}
+          animate={{
+            transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
+          }}
+          transition={{ duration: 1 }}
         >
           {items.map((item, index) => (
-            <Item visibleItems={visibleItems} key={index}>
+            <Item
+              key={index}
+              style={{ width: `calc(100% / ${visibleItems} - 0.86rem)` }}
+            >
               <ProductCard
                 name={item.name}
                 description={item.description}

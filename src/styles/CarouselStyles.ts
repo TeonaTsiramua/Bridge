@@ -21,38 +21,19 @@ export const Wrapper = styled.div`
   }
 `;
 
-export const Ul = styled.ul<{
-  visibleItems: number;
-  currentIndex: number;
-  totalItems: number;
-}>`
+export const Ul = styled.ul`
   display: flex;
   align-items: center;
   flex-direction: row;
   margin: 0;
   padding: 0;
   gap: 1rem;
-  transition: transform 1s ease-in-out;
-
-  transform: translateX(
-    -${(props) => {
-        if (props.currentIndex === props.totalItems - props.visibleItems) {
-          return (
-            (props.totalItems - props.visibleItems) *
-              (100 / props.visibleItems) +
-            '%'
-          );
-        }
-        return props.currentIndex * (100 / props.visibleItems) + '%';
-      }}
-  );
 `;
 
-export const Item = styled.li<{ visibleItems: number }>`
+export const Item = styled.li`
   flex: 0 0 auto;
   white-space: nowrap;
   list-style: none;
-  width: calc(100% / ${(props) => props.visibleItems} - 0.86rem);
 `;
 
 export const ButtonDiv = styled.div`

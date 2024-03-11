@@ -12,7 +12,7 @@ export default function Category() {
     >
       <h2>Product Category</h2>
       <CategoryUl>
-        <li>Fridge</li>
+        <li>მაცივარი</li>
         <li>სამშენებლო</li>
         <li>სატვირთო</li>
         <li>მისაბმელიანი</li>
