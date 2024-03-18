@@ -13,13 +13,18 @@ export const StyledHeader = styled.header`
   padding: 0.5rem;
   width: 90vw;
 
-  background-color: rgba(255, 255, 255, 0.4);
-  backdrop-filter: blur(24px);
+  background-color: hsl(var(--clr-white));
+
   box-shadow: 0 0 1px rgba(85, 166, 246, 0.1),
     1px 1.5px 2px -1px rgba(85, 166, 246, 0.15),
     4px 4px 12px -2.5px rgba(85, 166, 246, 0.15);
   border-radius: 999px;
   border: 1px solid hsl(var(--clr-blue), 0.3);
+
+  @supports (backdrop-filter: blur(24px)) {
+    background-color: hsl(var(--clr-light), 0.4);
+    backdrop-filter: blur(24px);
+  }
 `;
 
 export const Logo = styled.img`
@@ -188,11 +193,11 @@ export const MobileMenuIcon = styled.div<{ isOpen: boolean }>`
     isOpen ? 'hsl(var(--clr-light))' : 'hsl(var(--clr-blue))'};
 
   @media (max-width: 768px) {
-    display: block;
-    position: absolute;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
     z-index: 4000;
-    right: 4%;
-    top: 0.3rem;
+
     background: transparent;
     border: 0;
     width: 2rem;
