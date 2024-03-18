@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
   Item,
   Wrapper,
@@ -8,6 +8,7 @@ import {
   ButtonDiv,
 } from '../../styles/CarouselStyles';
 import ProductCard from '../ProductCard';
+import { useSwipeable } from 'react-swipeable';
 
 interface CarouselProps {
   items: {
@@ -21,32 +22,63 @@ interface CarouselProps {
 
 const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const containerRef = useRef<HTMLUListElement>(null);
+  const [isInteracting, setIsInteracting] = useState(false);
   const totalItems = items.length;
 
   useEffect(() => {
-    const interval = setInterval(goToNextItem, 5000);
+    const interval = setInterval(() => {
+      if (!isInteracting) {
+        goToNextItem();
+      }
+    }, 5000);
+
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [isInteracting]);
 
-  const goToPrevItem = () =>
+  const goToPrevItem = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? totalItems - visibleItems : prevIndex - 1
     );
+  };
+
   const goToNextItem = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === totalItems - visibleItems ? 0 : prevIndex + 1
     );
   };
 
+  const handleInteractionStart = () => {
+    setIsInteracting(true);
+  };
+
+  const handleInteractionEnd = () => {
+    setIsInteracting(false);
+  };
+
+  const handlers = useSwipeable({
+    onSwipedLeft: () => {
+      if (currentIndex !== totalItems - visibleItems) {
+        goToNextItem();
+      }
+    },
+    onSwipedRight: () => {
+      if (currentIndex !== 0) {
+        goToPrevItem();
+      }
+    },
+  });
+
   return (
-    <Container>
+    <Container
+      {...handlers}
+      onMouseEnter={handleInteractionStart}
+      onMouseLeave={handleInteractionEnd}
+    >
       <h2>{header}</h2>
       <Wrapper>
         <Ul
           as={motion.ul}
-          ref={containerRef}
           animate={{
             transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
           }}
