@@ -16,15 +16,19 @@ import Product from './pages/Product';
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
-      <Route index element={<Home />} />
-      <Route path='/Bridge/contact' element={<Contact />} />
       <Route
-        path='/Bridge/products'
+        index
+        element={<Home />}
+        // loader={async () => fetch('http://localhost:5456/test-endpoint')}
+      />
+      <Route path='contact' element={<Contact />} />
+      <Route
+        path='products'
         element={<Products />}
         loader={async () => fetch('')}
       />
       <Route
-        path='/Bridge/products/:productId'
+        path='products/:productId'
         element={<Product />}
         loader={async ({ params }) => fetch(`${params.productId}`)}
       />

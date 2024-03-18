@@ -17,13 +17,13 @@ function Footer() {
         <ul>
           <span>{t('nav')}</span>
           <li>
-            <StLink to='/Bridge/'>{t('nav.home')}</StLink>
+            <StLink to='/'>{t('nav.home')}</StLink>
           </li>
           <li>
-            <StLink to='Bridge/contact'>{t('nav.contact')}</StLink>
+            <StLink to='contact'>{t('nav.contact')}</StLink>
           </li>
           <li>
-            <StLink to='Bridge/products'>{t('nav.products')}</StLink>
+            <StLink to='products'>{t('nav.products')}</StLink>
           </li>
         </ul>
       </div>
