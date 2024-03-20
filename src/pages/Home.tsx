@@ -3,6 +3,7 @@ import Category from '../components/home/Category';
 import NewProducts from '../components/home/NewProducts';
 import AboutUs from '../components/home/AboutUs';
 import { Main } from '../styles/MainStyles';
+import OrderUs from '../components/OrderUs';
 // import { useLoaderData } from 'react-router-dom';
 
 // interface CompanyInterface {
@@ -18,8 +19,9 @@ function Home() {
     <Main>
       <Hero />
       <Category />
-      <NewProducts />
       <AboutUs />
+      <NewProducts />
+      <OrderUs />
     </Main>
   );
 }
