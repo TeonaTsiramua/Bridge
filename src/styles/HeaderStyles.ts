@@ -68,43 +68,6 @@ export const NavLi = styled.li`
   list-style: none;
   display: flex;
   align-items: center;
-
-  @media (max-width: 768px) {
-    color: hsl(var(--clr-blue));
-    background-image: linear-gradient(
-      to right,
-      hsl(var(--clr-grey)),
-      hsl(var(--clr-grey)) 50%,
-      hsl(var(--clr-light)) 50%
-    );
-    background-size: 200% 100%;
-    background-position: -100%;
-    display: inline-block;
-    padding: 5px 0;
-    position: relative;
-    background-clip: padding-box;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: all 0.3s ease-in-out;
-
-    &:before {
-      content: '';
-      background: hsl(var(--clr-light));
-      display: block;
-      position: absolute;
-      bottom: -3px;
-      left: 0;
-      height: 3px;
-      transition: all 0.3s ease-in-out;
-    }
-    &:hover {
-      background-position: 0;
-    }
-
-    &:hover::before {
-      background: hsl(var(--clr-grey));
-    }
-  }
 `;
 
 export const StyledLink = styled(motion(Link))`
@@ -166,7 +129,7 @@ export const StyledLink = styled(motion(Link))`
 
     &:hover::before {
       background: hsl(var(--clr-grey));
-      width: 10vw;
+      width: 40vw;
     }
   }
 `;

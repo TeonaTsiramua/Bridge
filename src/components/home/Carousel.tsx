@@ -23,9 +23,9 @@ interface CarouselProps {
 const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isInteracting, setIsInteracting] = useState(false);
-  const totalItems = items.length;
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  useEffect(() => {
+  +useEffect(() => {
     const interval = setInterval(() => {
       if (!isInteracting) {
         goToNextItem();
@@ -37,34 +37,41 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
   }, [isInteracting]);
 
   const goToPrevItem = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? totalItems - visibleItems : prevIndex - 1
-    );
+    if (!isButtonDisabled) {
+      setIsButtonDisabled(true);
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? items.length - visibleItems : prevIndex - 1
+      );
+      setTimeout(() => setIsButtonDisabled(false), 1000); // Re-enable button after 1 second
+    }
   };
 
   const goToNextItem = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === totalItems - visibleItems ? 0 : prevIndex + 1
-    );
+    if (!isButtonDisabled) {
+      setIsButtonDisabled(true);
+      setCurrentIndex((prevIndex) =>
+        prevIndex === items.length - visibleItems ? 0 : prevIndex + 1
+      );
+      setTimeout(() => setIsButtonDisabled(false), 1000); // Re-enable button after 1 second
+    }
   };
 
-  const handleInteractionStart = () => {
-    setIsInteracting(true);
-  };
-
-  const handleInteractionEnd = () => {
-    setIsInteracting(false);
-  };
+  const handleInteractionStart = () => setIsInteracting(true);
+  const handleInteractionEnd = () => setIsInteracting(false);
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
-      if (currentIndex !== totalItems - visibleItems) {
+      if (currentIndex !== items.length - visibleItems) {
         goToNextItem();
+        setIsInteracting(true);
+        setTimeout(() => setIsInteracting(false), 1000);
       }
     },
     onSwipedRight: () => {
       if (currentIndex !== 0) {
         goToPrevItem();
+        setIsInteracting(true);
+        setTimeout(() => setIsInteracting(false), 1000);
       }
     },
   });

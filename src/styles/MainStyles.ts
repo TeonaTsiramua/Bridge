@@ -63,15 +63,45 @@ export const Container = styled.div`
 `;
 
 export const CategoryUl = styled.ul`
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  text-align: center;
+  gap: 1em;
+  width: 100%;
   margin: 0;
   padding: 0;
 
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 375px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   & > li {
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  & img {
+    height: 5em;
+    filter: invert(25%) sepia(43%) saturate(1299%) hue-rotate(167deg)
+      brightness(95%) contrast(96%);
+  }
+
+  & :hover {
+    img {
+      filter: invert(17%) sepia(30%) saturate(6137%) hue-rotate(340deg)
+        brightness(94%) contrast(94%);
+    }
+
+    p {
+      color: hsl(var(--clr-red));
+    }
   }
 `;
 
