@@ -256,6 +256,7 @@ export const SubmitButton = styled.button`
   white-space: nowrap;
   will-change: box-shadow, transform;
   font-size: 18px;
+  cursor: pointer;
 
   &:focus {
     box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
