@@ -63,7 +63,7 @@ export default function OrderUs() {
           </Button>
         ) : (
           <>
-            <BackButton onClick={() => setShowForm(false)}>🡨</BackButton>
+            <BackButton onClick={() => setShowForm(false)}> &larr;</BackButton>
             <FormComponent />
           </>
         )}
