@@ -1,17 +1,19 @@
-import '@fontsource/firago'; // Defaults to weight 400
-import '@fontsource/firago/300.css'; // Specify weight
-import '@fontsource/firago/600.css'; // Specify weight
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
+
 import Layout from './components/Layout';
 import Home from './pages/Home';
 import Contact from './pages/Contact';
 import Products from './pages/Products';
 import Product from './pages/Product';
+
+import '@fontsource/firago'; // Defaults to weight 400
+import '@fontsource/firago/300.css'; // Specify weight
+import '@fontsource/firago/600.css'; // Specify weight
 
 const router = createBrowserRouter(
   createRoutesFromElements(
