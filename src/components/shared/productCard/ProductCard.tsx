@@ -1,4 +1,4 @@
-import { Card, CardImg, CardInfo } from '../styles/ProductCardStyles';
+import { Card, CardImg, CardInfo } from './styles';
 
 export default function ProductCard({
   name,

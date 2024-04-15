@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import FormComponent from './FormComponent';
+import FormComponent from '../form/Form';
 
 import {
   BackButton,
@@ -12,7 +12,7 @@ import {
   MainIcon,
   OrderDiv,
   SendIcon,
-} from '../styles/FormStyles';
+} from './styles';
 
 export default function OrderUs() {
   const [showForm, setShowForm] = useState(false);

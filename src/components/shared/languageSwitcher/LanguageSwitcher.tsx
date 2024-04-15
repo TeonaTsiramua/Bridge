@@ -2,7 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 
-import { LangButton } from '../styles/HeaderStyles';
+import { LangButton } from './styles';
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();

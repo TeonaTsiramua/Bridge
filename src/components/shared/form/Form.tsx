@@ -14,7 +14,7 @@ import {
   StyledForm,
   SubmitButton,
   TextArea,
-} from '../styles/FormStyles';
+} from './styles';
 
 interface FormData {
   name: string;
@@ -23,7 +23,7 @@ interface FormData {
   description?: string;
 }
 
-const FormComponent: React.FC = () => {
+const Form: React.FC = () => {
   const {
     register,
     handleSubmit,
@@ -166,4 +166,4 @@ const FormComponent: React.FC = () => {
   );
 };
 
-export default FormComponent;
+export default Form;

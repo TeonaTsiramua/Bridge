@@ -1,15 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { motion } from 'framer-motion';
-import ProductCard from '../ProductCard';
+import ProductCard from '../../shared/productCard/ProductCard';
 
-import {
-  Item,
-  Wrapper,
-  Container,
-  Ul,
-  ButtonDiv,
-} from '../../styles/CarouselStyles';
+import { Item, Wrapper, Container, Ul, ButtonDiv } from './styles';
 
 interface CarouselProps {
   items: {

@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import { StyledFooter, StLink } from '../styles/FooterStyles';
-import { Logo } from '../styles/HeaderStyles';
+import { StyledFooter, StLink } from './styles';
+import { Logo } from '../header/styles';
 import { IconButton, Stack } from '@mui/material';
 
 import FacebookIcon from '@mui/icons-material/Facebook';

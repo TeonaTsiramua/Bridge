@@ -2,15 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher from '../languageSwitcher/LanguageSwitcher';
 
-import {
-  MobileMenuIcon,
-  NavLi,
-  NavUl,
-  Navigation,
-  StyledLink,
-} from '../styles/HeaderStyles';
+import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
 
 function Nav() {
   const { t } = useTranslation();

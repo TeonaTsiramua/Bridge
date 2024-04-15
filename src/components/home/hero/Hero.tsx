@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { HeroImg, HeroText } from '../../styles/MainStyles';
+import { HeroImg, HeroText } from './styles';
 
 export default function Hero() {
   return (

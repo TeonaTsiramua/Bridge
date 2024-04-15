@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CategoryUl, Container } from '../../styles/MainStyles';
+import { CategoryUl, Container } from './styles';
 
 export default function Category() {
   return (

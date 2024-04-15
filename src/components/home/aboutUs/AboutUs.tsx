@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AboutContainer } from '../../styles/MainStyles';
+import { AboutContainer } from './styles';
 
 export default function AboutUs() {
   return (

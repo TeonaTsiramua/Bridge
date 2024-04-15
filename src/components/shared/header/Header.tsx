@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 
-import Nav from './Nav';
-import { Logo, StyledHeader } from '../styles/HeaderStyles';
+import Nav from '../nav/Nav';
+import { Logo, StyledHeader } from './styles';
 
 function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
