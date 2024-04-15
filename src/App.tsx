@@ -34,10 +34,7 @@ const router = createBrowserRouter(
       />
       <Route path='*' element={<Home />} />
     </Route>
-  ),
-  {
-    basename: '/Bridge',
-  }
+  )
 );
 
 function App() {
