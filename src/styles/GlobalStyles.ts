@@ -86,7 +86,6 @@ export const GlobalStyles = styled.createGlobalStyle`
     background-color: hsl(var(--clr-white));
     font-family: 'FiraGO', sans-serif;
     line-height: 1.5;
-    min-height: 100vh;
     overflow-x: hidden;
   }
 
@@ -94,7 +93,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 100vh;
+    height: 100vh;
     justify-content: space-between;
     gap: 2rem;
   }

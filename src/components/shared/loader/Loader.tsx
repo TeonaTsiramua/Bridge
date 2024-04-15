@@ -1,6 +1,10 @@
-import { LoaderDiv } from './styles';
+import { Container, LoaderDiv } from './styles';
 
 const Loader = () => {
-  return <LoaderDiv></LoaderDiv>;
+  return (
+    <Container>
+      <LoaderDiv></LoaderDiv>
+    </Container>
+  );
 };
 export default Loader;
