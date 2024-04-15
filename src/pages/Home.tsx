@@ -1,10 +1,12 @@
+// import { useLoaderData } from 'react-router-dom';
+
 import Hero from '../components/home/hero/Hero';
 import Category from '../components/home/category/Category';
 import NewProducts from '../components/home/newProducts/NewProducts';
 import AboutUs from '../components/home/aboutUs/AboutUs';
-import { Main } from '../styles/MainStyles';
 import OrderUs from '../components/shared/orderUs/OrderUs';
-// import { useLoaderData } from 'react-router-dom';
+
+import { Main } from '../styles/MainStyles';
 
 // interface CompanyInterface {
 //   description: string;
@@ -15,6 +17,7 @@ import OrderUs from '../components/shared/orderUs/OrderUs';
 function Home() {
   // const company = useLoaderData() as CompanyInterface;
   // console.log(company);
+
   return (
     <Main>
       <Hero />
