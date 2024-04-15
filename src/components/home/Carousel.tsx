@@ -25,7 +25,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
   const [isInteracting, setIsInteracting] = useState(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
-  +useEffect(() => {
+  useEffect(() => {
     const interval = setInterval(() => {
       if (!isInteracting) {
         goToNextItem();
