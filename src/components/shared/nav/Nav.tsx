@@ -1,42 +1,28 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 import LanguageSwitcher from '../languageSwitcher/LanguageSwitcher';
 
+import { useClickOutside } from '../../../hooks/useClickOutside';
+import { useToggleBodyScroll } from '../../../hooks/useToggleBodyScroll';
+
 import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
 
 function Nav() {
-  const { t } = useTranslation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const menuRef = useRef<HTMLUListElement>(null);
   const mobileMenuIconRef = useRef<HTMLDivElement>(null);
+
   const isMobile = useMediaQuery({ maxWidth: 768 });
+  const { t } = useTranslation();
 
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        !mobileMenuIconRef.current?.contains(event.target as Node)
-      ) {
-        setIsMenuOpen(false);
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside);
+  // Custom hook to handle click outside event
+  useClickOutside(menuRef, () => setIsMenuOpen(false));
 
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.classList.add('no-scroll');
-    } else {
-      document.body.classList.remove('no-scroll');
-    }
-  }, [isMenuOpen]);
+  // Custom hook to toggle body scrolling
+  useToggleBodyScroll(isMenuOpen);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
