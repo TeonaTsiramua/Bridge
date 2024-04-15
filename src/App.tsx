@@ -1,3 +1,4 @@
+import { Suspense, lazy } from 'react';
 import {
   Route,
   RouterProvider,
@@ -6,11 +7,12 @@ import {
 } from 'react-router-dom';
 import { GlobalStyles } from './styles/GlobalStyles';
 
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import Products from './pages/Products';
-import Product from './pages/Product';
+const Layout = lazy(() => import('./components/Layout'));
+const Home = lazy(() => import('./pages/Home'));
+const Contact = lazy(() => import('./pages/Contact'));
+const Products = lazy(() => import('./pages/Products'));
+const Product = lazy(() => import('./pages/Product'));
+import Loader from './components/shared/loader/Loader';
 
 import '@fontsource/firago'; // Defaults to weight 400
 import '@fontsource/firago/300.css'; // Specify weight
@@ -42,10 +44,10 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <>
+    <Suspense fallback={<Loader />}>
       <GlobalStyles />
       <RouterProvider router={router} />
-    </>
+    </Suspense>
   );
 }
 
