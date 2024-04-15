@@ -21,21 +21,21 @@ export default function OrderUs() {
   return (
     <OrderDiv
       as={motion.div}
-      initial={{ y: '30%' }}
+      initial={{ y: 200 }}
       whileInView={{ y: 0 }}
       viewport={{ once: true }}
-      transition={{ duration: 1 }}
+      transition={{ bounce: 0.4, duration: 0.8 }}
     >
       <HeaderDiv>
         <Icons>
           <MainIcon src={mainIcon} alt='' />
           <FindIcon
             as={motion.img}
-            initial={{ x: -50, y: -100 }}
+            initial={{ x: 0, y: 0 }}
             whileInView={{
               x: [25, 0, -25, 0, 25],
               y: [0, 25, 0, -25, 0],
-              transition: { repeat: 2, duration: 5, ease: 'linear' },
+              transition: { repeat: 1, duration: 3, ease: 'linear' },
             }}
             src={findIcon}
             alt='find'
