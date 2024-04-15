@@ -4,6 +4,7 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
+import { GlobalStyles } from './styles/GlobalStyles';
 
 import Layout from './components/Layout';
 import Home from './pages/Home';
@@ -42,6 +43,7 @@ const router = createBrowserRouter(
 function App() {
   return (
     <>
+      <GlobalStyles />
       <RouterProvider router={router} />
     </>
   );
