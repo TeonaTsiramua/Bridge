@@ -18,7 +18,7 @@ function Nav() {
   const { t } = useTranslation();
 
   // Custom hook to handle click outside event
-  useClickOutside(menuRef, () => setIsMenuOpen(false));
+  useClickOutside(menuRef, () => setIsMenuOpen(false), mobileMenuIconRef);
 
   // Custom hook to toggle body scrolling
   useToggleBodyScroll(isMenuOpen);
