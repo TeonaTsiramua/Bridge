@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-import FormComponent from '../form/Form';
+
+import { Form } from '../..';
 
 import {
   BackButton,
@@ -63,7 +64,7 @@ export default function OrderUs() {
         ) : (
           <>
             <BackButton onClick={() => setShowForm(false)}> &larr;</BackButton>
-            <FormComponent />
+            <Form />
           </>
         )}
       </ButtonDiv>

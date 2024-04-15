@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
-import { useScrollHandler } from '../../../hooks/useScrollHandler';
+import { useScrollHandler } from '../../../hooks';
 
-import Nav from '../nav/Nav';
+import { Nav } from '../..';
 import { Logo, StyledHeader } from './styles';
 
 function Header() {

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { motion } from 'framer-motion';
-import ProductCard from '../../shared/productCard/ProductCard';
+
+import { ProductCard } from '../..';
 
 import { Item, Wrapper, Container, Ul, ButtonDiv } from './styles';
 

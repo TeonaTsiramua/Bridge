@@ -1,11 +1,6 @@
 // import { useLoaderData } from 'react-router-dom';
 
-import Hero from '../components/home/hero/Hero';
-import Category from '../components/home/category/Category';
-import NewProducts from '../components/home/newProducts/NewProducts';
-import AboutUs from '../components/home/aboutUs/AboutUs';
-import OrderUs from '../components/shared/orderUs/OrderUs';
-
+import { AboutUs, Category, Hero, NewProducts, OrderUs } from '../components';
 import { Main } from '../styles/MainStyles';
 
 // interface CompanyInterface {

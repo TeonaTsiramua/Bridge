@@ -2,10 +2,9 @@ import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
-import LanguageSwitcher from '../languageSwitcher/LanguageSwitcher';
 
-import { useClickOutside } from '../../../hooks/useClickOutside';
-import { useToggleBodyScroll } from '../../../hooks/useToggleBodyScroll';
+import { useClickOutside, useToggleBodyScroll } from '../../../hooks';
+import { LanguageSwitcher } from '../..';
 
 import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
 

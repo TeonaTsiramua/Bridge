@@ -1,7 +1,7 @@
 import { useMediaQuery } from 'react-responsive';
 import { motion } from 'framer-motion';
 
-import Carousel from '../carousel/Carousel';
+import { Carousel } from '../..';
 
 export default function NewProducts() {
   const isMobile = useMediaQuery({ maxWidth: 430 });

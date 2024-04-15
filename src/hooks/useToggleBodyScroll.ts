@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 
-export function useToggleBodyScroll(isOpen: boolean) {
+export default function useToggleBodyScroll(isOpen: boolean) {
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add('no-scroll');

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-export function useScrollHandler() {
+export default function useScrollHandler() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [visible, setVisible] = useState(true);
 
