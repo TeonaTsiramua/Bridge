@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
-import { StyledFooter, StLink } from './styles';
-import { Logo } from '../header/styles';
-import { IconButton, Stack } from '@mui/material';
 
+import { StyledFooter, StLink, Logo } from './styles';
+
+import { IconButton, Stack } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YoutubeIcon from '@mui/icons-material/YouTube';

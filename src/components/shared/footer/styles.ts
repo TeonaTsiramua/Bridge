@@ -46,3 +46,10 @@ export const StLink = styled(Link)`
     text-decoration: underline;
   }
 `;
+
+export const Logo = styled.img`
+  width: 9rem;
+  @media (max-width: 768px) {
+    width: 6rem;
+  }
+`;
