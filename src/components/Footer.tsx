@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
 import { StyledFooter, StLink } from '../styles/FooterStyles';
-import logo from '../assets/logo1.svg';
 import { Logo } from '../styles/HeaderStyles';
 import { IconButton, Stack } from '@mui/material';
 
@@ -13,7 +12,7 @@ function Footer() {
   return (
     <StyledFooter>
       <div>
-        <Logo src={logo} alt='' />
+        <Logo src='/assets/main/logo1.svg' alt='logo' />
         <ul>
           <span>{t('nav')}</span>
           <li>

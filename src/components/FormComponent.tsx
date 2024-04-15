@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { motion } from 'framer-motion';
+
 import {
   FormDiv,
   FormElement,
@@ -13,12 +15,6 @@ import {
   SubmitButton,
   TextArea,
 } from '../styles/FormStyles';
-import { motion } from 'framer-motion';
-import SendingIcon from '../assets/order/sending.png';
-import ReceivedIcon from '../assets/order/received.png';
-import PersonIcon from '../assets/form/user.png';
-import EmailIcon from '../assets/form/email.png';
-import PhoneIcon from '../assets/form/phone-call.png';
 
 interface FormData {
   name: string;
@@ -64,7 +60,7 @@ const FormComponent: React.FC = () => {
           >
             <label htmlFor='name'>Name *</label>
             <FormIcons>
-              <FormIcon src={PersonIcon} alt='' />
+              <FormIcon src='/assets/form/user.png' alt='name' />
             </FormIcons>
             <Input
               type='text'
@@ -84,7 +80,7 @@ const FormComponent: React.FC = () => {
           >
             <label htmlFor='email'>Email </label>
             <FormIcons>
-              <FormIcon src={EmailIcon} alt='' />
+              <FormIcon src='/assets/form/email.png' alt='email' />
             </FormIcons>
             <Input
               type='email'
@@ -103,7 +99,7 @@ const FormComponent: React.FC = () => {
           >
             <label htmlFor='phone'>Phone *</label>
             <FormIcons>
-              <FormIcon src={PhoneIcon} alt='' />
+              <FormIcon src='/assets/form/phone-call.png' alt='phone' />
             </FormIcons>
             <Input
               type='tel'
@@ -145,7 +141,7 @@ const FormComponent: React.FC = () => {
           <Message>
             <p>Order Received!</p>
             <SendingImg
-              src={ReceivedIcon}
+              src='/assets/order/received.png'
               alt='recieved'
               as={motion.img}
               initial={{ opacity: 0, x: 0 }}
@@ -157,7 +153,7 @@ const FormComponent: React.FC = () => {
         </MessageDiv>
       ) : (
         <SendingImg
-          src={SendingIcon}
+          src='/assets/order/sending.png'
           alt='sending'
           as={motion.img}
           initial={{ opacity: 0, x: -100 }}

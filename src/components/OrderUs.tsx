@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import FormComponent from './FormComponent';
+
 import {
   BackButton,
   Button,
@@ -12,12 +13,10 @@ import {
   OrderDiv,
   SendIcon,
 } from '../styles/FormStyles';
-import mainIcon from '../assets/order/document.png';
-import findIcon from '../assets/order/magnifying-glass.png';
-import sendIcon from '../assets/order/send.png';
 
 export default function OrderUs() {
   const [showForm, setShowForm] = useState(false);
+
   return (
     <OrderDiv
       as={motion.div}
@@ -28,7 +27,7 @@ export default function OrderUs() {
     >
       <HeaderDiv>
         <Icons>
-          <MainIcon src={mainIcon} alt='' />
+          <MainIcon src='/assets/order/document.png' alt='' />
           <FindIcon
             as={motion.img}
             initial={{ x: 0, y: 0 }}
@@ -37,7 +36,7 @@ export default function OrderUs() {
               y: [0, 25, 0, -25, 0],
               transition: { repeat: 1, duration: 3, ease: 'linear' },
             }}
-            src={findIcon}
+            src='/assets/order/magnifying-glass.png'
             alt='find'
           />
         </Icons>
@@ -58,7 +57,7 @@ export default function OrderUs() {
           >
             {' '}
             <span>
-              <SendIcon src={sendIcon} alt='send' /> Order Us
+              <SendIcon src='/assets/order/send.png' alt='send' /> Order Us
             </span>
           </Button>
         ) : (

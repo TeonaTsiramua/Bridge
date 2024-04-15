@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion';
 import { HeroImg, HeroText } from '../../styles/MainStyles';
-import bg1 from '../../assets/bg-4.jpg';
 
 export default function Hero() {
   return (
@@ -10,7 +9,7 @@ export default function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 1 }}
-        src={bg1}
+        src='/assets/main/bg-4.jpg'
         alt=''
       />
       <HeroText>

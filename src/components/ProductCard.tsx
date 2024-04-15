@@ -1,4 +1,3 @@
-import bg from '../assets/bg-3.jpg';
 import { Card, CardImg, CardInfo } from '../styles/ProductCardStyles';
 
 export default function ProductCard({
@@ -12,7 +11,7 @@ export default function ProductCard({
 }) {
   return (
     <Card>
-      <CardImg src={bg} alt='' />
+      <CardImg src='/assets/main/bg-3.jpg' alt='' />
       <CardInfo>
         <h3>{name}</h3>
         <hr />

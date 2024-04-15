@@ -1,9 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import ge from '../assets/ge.svg';
-import gb from '../assets/gb.svg';
-import { LangButton } from '../styles/HeaderStyles';
 import { motion } from 'framer-motion';
+
+import { LangButton } from '../styles/HeaderStyles';
 
 const LanguageSwitcher: React.FC = () => {
   const { i18n } = useTranslation();
@@ -18,7 +17,7 @@ const LanguageSwitcher: React.FC = () => {
         <motion.img
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          src={gb}
+          src='/assets/main/gb.svg'
           alt='Great Britan flag'
         />
       </LangButton>
@@ -26,7 +25,7 @@ const LanguageSwitcher: React.FC = () => {
         <motion.img
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          src={ge}
+          src='/assets/main/ge.svg'
           alt='Georgia flag'
         />
       </LangButton>

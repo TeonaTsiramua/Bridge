@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+
 import Nav from './Nav';
 import { Logo, StyledHeader } from '../styles/HeaderStyles';
-import logo from '../assets/logo2.svg';
-import { motion } from 'framer-motion';
 
 function Header() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
@@ -39,7 +39,7 @@ function Header() {
       animate={visible ? 'open' : 'closed'}
       exit='closed'
     >
-      <Logo src={logo} alt='' />
+      <Logo src='/assets/main/logo2.svg' alt='logo' />
       <Nav />
     </StyledHeader>
   );
