@@ -42,8 +42,8 @@ function Nav() {
       };
 
   const iconVariants = {
-    open: { scale: 0.9, rotate: 90, transition: { duration: 0.7 } },
-    closed: { scale: 1, rotate: 0, transition: { duration: 0.7 } },
+    open: { scale: 1.3, transition: { duration: 0.7 } },
+    closed: { scale: 1, transition: { duration: 0.7 } },
   };
 
   return (
