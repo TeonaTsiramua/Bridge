@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { StyledFooter, StLink, Logo } from './styles';
@@ -12,7 +13,9 @@ function Footer() {
   return (
     <StyledFooter>
       <div>
-        <Logo src='/assets/main/logo1.svg' alt='logo' />
+        <Link to='/'>
+          <Logo src='/assets/main/logo1.svg' alt='logo' />
+        </Link>
         <ul>
           <span>{t('nav')}</span>
           <li>

@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { useScrollHandler } from '../../../hooks';
 
@@ -20,7 +21,9 @@ function Header() {
       animate={visible ? 'open' : 'closed'}
       exit='closed'
     >
-      <Logo src='/assets/main/logo2.svg' alt='logo' />
+      <Link to='/'>
+        <Logo src='/assets/main/logo2.svg' alt='logo' />
+      </Link>
       <Nav />
     </StyledHeader>
   );
