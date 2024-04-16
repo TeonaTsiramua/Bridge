@@ -87,9 +87,9 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
           }}
           transition={{ duration: 1 }}
         >
-          {items.map((item, index) => (
+          {items.map((item) => (
             <Item
-              key={index}
+              key={item.name}
               style={{ width: `calc(100% / ${visibleItems} - 0.86rem)` }}
             >
               <ProductCard
