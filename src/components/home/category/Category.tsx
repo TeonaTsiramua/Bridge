@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { CategoryUl, Container } from './styles';
+import { category } from './data';
 
 export default function Category() {
   return (
@@ -11,31 +12,18 @@ export default function Category() {
       transition={{ duration: 1 }}
     >
       <h2>Product Category</h2>
+
       <CategoryUl>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <img src='/assets/category/refrigerator.png' alt='refrigerator' />
-          <p>მაცივარი</p>
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <img src='/assets/category/concrete-mixer.png' alt='' />
-          <p>სამშენებლო</p>
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <img src='/assets/category/truck.png' alt='' />
-          <p>სატვირთო</p>
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <img src='/assets/category/trailer.png' alt='' />
-          <p>მისაბმელიანი</p>
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <img src='/assets/category/snowmobile.png' alt='' />
-          <p>ზამთრის ტექნიკა</p>
-        </motion.li>
-        <motion.li whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-          <img src='/assets/category/jet-ski.png' alt='' />
-          <p>წყლის ტრანსპორტი</p>
-        </motion.li>
+        {category.map((i) => (
+          <motion.li
+            key={i.name}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <img src={i.img} alt={i.name} />
+            <p>{i.name}</p>
+          </motion.li>
+        ))}
       </CategoryUl>
     </Container>
   );
