@@ -8,6 +8,8 @@ export { default as ProductCard } from './shared/productCard/ProductCard';
 export { default as OrderUs } from './shared/orderUs/OrderUs';
 
 // Ui
+export { default as DownArrow } from './ui/downArrow/DownArrow';
+export { default as DropDown } from './ui/dropDown/DropDown';
 
 // Home page
 export { default as Hero } from './home/hero/Hero';
@@ -15,3 +17,7 @@ export { default as Category } from './home/category/Category';
 export { default as NewProducts } from './home/newProducts/NewProducts';
 export { default as AboutUs } from './home/aboutUs/AboutUs';
 export { default as Carousel } from './shared/carousel/Carousel';
+
+// Products page
+export { default as Aside } from './products/aside/Aside';
+export { default as ProductSidebar } from './products/productSidebar/ProductSidebar';
