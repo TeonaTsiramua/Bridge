@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const AboutContainer = styled.div`
   background-color: hsl(var(--clr-light));
@@ -25,7 +26,7 @@ export const AboutContainer = styled.div`
     font-weight: 600;
   }
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     flex-direction: column;
     gap: 2rem;
     padding-top: 0;

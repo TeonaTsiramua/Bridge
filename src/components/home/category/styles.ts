@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -17,11 +18,11 @@ export const CategoryUl = styled.ul`
   margin: 0;
   padding: 0;
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  @media (max-width: 375px) {
+  @media ${device.xs} {
     grid-template-columns: repeat(2, 1fr);
   }
 

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const OrderDiv = styled.div`
   display: flex;
@@ -8,7 +9,7 @@ export const OrderDiv = styled.div`
   gap: 1em;
   padding: 2em;
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     flex-direction: column;
     gap: 2em;
     padding: 2em 1em;
@@ -82,10 +83,10 @@ export const Button = styled.button`
   box-sizing: border-box;
   color: hsl(var(--clr-white));
 
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1em;
   max-width: 100%;
-  min-width: 140px;
+  min-width: 196px;
   padding: 3px;
   text-decoration: none;
   user-select: none;
@@ -114,9 +115,9 @@ export const Button = styled.button`
     background: none;
   }
 
-  @media (min-width: 768px) {
-    font-size: 24px;
-    min-width: 196px;
+  @media ${device.md} {
+    font-size: 20px;
+    min-width: 140px;
   }
 `;
 

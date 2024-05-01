@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const StyledHeader = styled.header`
   font-size: var(--fs-400);
@@ -27,7 +28,7 @@ export const StyledHeader = styled.header`
 
 export const Logo = styled.img`
   width: 9rem;
-  @media (max-width: 768px) {
+  @media ${device.md} {
     width: 6rem;
   }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from './breakpoints';
 
 export const Main = styled.main`
   display: flex;
@@ -9,7 +10,20 @@ export const Main = styled.main`
   margin-top: clamp(5rem, 13vw, 7rem);
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     margin-top: 0;
+  }
+`;
+
+export const PMain = styled.main`
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: clamp(5rem, 13vw, 7rem);
+  width: 90%;
+
+  @media ${device.md} {
+    flex-direction: column;
   }
 `;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const FormDiv = styled.div`
   display: flex;
@@ -58,7 +59,7 @@ export const Input = styled.input`
       hsl(var(--clr-blue)) 0 0 0 3px;
   }
 
-  @media (max-width: 720px) {
+  @media ${device.md} {
     width: 100%;
   }
 `;

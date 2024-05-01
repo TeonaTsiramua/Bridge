@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { device } from './breakpoints';
 
 const styled = { createGlobalStyle };
 
@@ -125,7 +126,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     }
   }
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     .no-scroll {
       overflow: hidden;
     }

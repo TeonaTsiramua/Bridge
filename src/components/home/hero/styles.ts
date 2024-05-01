@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const HeroImg = styled.img`
   width: 90vw;
@@ -6,7 +7,7 @@ export const HeroImg = styled.img`
   height: 80vh;
   object-fit: cover;
   position: relative;
-  @media (max-width: 768px) {
+  @media ${device.md} {
     width: 100vw;
     border-radius: 0px;
     height: 90vh;

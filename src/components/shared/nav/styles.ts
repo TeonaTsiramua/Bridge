@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const Navigation = styled.nav`
   border-radius: 8px;
@@ -15,7 +16,7 @@ export const NavUl = styled.ul`
   gap: 1rem;
   margin: 0;
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     flex-direction: column;
     justify-content: space-evenly;
     position: absolute;
@@ -76,7 +77,7 @@ export const StyledLink = styled(motion(Link))`
   &:hover::before {
     width: 100%;
   }
-  @media (max-width: 768px) {
+  @media ${device.md} {
     color: hsl(var(--clr-blue));
     background-image: linear-gradient(
       to right,
@@ -123,7 +124,7 @@ export const MobileMenuIcon = styled.div<{ isOpen: boolean }>`
   color: ${({ isOpen }) =>
     isOpen ? 'hsl(var(--clr-light))' : 'hsl(var(--clr-blue))'};
 
-  @media (max-width: 768px) {
+  @media ${device.md} {
     display: flex;
     justify-content: flex-start;
     align-items: center;

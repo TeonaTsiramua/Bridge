@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { device } from '../../../styles/breakpoints';
 
 export const StyledFooter = styled.footer`
   display: flex;
@@ -49,7 +50,7 @@ export const StLink = styled(Link)`
 
 export const Logo = styled.img`
   width: 9rem;
-  @media (max-width: 768px) {
+  @media ${device.md} {
     width: 6rem;
   }
 `;
