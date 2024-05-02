@@ -11,7 +11,10 @@ export const Container = styled.div`
   border-radius: 8px;
 `;
 
-export const Title = styled.p``;
+export const Title = styled.p`
+  font-size: var(--fs-base);
+  font-weight: 500;
+`;
 
 export const Img = styled.img`
   width: 20%;

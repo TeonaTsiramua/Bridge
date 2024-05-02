@@ -46,4 +46,9 @@ export const Input = styled.input`
   @media ${device.md} {
     width: 100%;
   }
+
+  &::placeholder {
+    color: hsl(var(--clr-grey));
+    font-weight: 300;
+  }
 `;

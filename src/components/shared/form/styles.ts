@@ -149,3 +149,8 @@ export const Message = styled.div`
   justify-content: center;
   gap: 1em;
 `;
+
+export const P = styled.p`
+  font-weight: 500;
+  font-size: var(--fs-md);
+`;

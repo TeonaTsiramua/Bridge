@@ -16,6 +16,7 @@ import Loader from './components/shared/loader/Loader';
 
 import '@fontsource/firago'; // Defaults to weight 400
 import '@fontsource/firago/300.css'; // Specify weight
+import '@fontsource/firago/500.css'; // Specify weight
 import '@fontsource/firago/600.css'; // Specify weight
 
 const router = createBrowserRouter(

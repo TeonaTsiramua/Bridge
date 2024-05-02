@@ -11,6 +11,7 @@ import {
   Label,
   Message,
   MessageDiv,
+  P,
   SendingImg,
   StyledForm,
   TextArea,
@@ -132,7 +133,7 @@ const Form: React.FC = () => {
       ) : !sending ? (
         <MessageDiv>
           <Message>
-            <p>Order Received!</p>
+            <P>Order Received!</P>
             <SendingImg
               src='/assets/order/received.png'
               alt='recieved'
