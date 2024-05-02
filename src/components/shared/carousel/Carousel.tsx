@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import { motion } from 'framer-motion';
 
-import { ProductCard } from '../..';
+import { CarouselCard } from '../..';
 
 import { Item, Wrapper, Container, Ul, ButtonDiv } from './styles';
 
@@ -92,7 +92,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
               key={item.name}
               style={{ width: `calc(100% / ${visibleItems} - 0.86rem)` }}
             >
-              <ProductCard
+              <CarouselCard
                 name={item.name}
                 description={item.description}
                 info={item.info}
