@@ -6,6 +6,7 @@ import { useMediaQuery } from 'react-responsive';
 import { useBodyScrollLock, useClickOutside } from '../../../hooks';
 import { LanguageSwitcher } from '../..';
 
+import { navData } from '../../../data/data';
 import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
 
 function Nav() {
@@ -67,30 +68,17 @@ function Nav() {
           animate={isMenuOpen ? 'open' : 'closed'}
           exit='closed'
         >
-          <StyledLink
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={closeMenu}
-            to='/'
-          >
-            <NavLi>{t('nav.home')}</NavLi>
-          </StyledLink>
-          <StyledLink
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={closeMenu}
-            to='contact'
-          >
-            <NavLi>{t('nav.contact')}</NavLi>
-          </StyledLink>
-          <StyledLink
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={closeMenu}
-            to='products'
-          >
-            <NavLi>{t('nav.products')}</NavLi>
-          </StyledLink>
+          {navData.map((item, index) => (
+            <StyledLink
+              key={index}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={closeMenu}
+              to={item.path}
+            >
+              <NavLi>{t(`nav.${item.text}`)}</NavLi>
+            </StyledLink>
+          ))}
 
           <NavLi>
             <LanguageSwitcher />

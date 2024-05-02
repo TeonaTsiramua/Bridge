@@ -41,6 +41,8 @@ export const NavLi = styled.li`
 
 export const StyledLink = styled(motion(Link))`
   color: hsl(var(--clr-blue));
+  font-size: var(--fs-base);
+  font-weight: 500;
   text-decoration: none;
   background-image: linear-gradient(
     to right,
