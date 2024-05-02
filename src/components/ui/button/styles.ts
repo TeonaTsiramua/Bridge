@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const SendBtn = styled.button`
-  font-size: 20px;
+  font-size: var(--fs--md);
   background: hsl(var(--clr-blue));
   color: hsl(var(--clr-light));
   padding: 0.7em 1em;
