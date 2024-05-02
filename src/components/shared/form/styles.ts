@@ -27,14 +27,19 @@ export const FormElement = styled.div`
 
   & > span {
     color: hsl(var(--clr-red));
-    font-size: smaller;
+    font-size: var(--fs-sm);
     position: absolute;
     bottom: -25px;
   }
 `;
 
+export const Label = styled.label`
+  font-size: var(--fs-base);
+  font-weight: 500;
+`;
+
 export const Input = styled.input`
-  box-shadow: inset hsl(var(--clr-dark)) 0 0 0 2px;
+  box-shadow: inset hsl(var(--clr-grey)) 0 0 0 1px;
   border: 0;
   background: transparent;
   appearance: none;
@@ -50,13 +55,19 @@ export const Input = styled.input`
   transition: all 0.2s ease;
   &:hover {
     box-shadow: 0 0 0 0 hsl(var(--clr-white)) inset,
-      hsl(var(--clr-blue)) 0 0 0 2px;
+      hsl(var(--clr-blue)) 0 0 0 1px;
   }
   &:focus {
     background: hsl(var(--clr-white));
     outline: 0;
     box-shadow: 0 0 0 0 hsl(var(--clr-white)) inset,
-      hsl(var(--clr-blue)) 0 0 0 3px;
+      hsl(var(--clr-blue)) 0 0 0 2px;
+  }
+
+  &::placeholder {
+    font-size: var(--fs-base);
+    font-weight: 300;
+    color: hsl(var(--clr-grey));
   }
 
   @media ${device.md} {
@@ -65,7 +76,7 @@ export const Input = styled.input`
 `;
 
 export const TextArea = styled.textarea`
-  box-shadow: inset hsl(var(--clr-dark)) 0 0 0 2px;
+  box-shadow: inset hsl(var(--clr-grey)) 0 0 0 1px;
   border: 0;
   background: transparent;
   appearance: none;
@@ -81,13 +92,19 @@ export const TextArea = styled.textarea`
   transition: all 0.2s ease;
   &:hover {
     box-shadow: 0 0 0 0 hsl(var(--clr-white)) inset,
-      hsl(var(--clr-blue)) 0 0 0 2px;
+      hsl(var(--clr-blue)) 0 0 0 1px;
   }
   &:focus {
     background: hsl(var(--clr-white));
     outline: 0;
     box-shadow: 0 0 0 0 hsl(var(--clr-white)) inset,
-      hsl(var(--clr-blue)) 0 0 0 3px;
+      hsl(var(--clr-blue)) 0 0 0 2px;
+  }
+
+  &::placeholder {
+    font-size: var(--fs-base);
+    font-weight: 300;
+    color: hsl(var(--clr-grey));
   }
 `;
 
@@ -111,6 +128,7 @@ export const FormIcon = styled.img`
   height: 20px;
   filter: invert(22%) sepia(97%) saturate(905%) hue-rotate(173deg)
     brightness(90%) contrast(90%);
+  opacity: 0.8;
 `;
 
 export const MessageDiv = styled.div`

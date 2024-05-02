@@ -8,6 +8,7 @@ import {
   FormIcon,
   FormIcons,
   Input,
+  Label,
   Message,
   MessageDiv,
   SendingImg,
@@ -58,14 +59,14 @@ const Form: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.1 }}
           >
-            <label htmlFor='name'>Name *</label>
+            <Label htmlFor='name'>Name *</Label>
             <FormIcons>
               <FormIcon src='/assets/form/user.png' alt='name' />
             </FormIcons>
             <Input
               type='text'
               id='name'
-              placeholder='Your name...'
+              placeholder='Your name'
               {...register('name', { required: true })}
               onBlur={() => trigger('name')}
             />
@@ -78,14 +79,14 @@ const Form: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
           >
-            <label htmlFor='email'>Email </label>
+            <Label htmlFor='email'>Email </Label>
             <FormIcons>
               <FormIcon src='/assets/form/email.png' alt='email' />
             </FormIcons>
             <Input
               type='email'
               id='email'
-              placeholder='Email...'
+              placeholder='Email'
               {...register('email')}
               onBlur={() => trigger('email')}
             />
@@ -97,14 +98,14 @@ const Form: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
           >
-            <label htmlFor='phone'>Phone *</label>
+            <Label htmlFor='phone'>Phone *</Label>
             <FormIcons>
               <FormIcon src='/assets/form/phone-call.png' alt='phone' />
             </FormIcons>
             <Input
               type='tel'
               id='phone'
-              placeholder='Phone number...'
+              placeholder='Phone number'
               {...register('phone', { required: true })}
               onBlur={() => trigger('phone')}
             />
@@ -117,10 +118,10 @@ const Form: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
           >
-            <label htmlFor='description'>Description</label>
+            <Label htmlFor='description'>Description</Label>
             <TextArea
               id='description'
-              placeholder='Describe product...'
+              placeholder='Describe product'
               {...register('description')}
               onBlur={() => trigger('description')}
             />
