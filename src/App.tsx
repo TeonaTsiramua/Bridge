@@ -30,7 +30,9 @@ const router = createBrowserRouter(
       <Route
         path='products'
         element={<Products />}
-        loader={async () => fetch('')}
+        loader={async () =>
+          fetch('https://jsonplaceholder.typicode.com/photos')
+        }
       />
       <Route
         path='products/:productId'

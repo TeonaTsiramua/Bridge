@@ -18,7 +18,6 @@ export const Main = styled.main`
 export const PMain = styled.main`
   display: flex;
   gap: 3rem;
-  align-items: center;
   justify-content: space-between;
   margin-top: clamp(5rem, 13vw, 7rem);
   width: 90%;
