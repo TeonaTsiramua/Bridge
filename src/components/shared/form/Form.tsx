@@ -12,9 +12,9 @@ import {
   MessageDiv,
   SendingImg,
   StyledForm,
-  SubmitButton,
   TextArea,
 } from './styles';
+import { SendButton } from '../..';
 
 interface FormData {
   name: string;
@@ -126,15 +126,7 @@ const Form: React.FC = () => {
             />
           </FormElement>
 
-          <SubmitButton
-            as={motion.button}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-            type='submit'
-          >
-            Submit
-          </SubmitButton>
+          <SendButton content='Submit' type='submit' />
         </StyledForm>
       ) : !sending ? (
         <MessageDiv>
@@ -149,7 +141,7 @@ const Form: React.FC = () => {
               transition={{ duration: 0.5 }}
             />
           </Message>
-          <SubmitButton onClick={resetForm}>Order Another</SubmitButton>
+          <SendButton content='Order Another' onClick={resetForm} />
         </MessageDiv>
       ) : (
         <SendingImg

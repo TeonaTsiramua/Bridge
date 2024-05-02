@@ -3,12 +3,14 @@ import { SendBtn } from './styles';
 const SendButton = ({
   content,
   onClick,
+  type,
 }: {
   content: string;
-  onClick: () => void;
+  onClick?: () => void;
+  type?: 'submit' | 'reset';
 }) => {
   return (
-    <SendBtn onClick={onClick}>
+    <SendBtn onClick={onClick} type={type}>
       <div>
         <div className='svg-wrapper'>
           <svg

@@ -32,11 +32,11 @@ export const SendBtn = styled.button`
   }
 
   &:hover svg {
-    transform: translateX(2em) rotate(45deg) scale(1.2);
+    transform: translateX(3.5em) rotate(45deg) scale(1.2);
   }
 
   &:hover span {
-    transform: translateX(5em);
+    transform: translateX(8em);
   }
 
   &:active {
