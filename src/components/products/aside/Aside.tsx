@@ -1,15 +1,11 @@
-import { useMediaQuery } from 'react-responsive';
-
-import { Checkbox, Div, Label, Section, Wrapper } from './styles';
+import { Checkbox, Close, Div, Label, Section, Wrapper } from './styles';
 import { category } from '../../../data/data';
-import { Button, DropDown } from '../..';
+import { DropDown } from '../..';
 
 const Aside = ({ toggleShowFilter }: { toggleShowFilter: () => void }) => {
-  const isTablet = useMediaQuery({ maxWidth: 900 });
-
   return (
     <Wrapper>
-      {isTablet && <Button onClick={toggleShowFilter} content='⇦ Filter' />}
+      <Close onClick={toggleShowFilter}>×</Close>
 
       <Section>
         <DropDown title='Category'>

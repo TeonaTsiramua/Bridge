@@ -9,6 +9,14 @@ export const Container = styled.div`
   gap: 1rem;
 `;
 
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 1em;
+`;
+
 export const Input = styled.input`
   box-shadow: inset hsl(var(--clr-light)) 0 0 0 1px;
   border: 0;

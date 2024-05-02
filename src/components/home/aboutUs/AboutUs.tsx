@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { AboutContainer } from './styles';
+import { AboutContainer, Div, H2, Img, P } from './styles';
 
 export default function AboutUs() {
   return (
@@ -10,13 +10,13 @@ export default function AboutUs() {
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
-      <img
+      <Img
         src='https://dryeffect.com/wp-content/uploads/2021/09/iStock-858309414-scaled.jpg'
         alt=''
       />
-      <div>
-        <h2>About Us</h2>
-        <p>
+      <Div>
+        <H2>About Us</H2>
+        <P>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
           eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
           minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -24,8 +24,8 @@ export default function AboutUs() {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum."
-        </p>
-      </div>
+        </P>
+      </Div>
     </AboutContainer>
   );
 }

@@ -15,35 +15,13 @@ export const GlobalStyles = styled.createGlobalStyle`
     --clr-blue: 203, 78%, 27%;
 
     /* font-sizes */
-    --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
-    --fs-800: 3rem;
-    --fs-700: 2rem;
-    --fs-600: 1.5rem;
-    --fs-500: 1rem;
-    --fs-400: 0.9375rem;
-    --fs-300: 1rem;
-    --fs-200: 0.875rem;
-  }
-
-  @media (min-width: 35em) {
-    :root {
-      --fs-800: 5rem;
-      --fs-700: 2.5rem;
-      --fs-600: 1.5rem;
-      --fs-500: 1.25rem;
-      --fs-400: 1rem;
-    }
-  }
-
-  @media (min-width: 45em) {
-    :root {
-      /* font-sizes */
-      --fs-800: 6.25rem;
-      --fs-700: 3.5rem;
-      --fs-600: 2rem;
-      --fs-500: 1.75rem;
-      --fs-400: 1.1rem;
-    }
+    --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
+    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+    --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
   }
 
   /* ------------------- */
@@ -85,6 +63,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-size: var(--fs-400);
     color: hsl(var(--clr-blue));
     background-color: hsl(var(--clr-white));
+    font-size: var(--fs-base);
     font-family: 'FiraGO', sans-serif;
     line-height: 1.5;
     overflow-x: hidden;

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { CategoryUl, Container } from './styles';
+import { CategoryUl, Container, H2, Img, Li, P } from './styles';
 import { category } from './data';
 
 export default function Category() {
@@ -11,18 +11,19 @@ export default function Category() {
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
-      <h2>Product Category</h2>
+      <H2>Product Category</H2>
 
       <CategoryUl>
         {category.map((i) => (
-          <motion.li
+          <Li
+            as={motion.li}
             key={i.name}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <img src={i.img} alt={i.name} />
-            <p>{i.name}</p>
-          </motion.li>
+            <Img src={i.img} alt={i.name} />
+            <P>{i.name}</P>
+          </Li>
         ))}
       </CategoryUl>
     </Container>

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
-import { ProductCard } from '../..';
-import { Container, Input } from './style';
+import { useMediaQuery } from 'react-responsive';
+import { Button, ProductCard } from '../..';
+import { Container, Input, Wrapper } from './styles';
 import { Pagination } from '@mui/material';
 
 const data = [
@@ -14,13 +15,18 @@ const data = [
   },
 ];
 
-const itemsPerPage = 20;
+const itemsPerPage = 15;
 
-const ProductSidebar = () => {
+const ProductSidebar = ({
+  toggleShowFilter,
+}: {
+  toggleShowFilter: () => void;
+}) => {
   const products = useLoaderData() as typeof data;
   const [currentPage, setCurrentPage] = useState(1);
   const navigate = useNavigate();
   const { page } = useParams(); // Access the page parameter from the URL
+  const isTablet = useMediaQuery({ maxWidth: 900 });
 
   useEffect(() => {
     // Initialize the current page based on the page parameter in the URL
@@ -37,7 +43,10 @@ const ProductSidebar = () => {
 
   return (
     <Container>
-      <Input type='text' placeholder='Search...' />
+      <Wrapper>
+        {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
+        <Input type='text' placeholder='Search...' />
+      </Wrapper>
       {products
         .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
         .map((product) => (

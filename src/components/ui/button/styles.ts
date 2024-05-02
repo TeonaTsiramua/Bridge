@@ -63,8 +63,7 @@ export const Btn = styled.button`
   width: 100%;
   cursor: pointer;
 
-  padding: 0.7em 1em;
-  padding-left: 0.9em;
+  padding: 0.5em 1em;
 
   &:hover {
     background: hsl(var(--clr-blue));

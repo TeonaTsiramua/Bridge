@@ -94,3 +94,25 @@ export const Div = styled.div`
   gap: 1em;
   align-items: center;
 `;
+
+export const Close = styled.button`
+  display: none;
+  cursor: pointer;
+  color: hsl(var(--clr-blue));
+  color: hsl(var(--clr-blue));
+
+  @media ${device.md} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: end;
+
+    background: transparent;
+    border: 0;
+    width: 2rem;
+    height: 2rem;
+    aspect-ratio: 1;
+    font-size: 40px;
+    padding: 0 2rem;
+  }
+`;

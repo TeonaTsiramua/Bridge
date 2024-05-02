@@ -24,7 +24,7 @@ export const HeroText = styled.div`
   transform: translate(-50%, -50%);
 
   & h1 {
-    font-size: var(--fs-800);
+    font-size: var(--fs-xxxl);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
     @media (max-height: 430px) {
       display: none;
@@ -32,11 +32,11 @@ export const HeroText = styled.div`
   }
 
   & h2 {
-    font-size: var(--fs-600);
+    font-size: var(--fs-lg);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
   }
   & p {
-    font-size: var(--fs-500);
+    font-size: var(--fs-md);
     text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
   }
 `;

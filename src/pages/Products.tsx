@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { useBodyScrollLock, useShowFilter } from '../hooks';
-import { Aside, Button, ProductSidebar } from '../components';
+import { Aside, ProductSidebar } from '../components';
 import { PMain } from '../styles/MainStyles';
 
 export default function Products() {
@@ -22,9 +22,8 @@ export default function Products() {
 
   return (
     <PMain>
-      {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
       {showFilter && <Aside toggleShowFilter={toggleShowFilter} />}
-      <ProductSidebar />
+      <ProductSidebar toggleShowFilter={toggleShowFilter} />
     </PMain>
   );
 }
