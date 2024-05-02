@@ -28,17 +28,19 @@ const router = createBrowserRouter(
       />
       <Route path='contact' element={<Contact />} />
       <Route
-        path='products'
+        path='products/'
         element={<Products />}
         loader={async () =>
           fetch('https://jsonplaceholder.typicode.com/photos')
         }
-      />
-      <Route
-        path='products/:productId'
-        element={<Product />}
-        loader={async ({ params }) => fetch(`${params.productId}`)}
-      />
+      >
+        <Route path=':page' element={<Products />} />
+        <Route
+          path=':productId'
+          element={<Product />}
+          loader={async ({ params }) => fetch(`${params.productId}`)}
+        />
+      </Route>
       <Route path='*' element={<Home />} />
     </Route>
   )

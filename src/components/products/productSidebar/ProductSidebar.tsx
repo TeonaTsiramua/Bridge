@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { ProductCard } from '../..';
 import { Container, Input } from './style';
+import { Pagination } from '@mui/material';
 
 const data = [
   {
@@ -13,23 +14,41 @@ const data = [
   },
 ];
 
+const itemsPerPage = 20;
+
 const ProductSidebar = () => {
   const products = useLoaderData() as typeof data;
-  const [visibleProducts, setVisibleProducts] = useState(20);
+  const [currentPage, setCurrentPage] = useState(1);
+  const navigate = useNavigate();
+  const { page } = useParams(); // Access the page parameter from the URL
 
-  const handleLoadMore = () => {
-    setVisibleProducts((prevVisibleProducts) => prevVisibleProducts + 20);
+  useEffect(() => {
+    // Initialize the current page based on the page parameter in the URL
+    setCurrentPage(page ? parseInt(page) : 1);
+  }, [page]);
+
+  const handlePageChange = (_: unknown, page: number) => {
+    setCurrentPage(page);
+    navigate(`/products/${page}`); // Navigate to the corresponding page URL
+
+    // Scroll to the beginning of the page when navigating to the next page
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
     <Container>
       <Input type='text' placeholder='Search...' />
-      {products.slice(0, visibleProducts).map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-      {visibleProducts < products.length && (
-        <button onClick={handleLoadMore}>Load More</button>
-      )}
+      {products
+        .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+        .map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      <Pagination
+        count={Math.ceil(products.length / itemsPerPage)}
+        page={currentPage}
+        onChange={handlePageChange}
+        color='primary'
+      />
     </Container>
   );
 };
