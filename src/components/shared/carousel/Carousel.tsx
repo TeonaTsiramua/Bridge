@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import { CarouselCard } from '../..';
 
-import { Item, Wrapper, Container, Ul, ButtonDiv } from './styles';
+import { Item, Wrapper, Container, Ul, ButtonDiv, H2 } from './styles';
 
 interface CarouselProps {
   items: {
@@ -78,7 +78,7 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
       onMouseEnter={handleInteractionStart}
       onMouseLeave={handleInteractionEnd}
     >
-      <h2>{header}</h2>
+      <H2>{header}</H2>
       <Wrapper>
         <Ul
           as={motion.ul}

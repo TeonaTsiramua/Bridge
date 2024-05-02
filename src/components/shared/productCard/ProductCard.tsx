@@ -1,4 +1,4 @@
-import { Card, CardImg, CardInfo } from './styles';
+import { Card, CardImg, CardInfo, H3, Hr, P } from './styles';
 
 export default function ProductCard({
   name,
@@ -13,11 +13,11 @@ export default function ProductCard({
     <Card>
       <CardImg src='/assets/main/bg-3.jpg' alt='' />
       <CardInfo>
-        <h3>{name}</h3>
-        <hr />
-        <p>{description}</p>
-        <hr />
-        <p>{info}</p>
+        <H3>{name}</H3>
+        <Hr />
+        <P>{description}</P>
+        <Hr />
+        <P>{info}</P>
       </CardInfo>
     </Card>
   );

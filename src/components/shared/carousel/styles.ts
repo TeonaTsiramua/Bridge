@@ -8,6 +8,11 @@ export const Container = styled.div`
   width: 90vw;
 `;
 
+export const H2 = styled.h2`
+  font-size: var(--fs-lg);
+  font-weight: 600;
+`;
+
 export const Wrapper = styled.div`
   overflow: hidden;
   width: 100%;
