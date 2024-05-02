@@ -1,18 +1,16 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 
-import { Form } from '../..';
+import { Form, SendButton } from '../..';
 
 import {
   BackButton,
-  Button,
   ButtonDiv,
   FindIcon,
   HeaderDiv,
   Icons,
   MainIcon,
   OrderDiv,
-  SendIcon,
 } from './styles';
 
 export default function OrderUs() {
@@ -50,17 +48,7 @@ export default function OrderUs() {
 
       <ButtonDiv>
         {!showForm ? (
-          <Button
-            as={motion.button}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={() => setShowForm(true)}
-          >
-            {' '}
-            <span>
-              <SendIcon src='/assets/order/send.png' alt='send' /> Order Us
-            </span>
-          </Button>
+          <SendButton onClick={() => setShowForm(true)} content='Order Us' />
         ) : (
           <>
             <BackButton onClick={() => setShowForm(false)}> &larr;</BackButton>

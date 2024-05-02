@@ -49,13 +49,6 @@ export const FindIcon = styled.img`
   left: -1em;
 `;
 
-export const SendIcon = styled.img`
-  height: 1em;
-  width: 1em;
-  filter: invert(100%) sepia(1%) saturate(365%) hue-rotate(356deg)
-    brightness(117%) contrast(90%);
-`;
-
 export const ButtonDiv = styled.div`
   display: flex;
   flex-direction: column;
@@ -65,60 +58,6 @@ export const ButtonDiv = styled.div`
   border-radius: 0 20px 20px 0;
   height: 100%;
   width: 100%;
-`;
-
-export const Button = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-image: linear-gradient(
-    144deg,
-    hsl(var(--clr-red)),
-    hsl(var(--clr-grey)) 50%,
-    hsl(var(--clr-red))
-  );
-  border: 0;
-  border-radius: 8px;
-  box-shadow: hsl(var(--clr-blue), 0.2) 0 15px 30px -5px;
-  box-sizing: border-box;
-  color: hsl(var(--clr-white));
-
-  font-size: 24px;
-  line-height: 1em;
-  max-width: 100%;
-  min-width: 196px;
-  padding: 3px;
-  text-decoration: none;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  white-space: nowrap;
-  cursor: pointer;
-
-  &:active,
-  &:hover {
-    outline: 0;
-  }
-
-  & > span {
-    display: flex;
-    gap: 0.5em;
-    background-color: hsl(var(--clr-blue));
-    padding: 16px 24px;
-    border-radius: 6px;
-    width: 100%;
-    height: 100%;
-    transition: 300ms;
-  }
-
-  &:hover > span {
-    background: none;
-  }
-
-  @media ${device.md} {
-    font-size: 20px;
-    min-width: 140px;
-  }
 `;
 
 export const BackButton = styled.button`
