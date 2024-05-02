@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
-import { StyledFooter, StLink, Logo } from './styles';
+import { StyledFooter, StLink, Logo, Wrapper, Hr, Ul, P, H3 } from './styles';
 
+import { navData } from '../../../data/data';
 import { IconButton, Stack } from '@mui/material';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
@@ -12,32 +13,28 @@ function Footer() {
   const { t } = useTranslation();
   return (
     <StyledFooter>
-      <div>
+      <Wrapper>
         <Link to='/'>
           <Logo src='/assets/main/logo1.svg' alt='logo' />
         </Link>
-        <ul>
-          <span>{t('nav')}</span>
-          <li>
-            <StLink to='/'>{t('nav.home')}</StLink>
-          </li>
-          <li>
-            <StLink to='contact'>{t('nav.contact')}</StLink>
-          </li>
-          <li>
-            <StLink to='products'>{t('nav.products')}</StLink>
-          </li>
-        </ul>
-      </div>
+        <Ul>
+          <H3>{t('nav')}</H3>
+          {navData.map((item, index) => (
+            <li key={index}>
+              <StLink to={item.path}>{t(`nav.${item.text}`)}</StLink>
+            </li>
+          ))}
+        </Ul>
+      </Wrapper>
 
-      <hr />
+      <Hr />
 
-      <div>
-        <p>
+      <Wrapper>
+        <P>
           {'Copyright © '}
           <StLink to='/'>Bridge </StLink>
           {new Date().getFullYear()}
-        </p>
+        </P>
         <Stack
           direction='row'
           justifyContent='left'
@@ -71,7 +68,7 @@ function Footer() {
             <YoutubeIcon />
           </IconButton>
         </Stack>
-      </div>
+      </Wrapper>
     </StyledFooter>
   );
 }

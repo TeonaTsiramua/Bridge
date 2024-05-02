@@ -24,3 +24,9 @@ export const category = [
     img: '/assets/category/jet-ski.png',
   },
 ];
+
+export const navData = [
+  { path: '/', text: 'home' },
+  { path: '/contact', text: `contact` },
+  { path: '/products', text: 'products' },
+];
