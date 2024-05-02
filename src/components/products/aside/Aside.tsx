@@ -1,6 +1,6 @@
 import { useMediaQuery } from 'react-responsive';
 
-import { Checkbox, Label, Section, Wrapper } from './style';
+import { Checkbox, Label, Section, Wrapper } from './styles';
 import { category } from '../../../data/data';
 import { DropDown } from '../..';
 
