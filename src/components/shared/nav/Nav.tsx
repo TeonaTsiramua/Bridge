@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
 
-import { useClickOutside, useToggleBodyScroll } from '../../../hooks';
+import { useBodyScrollLock, useClickOutside } from '../../../hooks';
 import { LanguageSwitcher } from '../..';
 
 import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
@@ -14,14 +14,14 @@ function Nav() {
   const menuRef = useRef<HTMLUListElement>(null);
   const mobileMenuIconRef = useRef<HTMLDivElement>(null);
 
-  const isMobile = useMediaQuery({ maxWidth: 768 });
+  const isTablet = useMediaQuery({ maxWidth: 900 });
   const { t } = useTranslation();
 
   // Custom hook to handle click outside event
   useClickOutside(menuRef, () => setIsMenuOpen(false), mobileMenuIconRef);
 
   // Custom hook to toggle body scrolling
-  useToggleBodyScroll(isMenuOpen);
+  useBodyScrollLock(isMenuOpen);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -31,7 +31,7 @@ function Nav() {
     setIsMenuOpen(false);
   };
 
-  const variants = isMobile
+  const variants = isTablet
     ? {
         open: { opacity: 1, x: 0, transition: { duration: 0.7 } },
         closed: { opacity: 0, x: 500, transition: { duration: 0.7 } },

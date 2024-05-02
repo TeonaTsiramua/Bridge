@@ -5,8 +5,8 @@ import { Carousel } from '../..';
 import { products } from './data';
 
 export default function NewProducts() {
-  const isMobile = useMediaQuery({ maxWidth: 430 });
-  const isTablet = useMediaQuery({ maxWidth: 768 });
+  const isMobile = useMediaQuery({ maxWidth: 600 });
+  const isTablet = useMediaQuery({ maxWidth: 900 });
   return (
     <motion.div
       initial={{ y: '30%' }}

@@ -6,19 +6,23 @@ export const Wrapper = styled.aside`
   display: flex;
   flex-direction: column;
   position: relative;
+  font-size: 16px;
 
   gap: 2rem;
   z-index: 2;
 
   width: 30%;
-  min-height: 90vh;
-  padding-bottom: 2rem;
+  padding: 2rem;
 
   @media ${device.md} {
     position: fixed;
-    width: 90%;
-    top: 80px;
+    width: 100%;
+    height: 100vh;
+
+    top: 0;
+    left: 0;
     gap: 1rem;
+    z-index: 3;
   }
 `;
 
@@ -74,6 +78,7 @@ export const Checkbox = styled.input`
   margin: 0;
   border-radius: 5px;
   cursor: pointer;
+  flex-shrink: 0;
 
   &:checked {
     border-color: transparent;
@@ -82,4 +87,10 @@ export const Checkbox = styled.input`
   &:not(:checked):hover {
     border-color: hsl(var(--clr-blue));
   }
+`;
+
+export const Div = styled.div`
+  display: flex;
+  gap: 1em;
+  align-items: center;
 `;

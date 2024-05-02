@@ -1,15 +1,15 @@
 import { useMediaQuery } from 'react-responsive';
 
-import { Checkbox, Label, Section, Wrapper } from './styles';
+import { Checkbox, Div, Label, Section, Wrapper } from './styles';
 import { category } from '../../../data/data';
-import { DropDown } from '../..';
+import { Button, DropDown } from '../..';
 
 const Aside = ({ toggleShowFilter }: { toggleShowFilter: () => void }) => {
-  const isTablet = useMediaQuery({ maxWidth: 800 });
+  const isTablet = useMediaQuery({ maxWidth: 900 });
 
   return (
     <Wrapper>
-      {isTablet && <button onClick={toggleShowFilter}>⇦ Filter</button>}
+      {isTablet && <Button onClick={toggleShowFilter} content='⇦ Filter' />}
 
       <Section>
         <DropDown title='Category'>
@@ -47,10 +47,10 @@ const Aside = ({ toggleShowFilter }: { toggleShowFilter: () => void }) => {
 
         <DropDown title='კატეგორია' open>
           {category.map((i) => (
-            <Label key={i.title} htmlFor={i.title}>
+            <Div key={i.title}>
               <Checkbox type='checkbox' name={i.title} id={i.title} />
-              {i.title}
-            </Label>
+              <Label htmlFor={i.title}>{i.title}</Label>
+            </Div>
           ))}
         </DropDown>
       </Section>
