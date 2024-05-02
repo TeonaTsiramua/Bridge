@@ -23,13 +23,14 @@ export const HeaderDiv = styled.div`
   gap: 2em;
 
   height: 100%;
-  color: hsl(var(--clr-red));
   width: 100%;
   border-radius: 20px 0 0 20px;
+`;
 
-  & > p {
-    color: hsl(var(--clr-blue));
-  }
+export const H2 = styled.h2`
+  font-size: var(--fs-md);
+  color: hsl(var(--clr-red));
+  font-weight: 500;
 `;
 
 export const Icons = styled.div`

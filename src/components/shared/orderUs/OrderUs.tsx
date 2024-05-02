@@ -7,6 +7,7 @@ import {
   BackButton,
   ButtonDiv,
   FindIcon,
+  H2,
   HeaderDiv,
   Icons,
   MainIcon,
@@ -39,7 +40,7 @@ export default function OrderUs() {
             alt='find'
           />
         </Icons>
-        <h2>Couldn't find what you are looking for?</h2>
+        <H2>Couldn't find what you are looking for?</H2>
         <p>
           Order us any kind of heavy vehicle, our representative will contact
           you within 24 hours.{' '}
