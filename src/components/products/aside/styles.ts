@@ -62,7 +62,7 @@ export const Section = styled.div`
 `;
 
 export const Label = styled.label`
-  /* font-size: clamp(16px, 1.5vw, 18px); */
+  font-size: var(--fs-sm);
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -112,7 +112,7 @@ export const Close = styled.button`
     width: 2rem;
     height: 2rem;
     aspect-ratio: 1;
-    font-size: 40px;
+    font-size: var(--fs-xl);
     padding: 0 2rem;
   }
 `;
