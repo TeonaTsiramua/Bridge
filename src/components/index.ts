@@ -11,6 +11,7 @@ export { default as OrderUs } from './shared/orderUs/OrderUs';
 export { default as DownArrow } from './ui/downArrow/DownArrow';
 export { default as DropDown } from './ui/dropDown/DropDown';
 export { default as SendButton } from './ui/button/SendButton';
+export { default as Button } from './ui/button/Button';
 
 // Home page
 export { default as Hero } from './home/hero/Hero';

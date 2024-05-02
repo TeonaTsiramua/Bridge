@@ -1,14 +1,14 @@
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { useShowFilter } from '../hooks';
-import { Aside, ProductSidebar } from '../components';
+import { useBodyScrollLock, useShowFilter } from '../hooks';
+import { Aside, Button, ProductSidebar } from '../components';
 import { PMain } from '../styles/MainStyles';
 
 export default function Products() {
   const [showFilter, setShowFilter] = useState(false);
 
-  const isTablet = useMediaQuery({ maxWidth: 800 });
+  const isTablet = useMediaQuery({ maxWidth: 900 });
 
   const toggleShowFilter = () => {
     if (isTablet) {
@@ -18,9 +18,11 @@ export default function Products() {
 
   useShowFilter(setShowFilter, isTablet);
 
+  useBodyScrollLock(showFilter, isTablet);
+
   return (
     <PMain>
-      {isTablet && <button onClick={toggleShowFilter}>Filter</button>}
+      {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
       {showFilter && <Aside toggleShowFilter={toggleShowFilter} />}
       <ProductSidebar />
     </PMain>

@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const SendBtn = styled.button`
-  font-family: inherit;
   font-size: 20px;
   background: hsl(var(--clr-blue));
   color: hsl(var(--clr-light));
@@ -51,5 +50,24 @@ export const SendBtn = styled.button`
     to {
       transform: translateY(-0.1em);
     }
+  }
+`;
+
+export const Btn = styled.button`
+  color: hsl(var(--clr-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid hsl(var(--clr-blue));
+  border-radius: 8px;
+  width: 100%;
+  cursor: pointer;
+
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+
+  &:hover {
+    background: hsl(var(--clr-blue));
+    color: hsl(var(--clr-light));
   }
 `;
