@@ -6,6 +6,10 @@ export { default as LanguageSwitcher } from './shared/languageSwitcher/LanguageS
 export { default as Nav } from './shared/nav/Nav';
 export { default as CarouselCard } from './shared/productCard/ProductCard';
 export { default as OrderUs } from './shared/orderUs/OrderUs';
+export { default as MapComponent } from './shared/map/Map';
+export { default as Services } from './shared/services/Services';
+export { default as ContactInfo } from './shared/contactInfo/ContactInfo';
+export { default as Socials } from './shared/socials/Socials';
 
 // Ui
 export { default as DownArrow } from './ui/downArrow/DownArrow';
@@ -24,3 +28,7 @@ export { default as Carousel } from './shared/carousel/Carousel';
 export { default as Aside } from './products/aside/Aside';
 export { default as ProductSidebar } from './products/productSidebar/ProductSidebar';
 export { default as ProductCard } from './products/productCard/ProductCard';
+
+// Contact page
+export { default as ContactUs } from './contact/contactUs/ContactUs';
+export { default as Posts } from './contact/posts/Posts';

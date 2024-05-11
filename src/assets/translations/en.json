@@ -4,5 +4,6 @@
   "nav.home": "Home",
   "nav.contact": "About",
   "nav.products": "Products",
-  "home.welcome": "Welcome to my website!"
+  "home.welcome": "Welcome to my website!",
+  "contact": "Contact Us"
 }
