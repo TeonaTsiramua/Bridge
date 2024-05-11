@@ -12,7 +12,7 @@ export const Wrapper = styled.aside`
   z-index: 2;
 
   width: 30%;
-  padding: 2rem;
+  padding: 2em;
 
   @media ${device.md} {
     position: fixed;
@@ -23,6 +23,8 @@ export const Wrapper = styled.aside`
     left: 0;
     gap: 1rem;
     z-index: 3;
+    padding-top: 1em;
+    padding-bottom: 4em;
   }
 `;
 
