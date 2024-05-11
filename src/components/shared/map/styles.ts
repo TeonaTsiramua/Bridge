@@ -6,5 +6,6 @@ export const Container = styled.div`
   width: 50%;
   @media ${device.md} {
     width: 90%;
+    height: 250px;
   }
 `;
