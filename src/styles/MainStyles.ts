@@ -26,3 +26,11 @@ export const PMain = styled.main`
     flex-direction: column;
   }
 `;
+
+export const CMain = styled.main`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 3rem;
+  margin-top: clamp(5rem, 13vw, 7rem);
+`;

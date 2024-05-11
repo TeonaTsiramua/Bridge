@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { device } from '../../../styles/breakpoints';
 
 export const FormDiv = styled.div`
   display: flex;
@@ -15,7 +14,7 @@ export const StyledForm = styled.form`
   align-items: center;
   justify-content: center;
   gap: 1.5rem;
-  width: 100%;
+  width: 90%;
 `;
 
 export const FormElement = styled.div`
@@ -51,7 +50,7 @@ export const Input = styled.input`
   font-size: 16px;
   font-weight: 400;
   height: 40px;
-  width: 60%;
+  width: 100%;
   transition: all 0.2s ease;
   &:hover {
     box-shadow: 0 0 0 0 hsl(var(--clr-white)) inset,
@@ -68,10 +67,6 @@ export const Input = styled.input`
     font-size: var(--fs-base);
     font-weight: 300;
     color: hsl(var(--clr-grey));
-  }
-
-  @media ${device.md} {
-    width: 100%;
   }
 `;
 

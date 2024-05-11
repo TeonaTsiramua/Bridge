@@ -23,8 +23,12 @@ export const HeaderDiv = styled.div`
   gap: 2em;
 
   height: 100%;
-  width: 100%;
+  width: 50%;
   border-radius: 20px 0 0 20px;
+
+  @media ${device.md} {
+    width: 100%;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -58,7 +62,11 @@ export const ButtonDiv = styled.div`
   align-self: center;
   border-radius: 0 20px 20px 0;
   height: 100%;
-  width: 100%;
+  width: 50%;
+
+  @media ${device.md} {
+    width: 100%;
+  }
 `;
 
 export const BackButton = styled.button`

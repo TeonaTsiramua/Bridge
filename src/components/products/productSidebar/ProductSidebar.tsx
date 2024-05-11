@@ -36,9 +36,6 @@ const ProductSidebar = ({
   const handlePageChange = (_: unknown, page: number) => {
     setCurrentPage(page);
     navigate(`/products/${page}`); // Navigate to the corresponding page URL
-
-    // Scroll to the beginning of the page when navigating to the next page
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (

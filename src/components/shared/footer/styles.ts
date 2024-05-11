@@ -11,7 +11,7 @@ export const StyledFooter = styled.footer`
   align-self: flex-end;
   width: 100%;
   border-top: 1px solid hsl(var(--clr-light), 0.5);
-  padding: 0 0 3rem 0;
+  padding: 1em 0;
 `;
 
 export const Wrapper = styled.div`
@@ -21,6 +21,10 @@ export const Wrapper = styled.div`
   justify-content: space-evenly;
   align-items: center;
   text-align: center;
+
+  @media ${device.sm} {
+    flex-direction: column;
+  }
 `;
 
 export const Hr = styled.hr`
@@ -28,10 +32,13 @@ export const Hr = styled.hr`
   width: 90%;
 `;
 
-export const Ul = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 0;
+export const Ul = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  gap: 0.2em;
 `;
 
 export const H3 = styled.h3`
