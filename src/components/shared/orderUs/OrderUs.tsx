@@ -20,8 +20,8 @@ export default function OrderUs() {
   return (
     <OrderDiv
       as={motion.div}
-      initial={{ y: 200 }}
-      whileInView={{ y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ bounce: 0.4, duration: 0.8 }}
     >

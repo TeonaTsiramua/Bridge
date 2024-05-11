@@ -1,15 +1,9 @@
-import { motion } from 'framer-motion';
+import { animationConfig } from '../../../utils';
 import { AboutContainer, Div, H2, Img, P } from './styles';
 
 export default function AboutUs() {
   return (
-    <AboutContainer
-      as={motion.div}
-      initial={{ y: '30%' }}
-      whileInView={{ y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 1 }}
-    >
+    <AboutContainer {...animationConfig}>
       <Img
         src='https://dryeffect.com/wp-content/uploads/2021/09/iStock-858309414-scaled.jpg'
         alt=''

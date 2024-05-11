@@ -9,8 +9,8 @@ export default function NewProducts() {
   const isTablet = useMediaQuery({ maxWidth: 900 });
   return (
     <motion.div
-      initial={{ y: '30%' }}
-      whileInView={{ y: 0 }}
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 1 }}
     >
