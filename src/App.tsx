@@ -24,25 +24,52 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout />}>
       <Route
         index
-        element={<Home />}
-        // loader={async () => fetch('http://localhost:5456/test-endpoint')}
+        element={
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        }
       />
-      <Route path='contact' element={<Contact />} />
+      <Route
+        path='contact'
+        element={
+          <Suspense fallback={<Loader />}>
+            <Contact />
+          </Suspense>
+        }
+      />
       <Route
         path='products/'
-        element={<Products />}
+        element={
+          <Suspense fallback={<Loader />}>
+            <Products />
+          </Suspense>
+        }
         loader={async () =>
           fetch('https://jsonplaceholder.typicode.com/photos')
         }
       >
-        <Route path=':page' element={<Products />} />
-        <Route
-          path=':productId'
-          element={<Product />}
-          loader={async ({ params }) => fetch(`${params.productId}`)}
-        />
+        <Route path='page/:page' element={<Products />} />
       </Route>
-      <Route path='*' element={<Home />} />
+      <Route
+        path='products/product/:id'
+        element={
+          <Suspense fallback={<Loader />}>
+            <Product />
+          </Suspense>
+        }
+        loader={async ({ params }) =>
+          fetch(`https://jsonplaceholder.typicode.com/photos/${params.id}`)
+        }
+      />
+      <Route
+        path='*'
+        element={
+          <Suspense fallback={<Loader />}>
+            <Home />
+          </Suspense>
+        }
+      />
     </Route>
   )
 );
