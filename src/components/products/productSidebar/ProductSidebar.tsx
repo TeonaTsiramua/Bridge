@@ -35,7 +35,7 @@ const ProductSidebar = ({
 
   const handlePageChange = (_: unknown, page: number) => {
     setCurrentPage(page);
-    navigate(`/products/${page}`); // Navigate to the corresponding page URL
+    navigate(`/products/page/${page}`); // Navigate to the corresponding page URL
   };
 
   return (

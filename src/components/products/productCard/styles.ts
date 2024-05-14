@@ -9,6 +9,7 @@ export const Container = styled.div`
 
   border: 1px solid hsl(var(--clr-light));
   border-radius: 8px;
+  cursor: pointer;
 `;
 
 export const Title = styled.p`
