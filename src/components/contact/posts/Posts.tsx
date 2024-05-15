@@ -1,8 +1,14 @@
+import { motion } from 'framer-motion';
 import { Container, Img } from './styles';
 
 const Posts = () => {
   return (
-    <Container>
+    <Container
+      as={motion.div}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1 }}
+    >
       <Img
         src='https://scontent.ftbs3-2.fna.fbcdn.net/v/t39.30808-6/440963228_122128496846245862_148376517894505321_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=fpObufGLE3AQ7kNvgGlpeSE&_nc_ht=scontent.ftbs3-2.fna&oh=00_AYBci1b5ZoPeD2aD4JYvY1xuoJB_v70jfEStGFjdm-7rAg&oe=66454398'
         alt=''
