@@ -7,6 +7,7 @@ export const Container = styled.div`
   justify-content: space-between;
   gap: 1em;
   padding: 2em 5%;
+  width: 100%;
 
   @media ${device.md} {
     flex-direction: column-reverse;

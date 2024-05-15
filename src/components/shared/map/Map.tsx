@@ -20,11 +20,9 @@ function MapComponent() {
     <Container>
       <APIProvider apiKey={GOOGLE_MAPS_API_KEY}>
         <Map
-          mapId={'bf51a910020fa25a'}
+          mapId='51a0bcbfd9b2d20f'
           defaultZoom={15}
           defaultCenter={{ lat: 41.7851, lng: 44.8226 }}
-          gestureHandling={'greedy'}
-          disableDefaultUI={true}
         />
         <AdvancedMarker
           position={{ lat: 41.7851, lng: 44.8226 }}

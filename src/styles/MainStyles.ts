@@ -15,10 +15,8 @@ export const Main = styled.main`
   }
 `;
 
-export const PMain = styled.main`
-  display: flex;
-  gap: 3rem;
-  justify-content: space-between;
+export const PMain = styled(Main)`
+  flex-direction: row;
   margin-top: clamp(5rem, 13vw, 7rem);
   width: 90%;
 
@@ -27,10 +25,6 @@ export const PMain = styled.main`
   }
 `;
 
-export const CMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 3rem;
+export const CMain = styled(Main)`
   margin-top: clamp(5rem, 13vw, 7rem);
 `;
