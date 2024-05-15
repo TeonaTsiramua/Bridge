@@ -19,6 +19,7 @@ export const PMain = styled(Main)`
   flex-direction: row;
   margin-top: clamp(5rem, 13vw, 7rem);
   width: 90%;
+  align-items: start;
 
   @media ${device.md} {
     flex-direction: column;

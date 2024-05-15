@@ -43,7 +43,7 @@ function Nav({
       }
     : {
         open: { opacity: 1, x: 0 },
-        closed: { opacity: 0, x: 0 },
+        closed: { opacity: 1, x: 0 },
       };
 
   const iconVariants = {
