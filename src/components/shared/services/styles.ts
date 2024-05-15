@@ -4,6 +4,7 @@ export const Container = styled.div`
   padding: 1.5em 5% 3em 5%;
   background-color: hsl(var(--clr-blue));
   color: hsl(var(--clr-light));
+  width: 100%;
 `;
 
 export const H2 = styled.h2`
