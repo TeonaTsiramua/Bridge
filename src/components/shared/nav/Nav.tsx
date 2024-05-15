@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { useMediaQuery } from 'react-responsive';
@@ -9,9 +9,13 @@ import { LanguageSwitcher } from '../..';
 import { navData } from '../../../data/data';
 import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
 
-function Nav() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+function Nav({
+  isMenuOpen,
+  setIsMenuOpen,
+}: {
+  isMenuOpen: boolean;
+  setIsMenuOpen: (arg0: boolean) => void;
+}) {
   const menuRef = useRef<HTMLUListElement>(null);
   const mobileMenuIconRef = useRef<HTMLDivElement>(null);
 
@@ -39,7 +43,7 @@ function Nav() {
       }
     : {
         open: { opacity: 1, x: 0 },
-        closed: { opacity: 1, x: 0 },
+        closed: { opacity: 0, x: 0 },
       };
 
   const iconVariants = {

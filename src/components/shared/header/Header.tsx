@@ -4,9 +4,11 @@ import { useScrollHandler } from '../../../hooks';
 
 import { Nav } from '../..';
 import { Logo, StyledHeader } from './styles';
+import { useState } from 'react';
 
 function Header() {
-  const visible = useScrollHandler();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const visible = useScrollHandler(isMenuOpen);
 
   const variants = {
     open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
@@ -24,7 +26,7 @@ function Header() {
       <Link to='/'>
         <Logo src='/assets/main/logo2.svg' alt='logo' />
       </Link>
-      <Nav />
+      <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
     </StyledHeader>
   );
 }
