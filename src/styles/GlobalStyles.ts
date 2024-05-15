@@ -15,8 +15,8 @@ export const GlobalStyles = styled.createGlobalStyle`
     --clr-blue: 203, 78%, 27%;
 
     /* font-sizes */
-    --fs-sm: clamp(0.8rem, 0.17vi + 0.76rem, 0.89rem);
-    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+    --fs-sm: clamp(0.8rem, 0.3vi + 0.76rem, 1rem);
+    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.3rem);
     --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
     --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
     --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
