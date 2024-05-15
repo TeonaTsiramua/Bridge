@@ -1,5 +1,6 @@
 import { useNavigate } from 'react-router-dom';
-import { Container, Img, Title } from './styles';
+import { Container, Title, Wrapper } from './styles';
+import { Image } from '../..';
 
 const ProductCard = ({
   product,
@@ -21,7 +22,9 @@ const ProductCard = ({
 
   return (
     <Container onClick={handleClick}>
-      <Img src={product.url} alt={product.title} />
+      <Wrapper>
+        <Image src={product.url} alt={product.title} />
+      </Wrapper>
       <Title>{product.title}</Title>
     </Container>
   );

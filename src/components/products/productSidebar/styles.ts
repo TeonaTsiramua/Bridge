@@ -7,6 +7,11 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  width: 70%;
+
+  @media ${device.md} {
+    width: 100%;
+  }
 `;
 
 export const Wrapper = styled.div`

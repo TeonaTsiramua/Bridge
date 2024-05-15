@@ -1,5 +1,6 @@
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { PMain } from '../styles/MainStyles';
+import { Image } from '../components';
 
 const data = {
   albumId: 1,
@@ -20,7 +21,8 @@ export default function Product() {
         <h2>{product.title}</h2>
       </div>
 
-      <img src={product.url} alt={product.title} />
+      <Image src={product.url} alt={product.title} />
+      <Image src={product.thumbnailUrl} alt={product.title} />
     </PMain>
   );
 }
