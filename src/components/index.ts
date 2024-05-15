@@ -16,6 +16,7 @@ export { default as DownArrow } from './ui/downArrow/DownArrow';
 export { default as DropDown } from './ui/dropDown/DropDown';
 export { default as SendButton } from './ui/button/SendButton';
 export { default as Button } from './ui/button/Button';
+export { default as Image } from './ui/image/Image';
 
 // Home page
 export { default as Hero } from './home/hero/Hero';
