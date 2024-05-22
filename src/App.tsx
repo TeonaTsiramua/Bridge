@@ -7,13 +7,12 @@ import {
 } from 'react-router-dom';
 
 import { GlobalStyles } from './styles/GlobalStyles';
-import Layout from './components/Layout';
-import Home from './pages/Home';
-import Contact from './pages/Contact';
-import { Loader } from './components';
+
+import { Layout, Loader } from './components';
 
 const Products = lazy(() => import('./pages/Products'));
 const Product = lazy(() => import('./pages/Product'));
+import { Contact, ErrorPage, Home } from './pages';
 
 import '@fontsource/firago'; // Defaults to weight 400
 import '@fontsource/firago/300.css'; // Specify weight
@@ -49,7 +48,7 @@ const router = createBrowserRouter(
           fetch(`https://jsonplaceholder.typicode.com/photos/${params.id}`)
         }
       />
-      <Route path='*' element={<Home />} />
+      <Route path='*' element={<ErrorPage />} />
     </Route>
   )
 );

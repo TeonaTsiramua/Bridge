@@ -1,4 +1,5 @@
 // Shared
+export { default as Layout } from './Layout';
 export { default as Header } from './shared/header/Header';
 export { default as Footer } from './shared/footer/Footer';
 export { default as Form } from './shared/form/Form';
