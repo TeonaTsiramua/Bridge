@@ -8,6 +8,7 @@ import { LanguageSwitcher } from '../..';
 
 import { navData } from '../../../data/data';
 import { MobileMenuIcon, NavLi, NavUl, Navigation, StyledLink } from './styles';
+import { MenuToggle } from './MenuToggle';
 
 function Nav({
   isMenuOpen,
@@ -28,10 +29,6 @@ function Nav({
   // Custom hook to toggle body scrolling
   useBodyScrollLock(isMenuOpen);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
   const closeMenu = () => {
     setIsMenuOpen(false);
   };
@@ -46,22 +43,10 @@ function Nav({
         closed: { opacity: 1, x: 0 },
       };
 
-  const iconVariants = {
-    open: { scale: 1.3, transition: { duration: 0.7 } },
-    closed: { scale: 1, transition: { duration: 0.7 } },
-  };
-
   return (
     <Navigation>
-      <MobileMenuIcon
-        as={motion.div}
-        isOpen={isMenuOpen}
-        onClick={toggleMenu}
-        ref={mobileMenuIconRef}
-        animate={isMenuOpen ? 'open' : 'closed'}
-        variants={iconVariants}
-      >
-        {isMenuOpen ? '×' : '☰'}
+      <MobileMenuIcon ref={mobileMenuIconRef}>
+        <MenuToggle isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
       </MobileMenuIcon>
       <>
         <NavUl

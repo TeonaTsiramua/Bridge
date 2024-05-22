@@ -23,6 +23,13 @@ export const StyledHeader = styled.header`
   @supports (backdrop-filter: blur(24px)) {
     background-color: hsl(var(--clr-light), 0.4);
     backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+  }
+
+  @supports (-webkit-backdrop-filter: blur(24px)) {
+    background-color: hsl(var(--clr-light), 0.4);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
   }
 `;
 

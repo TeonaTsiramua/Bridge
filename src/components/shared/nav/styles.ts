@@ -28,8 +28,9 @@ export const NavUl = styled.ul`
     border-radius: 16px 0 0 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-    width: 60vw;
+    width: 60vi;
     height: 100vh;
+    padding: 50px;
   }
 `;
 
@@ -91,7 +92,7 @@ export const StyledLink = styled(motion(Link))`
     &:before {
       content: '';
       background: hsl(var(--clr-light));
-      width: 40vw;
+      width: 100%;
     }
 
     &:hover {
@@ -100,7 +101,7 @@ export const StyledLink = styled(motion(Link))`
 
     &:hover::before {
       background: hsl(var(--clr-grey));
-      width: 40vw;
+      width: 100%;
     }
   }
 `;
@@ -119,25 +120,11 @@ export const LangButton = styled.button`
   }
 `;
 
-export const MobileMenuIcon = styled.div<{ isOpen: boolean }>`
+export const MobileMenuIcon = styled.div`
   display: none;
-  cursor: pointer;
-  color: hsl(var(--clr-blue));
-  color: ${({ isOpen }) =>
-    isOpen ? 'hsl(var(--clr-light))' : 'hsl(var(--clr-blue))'};
 
   @media ${device.md} {
     display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    z-index: 4000;
-
-    background: transparent;
-    border: 0;
-    width: 2rem;
-    height: 2rem;
-    aspect-ratio: 1;
-    font-size: 30px;
   }
 `;
 
@@ -145,4 +132,16 @@ export const StLink = styled(Link)`
   color: hsl(var(--clr-dark));
   font-weight: 300;
   text-decoration: none;
+`;
+
+export const SButton = styled.button`
+  display: none;
+  background: transparent;
+  cursor: pointer;
+  border: 0;
+
+  @media ${device.md} {
+    display: flex;
+    z-index: 6;
+  }
 `;
