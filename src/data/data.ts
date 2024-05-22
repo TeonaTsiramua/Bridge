@@ -27,7 +27,7 @@ export const category = [
 
 export const navData = [
   { path: '/', text: 'home' },
-  { path: '/contact', text: `contact` },
+  { path: '/contact', text: 'contact' },
   { path: '/products', text: 'products' },
 ];
 
