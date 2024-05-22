@@ -24,7 +24,7 @@ export const NavUl = styled.ul`
     right: -7%;
     top: -32%;
 
-    background: rgba(15, 82, 124, 0.95);
+    background: hsl(var(--clr-blue));
     border-radius: 16px 0 0 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
