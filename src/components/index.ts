@@ -10,6 +10,7 @@ export { default as MapComponent } from './shared/map/Map';
 export { default as Services } from './shared/services/Services';
 export { default as ContactInfo } from './shared/contactInfo/ContactInfo';
 export { default as Socials } from './shared/socials/Socials';
+export { default as Loader } from './shared/loader/Loader';
 
 // Ui
 export { default as DownArrow } from './ui/downArrow/DownArrow';

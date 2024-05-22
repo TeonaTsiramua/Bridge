@@ -60,7 +60,6 @@ export const GlobalStyles = styled.createGlobalStyle`
 
   /* set up the body */
   body {
-    font-size: var(--fs-400);
     color: hsl(var(--clr-blue));
     background-color: hsl(var(--clr-white));
     font-size: var(--fs-base);

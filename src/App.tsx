@@ -5,14 +5,15 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
 } from 'react-router-dom';
-import { GlobalStyles } from './styles/GlobalStyles';
 
-const Layout = lazy(() => import('./components/Layout'));
-const Home = lazy(() => import('./pages/Home'));
-const Contact = lazy(() => import('./pages/Contact'));
+import { GlobalStyles } from './styles/GlobalStyles';
+import Layout from './components/Layout';
+import Home from './pages/Home';
+import Contact from './pages/Contact';
+import { Loader } from './components';
+
 const Products = lazy(() => import('./pages/Products'));
 const Product = lazy(() => import('./pages/Product'));
-import Loader from './components/shared/loader/Loader';
 
 import '@fontsource/firago'; // Defaults to weight 400
 import '@fontsource/firago/300.css'; // Specify weight
@@ -22,24 +23,10 @@ import '@fontsource/firago/600.css'; // Specify weight
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
+      <Route index element={<Home />} />
+      <Route path='contact' element={<Contact />} />
       <Route
-        index
-        element={
-          <Suspense fallback={<Loader />}>
-            <Home />
-          </Suspense>
-        }
-      />
-      <Route
-        path='contact'
-        element={
-          <Suspense fallback={<Loader />}>
-            <Contact />
-          </Suspense>
-        }
-      />
-      <Route
-        path='products/'
+        path='products'
         element={
           <Suspense fallback={<Loader />}>
             <Products />
@@ -62,14 +49,7 @@ const router = createBrowserRouter(
           fetch(`https://jsonplaceholder.typicode.com/photos/${params.id}`)
         }
       />
-      <Route
-        path='*'
-        element={
-          <Suspense fallback={<Loader />}>
-            <Home />
-          </Suspense>
-        }
-      />
+      <Route path='*' element={<Home />} />
     </Route>
   )
 );
