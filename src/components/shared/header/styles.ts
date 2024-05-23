@@ -20,16 +20,16 @@ export const StyledHeader = styled.header`
   border-radius: 999px;
   border: 1px solid hsl(var(--clr-blue), 0.3);
 
-  @supports (backdrop-filter: blur(24px)) {
+  @supports (backdrop-filter: blur(5px)) {
     background-color: hsl(var(--clr-light), 0.4);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 
-  @supports (-webkit-backdrop-filter: blur(24px)) {
+  @supports (-webkit-backdrop-filter: blur(5px)) {
     background-color: hsl(var(--clr-light), 0.4);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
   }
 `;
 

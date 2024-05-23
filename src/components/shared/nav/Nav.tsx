@@ -17,7 +17,7 @@ function Nav({
   isMenuOpen: boolean;
   setIsMenuOpen: (arg0: boolean) => void;
 }) {
-  const menuRef = useRef<HTMLUListElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const mobileMenuIconRef = useRef<HTMLDivElement>(null);
 
   const isTablet = useMediaQuery({ maxWidth: 900 });
@@ -50,7 +50,7 @@ function Nav({
       </MobileMenuIcon>
       <>
         <NavUl
-          as={motion.ul}
+          as={motion.div}
           ref={menuRef}
           variants={variants}
           initial='closed'
@@ -58,14 +58,8 @@ function Nav({
           exit='closed'
         >
           {navData.map((item, index) => (
-            <StyledLink
-              key={index}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              onClick={closeMenu}
-              to={item.path}
-            >
-              <NavLi>{t(`nav.${item.text}`)}</NavLi>
+            <StyledLink key={index} onClick={closeMenu} to={item.path}>
+              {t(`nav.${item.text}`)}
             </StyledLink>
           ))}
 

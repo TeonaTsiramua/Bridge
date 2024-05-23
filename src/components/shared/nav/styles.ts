@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import { device } from '../../../styles/breakpoints';
 
@@ -10,15 +9,16 @@ export const Navigation = styled.nav`
   justify-content: flex-end;
 `;
 
-export const NavUl = styled.ul`
+export const NavUl = styled.div`
   display: flex;
-  place-content: center;
+  align-items: center;
   gap: 1rem;
   margin: 0;
 
   @media ${device.md} {
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 2rem;
     position: absolute;
     z-index: 4;
     right: -7%;
@@ -34,74 +34,39 @@ export const NavUl = styled.ul`
   }
 `;
 
-export const NavLi = styled.li`
+export const NavLi = styled.div`
   list-style: none;
   display: flex;
   align-items: center;
 `;
 
-export const StyledLink = styled(motion(Link))`
+export const StyledLink = styled(NavLink)`
   color: hsl(var(--clr-blue));
   font-size: var(--fs-base);
   font-weight: 500;
+  border-radius: 8px;
   text-decoration: none;
-  background-image: linear-gradient(
-    to right,
-    hsl(var(--clr-red)),
-    hsl(var(--clr-red)) 50%,
-    hsl(var(--clr-blue)) 50%
-  );
-  background-size: 200% 100%;
-  background-position: -100%;
-  display: inline-block;
-  padding: 5px 0;
-  position: relative;
-  background-clip: padding-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  transition: all 0.3s ease-in-out;
-
-  &:before {
-    content: '';
-    background: hsl(var(--clr-red));
-    display: block;
-    position: absolute;
-    bottom: -3px;
-    left: 0;
-    width: 0;
-    height: 3px;
-    transition: all 0.3s ease-in-out;
-  }
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
-    background-position: 0;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
-  &:hover::before {
-    width: 100%;
+  &.active {
+    color: hsl(var(--clr-white));
+    background-color: hsl(var(--clr-blue));
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
+
   @media ${device.md} {
-    color: hsl(var(--clr-blue));
-    background-image: linear-gradient(
-      to right,
-      hsl(var(--clr-grey)),
-      hsl(var(--clr-grey)) 50%,
-      hsl(var(--clr-light)) 50%
-    );
+    color: hsl(var(--clr-white));
+    padding: 0.5rem 2rem;
 
-    &:before {
-      content: '';
-      background: hsl(var(--clr-light));
-      width: 100%;
-    }
-
-    &:hover {
-      color: hsl(var(--clr-grey));
-    }
-
-    &:hover::before {
-      background: hsl(var(--clr-grey));
-      width: 100%;
+    &.active {
+      color: hsl(var(--clr-blue));
+      background-color: hsl(var(--clr-white));
+      padding: 0.5rem 2rem;
     }
   }
 `;
