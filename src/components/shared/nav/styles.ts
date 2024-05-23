@@ -28,9 +28,9 @@ export const NavUl = styled.div`
     border-radius: 16px 0 0 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 
-    width: 60vi;
+    min-width: 60vi;
     height: 100vh;
-    padding: 50px;
+    padding: 1rem;
   }
 `;
 
@@ -47,7 +47,7 @@ export const StyledLink = styled(NavLink)`
   border-radius: 8px;
   text-decoration: none;
   padding: 0.5rem 1rem;
-  transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
