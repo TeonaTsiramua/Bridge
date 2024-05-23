@@ -16,7 +16,7 @@ export const MenuToggle = ({
         stroke={isMenuOpen ? 'hsl(0, 0%, 95%)' : 'hsl(203, 78%, 27%)'}
         strokeLinecap='round'
         d={isMenuOpen ? 'M 3 16.5 L 17 2.5' : 'M 2 2.5 L 20 2.5'}
-        style={{ transition: 'all 0.5s ease-in-out' }}
+        style={{ transition: 'stroke 0.5s ease-in-out, d 0.5s ease-in-out' }}
       />
       {/* Second Path */}
       <path
@@ -35,7 +35,7 @@ export const MenuToggle = ({
         stroke={isMenuOpen ? 'hsl(0, 0%, 95%)' : 'hsl(203, 78%, 27%)'}
         strokeLinecap='round'
         d={isMenuOpen ? 'M 3 2.5 L 17 16.346' : 'M 2 16.346 L 20 16.346'}
-        style={{ transition: 'all 0.5s ease-in-out' }}
+        style={{ transition: 'stroke 0.5s ease-in-out, d 0.5s ease-in-out' }}
       />
     </svg>
   </SButton>
