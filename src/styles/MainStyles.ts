@@ -20,6 +20,7 @@ export const PMain = styled(Main)`
   margin-top: clamp(5rem, 13vw, 7rem);
   width: 90%;
   align-items: start;
+  gap: 1rem;
 
   @media ${device.md} {
     flex-direction: column;

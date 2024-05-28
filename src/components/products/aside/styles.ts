@@ -5,36 +5,37 @@ export const Wrapper = styled.aside`
   background-color: hsl(var(--clr-white));
   display: flex;
   flex-direction: column;
-  position: relative;
-  font-size: 16px;
-
+  position: sticky;
+  top: clamp(5rem, 13vw, 7rem);
+  max-height: 80vh;
   gap: 2rem;
-  z-index: 2;
-
   width: 30%;
-  padding: 2em;
+  overflow-y: auto;
 
   @media ${device.md} {
     position: fixed;
     width: 100%;
     height: 100vh;
-
+    max-height: 100vh;
     top: 0;
     left: 0;
     gap: 1rem;
     z-index: 3;
-    padding-top: 1em;
-    padding-bottom: 4em;
+    padding: 1em 2em 4em 2em;
   }
 `;
 
 export const Section = styled.div`
   background-color: hsl(var(--clr-white));
-  padding: 1.5rem;
+  padding-right: 1em;
   display: flex;
   flex-direction: column;
   gap: 1rem;
   overflow-y: auto;
+
+  @media ${device.md} {
+    padding: 1em;
+  }
 
   /* width */
   &::-webkit-scrollbar {
@@ -71,6 +72,7 @@ export const Label = styled.label`
 `;
 
 export const Checkbox = styled.input`
+  font-size: var(--fs-sm);
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -114,7 +116,7 @@ export const Close = styled.button`
     width: 2rem;
     height: 2rem;
     aspect-ratio: 1;
-    font-size: var(--fs-xl);
-    padding: 0 2rem;
+    font-size: var(--fs-xxl);
+    padding: 0 1.5rem;
   }
 `;
