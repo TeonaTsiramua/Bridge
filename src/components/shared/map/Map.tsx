@@ -4,7 +4,7 @@ import {
   Map,
   Pin,
 } from '@vis.gl/react-google-maps';
-import { handleMarkerClick } from '../../../utils';
+import { handleMarkerClick } from '../../../utils/index';
 
 import { Container } from './styles';
 
