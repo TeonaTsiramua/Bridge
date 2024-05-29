@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
 import { Form, SendButton } from '../..';
+import { animationConfig, searchAnimation } from '../../../utils/animations';
 
 import {
   BackButton,
@@ -17,22 +18,12 @@ export default function OrderUs() {
   const [showForm, setShowForm] = useState(false);
 
   return (
-    <OrderDiv
-      initial={{ opacity: 0, y: 50 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ bounce: 0.4, duration: 0.8 }}
-    >
+    <OrderDiv {...animationConfig}>
       <HeaderDiv>
         <Icons>
           <MainIcon src='/assets/order/document.png' alt='' />
           <FindIcon
-            initial={{ x: 0, y: 0 }}
-            whileInView={{
-              x: [25, 0, -25, 0, 25],
-              y: [0, 25, 0, -25, 0],
-              transition: { repeat: 1, duration: 3, ease: 'linear' },
-            }}
+            {...searchAnimation}
             src='/assets/order/magnifying-glass.png'
             alt='find'
           />

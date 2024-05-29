@@ -6,7 +6,7 @@ export const animationConfig = {
   initial: { opacity: 0, y: 100 }, //maybe 50
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true },
-  transition: { duration: 1 },
+  transition: { duration: 1, bounce: 0.4 },
 };
 
 //header animation
@@ -117,5 +117,15 @@ export const loadingAnimation = {
   transition: {
     height: { delay: 0, duration: 0.4 },
     opacity: { delay: 0.5, duration: 0.4 },
+  },
+};
+
+//search icon animation
+export const searchAnimation = {
+  initial: { x: 0, y: 0 },
+  whileInView: {
+    x: [25, 0, -25, 0, 25],
+    y: [0, 25, 0, -25, 0],
+    transition: { repeat: 1, duration: 3, ease: 'linear' },
   },
 };
