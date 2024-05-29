@@ -62,8 +62,8 @@ export const Btn = styled.button`
   border-radius: 8px;
   width: 100%;
   cursor: pointer;
-
   padding: 0.5em 1em;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
     background: hsl(var(--clr-blue));

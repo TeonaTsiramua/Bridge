@@ -53,6 +53,7 @@ export const ButtonDiv = styled.div`
     padding: 5px;
     height: 35px;
     width: 35px;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       color: hsl(var(--clr-blue), 1);

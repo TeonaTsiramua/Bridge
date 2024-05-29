@@ -30,6 +30,7 @@ export const BackButton = styled(motion.button)`
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
   &:hover {
     background-color: hsl(203, 78%, 37%);
   }

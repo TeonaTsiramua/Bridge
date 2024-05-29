@@ -15,11 +15,13 @@ export const A = styled.a`
   flex-wrap: wrap;
   gap: 0.5em;
   color: hsl(var(--clr-dark));
+  line-height: 2;
   font-weight: 300;
   text-decoration: none;
   cursor: pointer;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    text-decoration: underline;
+    color: hsl(var(--clr-blue));
   }
 `;

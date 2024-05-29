@@ -52,11 +52,13 @@ export const P = styled.p`
 
 export const StLink = styled(Link)`
   color: hsl(var(--clr-dark));
+  line-height: 2;
   font-weight: 300;
   text-decoration: none;
+  transition: all 0.3s ease-in-out;
 
   &:hover {
-    text-decoration: underline;
+    color: hsl(var(--clr-blue));
   }
 `;
 
