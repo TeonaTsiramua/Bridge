@@ -1,7 +1,7 @@
 import { Fragment } from 'react/jsx-runtime';
 import { ContactInfo, Form, MapComponent, Socials } from '../..';
 import { contact } from '../../../data/data';
-import { animationConfig } from '../../../utils';
+import { animationConfig } from '../../../utils/animations';
 import { Container, H3, Wrapper } from './styles';
 
 const ContactUs = () => {

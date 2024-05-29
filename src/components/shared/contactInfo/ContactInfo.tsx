@@ -1,4 +1,4 @@
-import { handleMarkerClick } from '../../../utils';
+import { handleMarkerClick } from '../../../utils/index';
 
 import MailIcon from '@mui/icons-material/Mail';
 import PhoneIcon from '@mui/icons-material/Phone';

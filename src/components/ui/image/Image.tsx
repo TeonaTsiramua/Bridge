@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { loadingAnimation } from '../../../utils/animations';
 import { Img, ImgWrapper } from './styles';
 
 const Image = ({ src, alt }: { src: string; alt: string }) => {
@@ -13,14 +13,9 @@ const Image = ({ src, alt }: { src: string; alt: string }) => {
   return (
     <ImgWrapper $pulsing={pulsing}>
       <Img
-        as={motion.img}
-        initial={{ opacity: 0 }}
+        {...loadingAnimation}
         animate={{
           opacity: imageLoading ? 0 : 1,
-        }}
-        transition={{
-          height: { delay: 0, duration: 0.4 },
-          opacity: { delay: 0.5, duration: 0.4 },
         }}
         onLoad={imageLoaded}
         src={src}

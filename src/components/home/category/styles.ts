@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { device } from '../../../styles/breakpoints';
 
 export const Container = styled.div`
@@ -60,7 +61,7 @@ export const CategoryUl = styled.ul`
   }
 `;
 
-export const Li = styled.li`
+export const Li = styled(motion.li)`
   font-weight: 500;
 
   list-style: none;

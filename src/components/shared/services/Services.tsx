@@ -1,5 +1,5 @@
 import { services } from '../../../data/data';
-import { animationConfig } from '../../../utils';
+import { animationConfig } from '../../../utils/animations';
 
 import Accordion from '@mui/material/Accordion';
 import AccordionSummary from '@mui/material/AccordionSummary';

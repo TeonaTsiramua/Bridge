@@ -1,32 +1,26 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { useScrollHandler } from '../../../hooks';
+import { useResizeHandler, useScrollHandler } from '../../../hooks';
+import { headerAnimation } from '../../../utils/animations';
 
 import { Nav } from '../..';
 import { Logo, StyledHeader } from './styles';
-import { useState } from 'react';
 
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const visible = useScrollHandler(isMenuOpen);
+  useResizeHandler(isMenuOpen, setIsMenuOpen);
 
-  const variants = {
-    open: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-    closed: { opacity: 0, y: -100, transition: { duration: 0.5 } },
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
   };
 
   return (
-    <StyledHeader
-      as={motion.header}
-      variants={variants}
-      initial='closed'
-      animate={visible ? 'open' : 'closed'}
-      exit='closed'
-    >
+    <StyledHeader {...headerAnimation} animate={visible ? 'open' : 'closed'}>
       <Link to='/'>
         <Logo src='/assets/main/logo2.svg' alt='logo' />
       </Link>
-      <Nav isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+      <Nav isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
     </StyledHeader>
   );
 }

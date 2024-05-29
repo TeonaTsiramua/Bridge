@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 
 export const FormDiv = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const StyledForm = styled.form`
   width: 90%;
 `;
 
-export const FormElement = styled.div`
+export const FormElement = styled(motion.div)`
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -133,7 +134,7 @@ export const MessageDiv = styled.div`
   gap: 2em;
 `;
 
-export const SendingImg = styled.img`
+export const SendingImg = styled(motion.img)`
   height: 5em;
   width: 5em;
 `;

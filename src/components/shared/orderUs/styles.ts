@@ -1,7 +1,8 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { device } from '../../../styles/breakpoints';
 
-export const OrderDiv = styled.div`
+export const OrderDiv = styled(motion.div)`
   display: flex;
   align-items: center;
   width: 100%;
@@ -46,7 +47,7 @@ export const MainIcon = styled.img`
   height: 5em;
   width: 5em;
 `;
-export const FindIcon = styled.img`
+export const FindIcon = styled(motion.img)`
   height: 5em;
   width: 5em;
   position: absolute;

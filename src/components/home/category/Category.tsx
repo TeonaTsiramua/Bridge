@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion';
-import { animationConfig } from '../../../utils';
+import { animationConfig, clickAnimation } from '../../../utils/animations';
 import { CategoryUl, Container, H2, Img, Li, P } from './styles';
 import { category } from './data';
 
@@ -10,12 +9,7 @@ export default function Category() {
 
       <CategoryUl>
         {category.map((i) => (
-          <Li
-            as={motion.li}
-            key={i.name}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
+          <Li key={i.name} {...clickAnimation}>
             <Img src={i.img} alt={i.name} />
             <P>{i.name}</P>
           </Li>

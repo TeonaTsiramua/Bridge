@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
 import { device } from '../../../styles/breakpoints';
 
 export const Container = styled.div`
@@ -13,7 +14,7 @@ export const Container = styled.div`
   }
 `;
 
-export const Img = styled.img`
+export const Img = styled(motion.img)`
   width: 100%;
   height: 100%;
   border-radius: 8px;

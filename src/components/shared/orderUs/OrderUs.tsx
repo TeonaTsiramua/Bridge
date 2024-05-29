@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 
 import { Form, SendButton } from '../..';
 
@@ -19,7 +18,6 @@ export default function OrderUs() {
 
   return (
     <OrderDiv
-      as={motion.div}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
@@ -29,7 +27,6 @@ export default function OrderUs() {
         <Icons>
           <MainIcon src='/assets/order/document.png' alt='' />
           <FindIcon
-            as={motion.img}
             initial={{ x: 0, y: 0 }}
             whileInView={{
               x: [25, 0, -25, 0, 25],

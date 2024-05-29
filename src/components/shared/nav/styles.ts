@@ -26,7 +26,9 @@ export const NavUl = styled.div`
 
     background: hsl(var(--clr-blue));
     border-radius: 16px 0 0 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
     min-width: 60vi;
     height: 100vh;
@@ -108,5 +110,22 @@ export const SButton = styled.button`
   @media ${device.md} {
     display: flex;
     z-index: 6;
+  }
+`;
+
+export const SOverlay = styled.div`
+  display: none;
+
+  @media ${device.md} {
+    position: fixed;
+    top: -1rem;
+    left: -3rem;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    background-color: var(--bg-secondary);
+    background-color: hsla(var(--clr-dark), 0.3);
+    filter: blur(4px);
+    z-index: 3;
   }
 `;

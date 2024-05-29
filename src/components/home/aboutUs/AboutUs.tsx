@@ -1,4 +1,4 @@
-import { animationConfig } from '../../../utils';
+import { animationConfig } from '../../../utils/animations';
 import { AboutContainer, Div, H2, Img, P } from './styles';
 
 export default function AboutUs() {

@@ -1,40 +1,21 @@
-import { motion } from 'framer-motion';
-import { HeroImg, HeroText } from './styles';
+import { opacityAnimation, textAnimation } from '../../../utils/animations';
+import { H1, H2, HeroImg, HeroText, P } from './styles';
 
 export default function Hero() {
   return (
     <div>
-      <HeroImg
-        as={motion.img}
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1 }}
-        src='/assets/main/bg-4.jpg'
-        alt=''
-      />
+      <HeroImg {...opacityAnimation} src='/assets/main/bg-4.jpg' alt='hero' />
       <HeroText>
-        <motion.h1
-          initial={{ opacity: 0, y: -50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5, duration: 1 }}
-        >
+        <H1 {...textAnimation} transition={{ delay: 0.5 }}>
           BRIDGE
-        </motion.h1>
-        <motion.h2
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1, duration: 1 }}
-        >
+        </H1>
+        <H2 {...textAnimation} transition={{ delay: 1 }}>
           Global Vehicle Trader
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 2, duration: 1 }}
-        >
+        </H2>
+        <P {...textAnimation} transition={{ delay: 2 }}>
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur, adipisci velit...
-        </motion.p>
+        </P>
       </HeroText>
     </div>
   );

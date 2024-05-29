@@ -3,6 +3,7 @@ import { useSwipeable } from 'react-swipeable';
 import { motion } from 'framer-motion';
 
 import { CarouselCard } from '../..';
+import { clickAnimation } from '../../../utils/animations';
 
 import { Item, Wrapper, Container, Ul, ButtonDiv, H2 } from './styles';
 
@@ -81,7 +82,6 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
       <H2>{header}</H2>
       <Wrapper>
         <Ul
-          as={motion.ul}
           animate={{
             transform: `translateX(-${currentIndex * (100 / visibleItems)}%)`,
           }}
@@ -102,18 +102,10 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
         </Ul>
       </Wrapper>
       <ButtonDiv>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={goToPrevItem}
-        >
+        <motion.button {...clickAnimation} onClick={goToPrevItem}>
           &lt;
         </motion.button>
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          onClick={goToNextItem}
-        >
+        <motion.button {...clickAnimation} onClick={goToNextItem}>
           &gt;
         </motion.button>
       </ButtonDiv>

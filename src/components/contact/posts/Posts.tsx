@@ -1,16 +1,11 @@
-import { motion } from 'framer-motion';
+import { opacityAnimation } from '../../../utils/animations';
 import { Container, Img } from './styles';
 
 const Posts = () => {
   return (
-    <Container
-      as={motion.div}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1 }}
-    >
-      <Img src='/assets/posts/post1.jpg' alt='' />
-      <Img src='/assets/posts/post2.jpg' alt='' />
+    <Container>
+      <Img {...opacityAnimation} src='/assets/posts/post1.jpg' alt='post' />
+      <Img {...opacityAnimation} src='/assets/posts/post2.jpg' alt='post' />
     </Container>
   );
 };
