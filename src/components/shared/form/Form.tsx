@@ -59,7 +59,7 @@ const Form: React.FC = () => {
     <FormDiv>
       {!submitted ? (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
-          <FormElement {...opacityAnimation} transition={{ delay: 0.1 }}>
+          <FormElement {...opacityAnimation(0.1)}>
             <Label htmlFor='name'>Name *</Label>
             <FormIcons>
               <FormIcon src='/assets/form/user.png' alt='name' />
@@ -74,7 +74,7 @@ const Form: React.FC = () => {
             {errors.name && <span>This field is required</span>}
           </FormElement>
 
-          <FormElement {...opacityAnimation} transition={{ delay: 0.2 }}>
+          <FormElement {...opacityAnimation(0.2)}>
             <Label htmlFor='email'>Email </Label>
             <FormIcons>
               <FormIcon src='/assets/form/email.png' alt='email' />
@@ -88,7 +88,7 @@ const Form: React.FC = () => {
             />
           </FormElement>
 
-          <FormElement {...opacityAnimation} transition={{ delay: 0.3 }}>
+          <FormElement {...opacityAnimation(0.3)}>
             <Label htmlFor='phone'>Phone *</Label>
             <FormIcons>
               <FormIcon src='/assets/form/phone-call.png' alt='phone' />
@@ -103,7 +103,7 @@ const Form: React.FC = () => {
             {errors.phone && <span>This field is required</span>}
           </FormElement>
 
-          <FormElement {...opacityAnimation} transition={{ delay: 0.4 }}>
+          <FormElement {...opacityAnimation(0.4)}>
             <Label htmlFor='description'>Description</Label>
             <TextArea
               id='description'

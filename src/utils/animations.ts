@@ -66,18 +66,18 @@ export const overlayAnimation = {
 };
 
 //opacity animation
-export const opacityAnimation = {
+export const opacityAnimation = (delay: number = 0) => ({
   initial: { opacity: 0 },
   animate: { opacity: 1 },
-  transition: { duration: 1 },
-};
+  transition: { duration: 1, delay },
+});
 
 //text animation
-export const textAnimation = {
+export const textAnimation = (delay: number = 0) => ({
   initial: { opacity: 0, y: -50 },
   animate: { opacity: 1, y: 0 },
-  transition: { duration: 1 },
-};
+  transition: { duration: 1, delay },
+});
 
 //click animation
 export const clickAnimation = {
