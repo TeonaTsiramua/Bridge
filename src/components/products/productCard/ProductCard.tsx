@@ -4,6 +4,7 @@ import { Image } from '../..';
 
 const ProductCard = ({
   product,
+  primary = true,
 }: {
   product: {
     albumId: number;
@@ -12,6 +13,7 @@ const ProductCard = ({
     url: string;
     thumbnailUrl: string;
   };
+  primary?: boolean;
 }) => {
   const navigate = useNavigate(); // Use navigate from react-router-dom
 
@@ -21,8 +23,8 @@ const ProductCard = ({
   };
 
   return (
-    <Container onClick={handleClick}>
-      <Wrapper>
+    <Container onClick={handleClick} $primary={primary}>
+      <Wrapper $primary={primary}>
         <Image src={product.url} alt={product.title} />
       </Wrapper>
       <Title>{product.title}</Title>

@@ -22,6 +22,22 @@ export const Wrapper = styled.div`
   gap: 1em;
 `;
 
+export const ProductWrapper = styled.div<{ $primary: boolean }>`
+  display: grid;
+  grid-template-columns: ${({ $primary }) =>
+    $primary ? 'repeat(3, 1fr)' : '1fr'};
+  gap: 1rem;
+
+  @media ${device.lg} {
+    grid-template-columns: ${({ $primary }) =>
+      $primary ? 'repeat(2, 1fr)' : '1fr'};
+  }
+
+  @media ${device.sm} {
+    grid-template-columns: 1fr;
+  }
+`;
+
 export const Input = styled.input`
   box-shadow: inset hsl(var(--clr-light)) 0 0 0 1px;
   border: 0;

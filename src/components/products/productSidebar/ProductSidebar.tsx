@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { useMediaQuery } from 'react-responsive';
 import { Button, ProductCard } from '../..';
-import { Container, Input, Wrapper } from './styles';
+import { Container, Input, ProductWrapper, Wrapper } from './styles';
 import { Pagination } from '@mui/material';
 
 const data = [
@@ -15,7 +15,7 @@ const data = [
   },
 ];
 
-const itemsPerPage = 15;
+const itemsPerPage = 18;
 
 const ProductSidebar = ({
   toggleShowFilter,
@@ -24,6 +24,7 @@ const ProductSidebar = ({
 }) => {
   const products = useLoaderData() as typeof data;
   const [currentPage, setCurrentPage] = useState(1);
+  const [isGridView, setisGridView] = useState(true);
   const navigate = useNavigate();
   const { page } = useParams(); // Access the page parameter from the URL
   const isTablet = useMediaQuery({ maxWidth: 900 });
@@ -43,12 +44,19 @@ const ProductSidebar = ({
       <Wrapper>
         {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
         <Input type='text' placeholder='Search...' />
+        <button onClick={() => setisGridView(!isGridView)}>G</button>
       </Wrapper>
-      {products
-        .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-        .map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <ProductWrapper $primary={isGridView}>
+        {products
+          .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+          .map((product) => (
+            <ProductCard
+              key={product.id}
+              primary={isGridView}
+              product={product}
+            />
+          ))}
+      </ProductWrapper>
       <Pagination
         count={Math.ceil(products.length / itemsPerPage)}
         page={currentPage}

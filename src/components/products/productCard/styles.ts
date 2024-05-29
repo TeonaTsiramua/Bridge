@@ -1,44 +1,60 @@
 import styled from 'styled-components';
 import { device } from '../../../styles/breakpoints';
 
-export const Container = styled.div`
+export const Container = styled.div<{ $primary: boolean }>`
   display: flex;
+  flex-direction: ${({ $primary }) => ($primary ? 'column' : 'row')};
   align-items: center;
   width: 100%;
-  height: 20vw;
+  height: ${({ $primary }) => ($primary ? '35vi' : '20vi')};
   gap: 1rem;
   padding: 1rem;
-
   border: 1px solid hsl(var(--clr-light));
   border-radius: 8px;
   cursor: pointer;
 
   @media ${device.md} {
-    height: 30vi;
+    height: ${({ $primary }) => ($primary ? '50vi' : '35vi')};
   }
 
   @media ${device.sm} {
+    height: ${({ $primary }) => ($primary ? '90vi' : '50vi')};
+  }
+
+  @media ${device.xs} {
     flex-direction: column;
-    height: 100vi;
+    height: 90vi;
   }
 `;
 
 export const Title = styled.p`
-  font-size: var(--fs-base);
+  align-self: start;
+  padding: 1rem 1rem 0 1rem;
+  font-size: var(--fs-sm);
   font-weight: 500;
-  width: 70%;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 
   @media ${device.sm} {
     width: 100%;
   }
 `;
 
-export const Wrapper = styled.div`
-  width: 30%;
-  height: 100%;
+export const Wrapper = styled.div<{ $primary: boolean }>`
+  width: ${({ $primary }) => ($primary ? '100%' : '30%')};
+  height: ${({ $primary }) => ($primary ? '50%' : '100%')};
+
+  @media ${device.lg} {
+    height: ${({ $primary }) => ($primary ? '60%' : '100%')};
+  }
 
   @media ${device.sm} {
-    height: 60%;
     width: 100%;
+  }
+
+  @media ${device.xs} {
+    height: 60%;
   }
 `;
