@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import { device } from '../../../styles/breakpoints';
+import { motion } from 'framer-motion';
 
 export const Container = styled.div`
   display: flex;
@@ -17,7 +18,7 @@ export const Container = styled.div`
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   gap: 1em;
 `;
@@ -27,6 +28,7 @@ export const ProductWrapper = styled.div<{ $primary: boolean }>`
   grid-template-columns: ${({ $primary }) =>
     $primary ? 'repeat(3, 1fr)' : '1fr'};
   gap: 1rem;
+  width: 100%;
 
   @media ${device.lg} {
     grid-template-columns: ${({ $primary }) =>
@@ -72,4 +74,11 @@ export const Input = styled.input`
     color: hsl(var(--clr-grey));
     font-weight: 300;
   }
+`;
+
+export const SButton = styled(motion.div)`
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
 `;

@@ -4,6 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { Button, ProductCard } from '../..';
 import { Container, Input, ProductWrapper, Wrapper } from './styles';
 import { Pagination } from '@mui/material';
+import ToggleButton from './ToggleButton';
 
 const data = [
   {
@@ -39,12 +40,16 @@ const ProductSidebar = ({
     navigate(`/products/page/${page}`); // Navigate to the corresponding page URL
   };
 
+  const toggleView = () => {
+    setisGridView(!isGridView);
+  };
+
   return (
     <Container>
       <Wrapper>
         {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
         <Input type='text' placeholder='Search...' />
-        <button onClick={() => setisGridView(!isGridView)}>G</button>
+        <ToggleButton toggleView={toggleView} isGridView={isGridView} />
       </Wrapper>
       <ProductWrapper $primary={isGridView}>
         {products

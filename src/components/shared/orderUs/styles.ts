@@ -8,12 +8,11 @@ export const OrderDiv = styled(motion.div)`
   width: 100%;
   background-color: hsl(var(--clr-light));
   gap: 1em;
-  padding: 2em;
+  padding: 2em 5%;
 
   @media ${device.md} {
     flex-direction: column;
     gap: 2em;
-    padding: 2em 1em;
   }
 `;
 

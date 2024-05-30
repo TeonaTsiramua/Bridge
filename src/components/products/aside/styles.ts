@@ -8,6 +8,7 @@ export const Wrapper = styled(motion.aside)`
   position: sticky;
   top: clamp(5rem, 13vw, 7rem);
   max-height: 80vh;
+  margin-top: 3em;
   gap: 2rem;
   width: 30%;
   overflow-y: auto;
@@ -23,6 +24,7 @@ export const Wrapper = styled(motion.aside)`
     gap: 1rem;
     z-index: 3;
     padding: 1em 2em 4em 2em;
+    margin: 0;
   }
 `;
 
