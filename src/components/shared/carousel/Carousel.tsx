@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
-import { motion } from 'framer-motion';
 
 import { CarouselCard } from '../..';
 import { clickAnimation } from '../../../utils/animations';
 
-import { Item, Wrapper, Container, Ul, ButtonDiv, H2 } from './styles';
+import { Item, Wrapper, Container, Ul, ButtonDiv, H2, SButton } from './styles';
 
 interface CarouselProps {
   items: {
@@ -102,12 +101,12 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
         </Ul>
       </Wrapper>
       <ButtonDiv>
-        <motion.button {...clickAnimation} onClick={goToPrevItem}>
+        <SButton {...clickAnimation} onClick={goToPrevItem}>
           &lt;
-        </motion.button>
-        <motion.button {...clickAnimation} onClick={goToNextItem}>
+        </SButton>
+        <SButton {...clickAnimation} onClick={goToNextItem}>
           &gt;
-        </motion.button>
+        </SButton>
       </ButtonDiv>
     </Container>
   );

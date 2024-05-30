@@ -37,27 +37,26 @@ export const Item = styled.li`
 export const ButtonDiv = styled.div`
   display: flex;
   gap: 1rem;
+`;
 
-  & > button {
-    background: transparent;
-    border-radius: 50%;
-    aspect-ratio: 1;
-    font-size: 24px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+export const SButton = styled(motion.button)`
+  background: transparent;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  font-size: 24px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    color: hsl(var(--clr-blue), 0.5);
-    border: 1px solid hsl(var(--clr-blue), 0.5);
-    padding: 5px;
-    height: 35px;
-    width: 35px;
-    transition: all 0.3s ease-in-out;
+  color: hsl(var(--clr-blue), 0.5);
+  border: 1px solid hsl(var(--clr-blue), 0.5);
+  padding: 5px;
+  height: 35px;
+  width: 35px;
 
-    &:hover {
-      color: hsl(var(--clr-blue), 1);
-      border: 1px solid hsl(var(--clr-blue), 1);
-    }
+  &:hover {
+    color: hsl(var(--clr-blue), 1);
+    border: 1px solid hsl(var(--clr-blue), 1);
   }
 `;
