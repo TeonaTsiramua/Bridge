@@ -52,6 +52,19 @@ export const getNavAnimationConfig = (
   animate: isMenuOpen ? 'open' : 'closed',
 });
 
+//filter animation
+const filterVariants = {
+  open: { opacity: 1, display: 'flex', X: 500 },
+  closed: { opacity: 0, display: 'none', x: 0 },
+};
+
+export const getfilterAnimation = (isMenuOpen: boolean) => ({
+  initial: 'closed',
+  exit: 'closed',
+  variants: filterVariants,
+  animate: isMenuOpen ? 'open' : 'closed',
+});
+
 //overlay animation
 const overlayVariants = {
   open: { opacity: 1, display: 'block', transition: { duration: 0.7 } },

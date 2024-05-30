@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 import { device } from '../../../styles/breakpoints';
+import { motion } from 'framer-motion';
 
-export const Wrapper = styled.aside`
-  background-color: hsl(var(--clr-white));
+export const Wrapper = styled(motion.aside)`
   display: flex;
   flex-direction: column;
   position: sticky;
@@ -13,6 +13,7 @@ export const Wrapper = styled.aside`
   overflow-y: auto;
 
   @media ${device.md} {
+    background-color: hsl(var(--clr-light));
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -26,7 +27,6 @@ export const Wrapper = styled.aside`
 `;
 
 export const Section = styled.div`
-  background-color: hsl(var(--clr-white));
   padding-right: 1em;
   display: flex;
   flex-direction: column;
@@ -39,22 +39,21 @@ export const Section = styled.div`
 
   /* width */
   &::-webkit-scrollbar {
-    width: 8px;
+    width: 7px;
     min-height: 70px;
   }
 
   /* Track */
   &::-webkit-scrollbar-track {
-    background: hsl(var(--clr-light), 0.5);
+    background: hsl(var(--clr-light), 0.4);
     border-radius: 8px;
-    margin: 12px 0;
+    margin: 15px 0;
   }
 
   /* Handle */
   &::-webkit-scrollbar-thumb {
     background: hsl(var(--clr-light));
     border-radius: 12px;
-    outline: 1px solid white;
   }
 
   /* Handle on hover */
@@ -64,11 +63,12 @@ export const Section = styled.div`
   }
 `;
 
-export const Label = styled.label`
+export const Label = styled(motion.label)`
   font-size: var(--fs-sm);
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  cursor: pointer;
 `;
 
 export const Checkbox = styled.input`
@@ -83,6 +83,7 @@ export const Checkbox = styled.input`
   border-radius: 5px;
   cursor: pointer;
   flex-shrink: 0;
+  transition: all 0.3s ease-in-out;
 
   &:checked {
     border-color: transparent;
@@ -91,12 +92,6 @@ export const Checkbox = styled.input`
   &:not(:checked):hover {
     border-color: hsl(var(--clr-blue));
   }
-`;
-
-export const Div = styled.div`
-  display: flex;
-  gap: 1em;
-  align-items: center;
 `;
 
 export const Close = styled.button`

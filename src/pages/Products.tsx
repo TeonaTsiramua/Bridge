@@ -22,7 +22,7 @@ export default function Products() {
 
   return (
     <PMain>
-      {showFilter && <Aside toggleShowFilter={toggleShowFilter} />}
+      <Aside toggleShowFilter={toggleShowFilter} showFilter={showFilter} />
       <ProductSidebar toggleShowFilter={toggleShowFilter} />
     </PMain>
   );
