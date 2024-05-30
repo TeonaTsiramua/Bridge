@@ -24,6 +24,62 @@ export const GlobalStyles = styled.createGlobalStyle`
     --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
   }
 
+  //fonts
+
+  @font-face {
+    font-family: 'FiraGO';
+    src: url('assets/fonts/FiraGO-Light.woff2');
+    font-weight: 300;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'FiraGO';
+    src: url('assets/fonts/FiraGO-Regular.woff2');
+    font-weight: 400;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'FiraGO';
+    src: url('assets/fonts/FiraGO-Medium.woff2');
+    font-weight: 500;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'FiraGO';
+    src: url('assets/fonts/FiraGO-SemiBold.woff2');
+    font-weight: 600;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'FiraGO';
+    src: url('assets/fonts/FiraGO-Bold.woff2');
+    font-weight: 700;
+    font-display: swap;
+  }
+
+  /* set up the body */
+  body {
+    color: hsl(var(--clr-blue));
+    background-color: hsl(var(--clr-white));
+    font-size: var(--fs-base);
+    font-family: 'FiraGO';
+    line-height: 1.5;
+    overflow-x: hidden;
+  }
+
+  #root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
   /* ------------------- */
   /* Reset               */
   /* ------------------- */
@@ -56,25 +112,6 @@ export const GlobalStyles = styled.createGlobalStyle`
   h6,
   p {
     font-weight: 400;
-  }
-
-  /* set up the body */
-  body {
-    color: hsl(var(--clr-blue));
-    background-color: hsl(var(--clr-white));
-    font-size: var(--fs-base);
-    font-family: 'FiraGO', sans-serif;
-    line-height: 1.5;
-    overflow-x: hidden;
-  }
-
-  #root {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 100vh;
-    justify-content: space-between;
-    gap: 2rem;
   }
 
   /* make images easier to work with */

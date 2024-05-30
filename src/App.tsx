@@ -14,11 +14,6 @@ const Products = lazy(() => import('./pages/Products'));
 const Product = lazy(() => import('./pages/Product'));
 import { Contact, ErrorPage, Home } from './pages';
 
-import '@fontsource/firago'; // Defaults to weight 400
-import '@fontsource/firago/300.css'; // Specify weight
-import '@fontsource/firago/500.css'; // Specify weight
-import '@fontsource/firago/600.css'; // Specify weight
-
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
