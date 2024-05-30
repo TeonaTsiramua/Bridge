@@ -78,7 +78,11 @@ export const Input = styled.input`
 
 export const SButton = styled(motion.div)`
   cursor: pointer;
-  width: 30px;
-  height: 30px;
-  display: flex;
+  min-height: 30px;
+  min-width: 30px;
+  display: block;
+
+  @media ${device.sm} {
+    display: none;
+  }
 `;

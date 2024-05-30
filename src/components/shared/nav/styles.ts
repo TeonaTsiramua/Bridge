@@ -122,10 +122,6 @@ export const SOverlay = styled.div`
     left: -3rem;
     min-width: 100vw;
     min-height: 100vh;
-
-    background-color: var(--bg-secondary);
-    background-color: hsla(var(--clr-dark), 0.3);
-    filter: blur(4px);
     z-index: 3;
   }
 `;
