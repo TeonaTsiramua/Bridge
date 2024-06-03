@@ -92,6 +92,11 @@ export const GlobalStyles = styled.createGlobalStyle`
   *::before,
   *::after {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    vertical-align: baseline;
   }
 
   /* Reset margins */
