@@ -8,67 +8,70 @@ export const GlobalStyles = styled.createGlobalStyle`
     /* colors */
     --clr-dark: 0, 0%, 20%;
     --clr-light: 0, 0%, 88%;
-    --clr-white: 0 0% 95%;
+    --clr-white: 0, 0%, 95%;
 
     --clr-grey: 0, 0%, 64%;
     --clr-red: 359, 66%, 37%;
     --clr-blue: 203, 78%, 27%;
 
     /* font-sizes */
-    --fs-sm: clamp(0.8rem, 0.3vi + 0.76rem, 1rem);
-    --fs-base: clamp(1rem, 0.34vi + 0.91rem, 1.3rem);
-    --fs-md: clamp(1.25rem, 0.61vi + 1.1rem, 1.58rem);
-    --fs-lg: clamp(1.56rem, 1vi + 1.31rem, 2.11rem);
-    --fs-xl: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
-    --fs-xxl: clamp(2.44rem, 2.38vi + 1.85rem, 3.75rem);
-    --fs-xxxl: clamp(3.05rem, 3.54vi + 2.17rem, 5rem);
+    --fs-sm: clamp(0.8rem, 0.3vw + 0.76rem, 1rem);
+    --fs-base: clamp(1rem, 0.34vw + 0.91rem, 1.3rem);
+    --fs-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
+    --fs-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
+    --fs-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
+    --fs-xxl: clamp(2.44rem, 2.38vw + 1.85rem, 3.75rem);
+    --fs-xxxl: clamp(3.05rem, 3.54vw + 2.17rem, 5rem);
   }
-
-  //fonts
 
   @font-face {
     font-family: 'FiraGO';
-    src: url('assets/fonts/FiraGO-Light.woff2');
+    src: url('/assets/fonts/FiraGO-Light.woff2') format('woff2'),
+      url('/assets/fonts/FiraGO-Light.woff') format('woff');
     font-weight: 300;
     font-display: swap;
   }
 
   @font-face {
     font-family: 'FiraGO';
-    src: url('assets/fonts/FiraGO-Regular.woff2');
+    src: url('/assets/fonts/FiraGO-Regular.woff2') format('woff2'),
+      url('/assets/fonts/FiraGO-Regular.woff') format('woff');
     font-weight: 400;
     font-display: swap;
   }
 
   @font-face {
     font-family: 'FiraGO';
-    src: url('assets/fonts/FiraGO-Medium.woff2');
+    src: url('/assets/fonts/FiraGO-Medium.woff2') format('woff2'),
+      url('/assets/fonts/FiraGO-Medium.woff') format('woff');
     font-weight: 500;
     font-display: swap;
   }
 
   @font-face {
     font-family: 'FiraGO';
-    src: url('assets/fonts/FiraGO-SemiBold.woff2');
+    src: url('/assets/fonts/FiraGO-SemiBold.woff2') format('woff2'),
+      url('/assets/fonts/FiraGO-SemiBold.woff') format('woff');
     font-weight: 600;
     font-display: swap;
   }
 
   @font-face {
     font-family: 'FiraGO';
-    src: url('assets/fonts/FiraGO-Bold.woff2');
+    src: url('/assets/fonts/FiraGO-Bold.woff2') format('woff2'),
+      url('/assets/fonts/FiraGO-Bold.woff') format('woff');
     font-weight: 700;
     font-display: swap;
   }
 
-  /* set up the body */
   body {
     color: hsl(var(--clr-blue));
     background-color: hsl(var(--clr-white));
     font-size: var(--fs-base);
-    font-family: 'FiraGO';
+    font-family: 'FiraGO', sans-serif;
     line-height: 1.5;
     overflow-x: hidden;
+    margin: 0;
   }
 
   #root {
@@ -114,14 +117,15 @@ export const GlobalStyles = styled.createGlobalStyle`
     font-weight: 400;
   }
 
-  /* make images easier to work with */
+  /* Make images easier to work with */
   img,
   picture {
     max-width: 100%;
+    height: auto;
     display: block;
   }
 
-  /* make form elements easier to work with */
+  /* Make form elements easier to work with */
   input,
   button,
   textarea,
@@ -129,7 +133,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     font: inherit;
   }
 
-  /* remove animations for people who've turned them off */
+  /* Remove animations for people who've turned them off */
   @media (prefers-reduced-motion: reduce) {
     *,
     *::before,
@@ -140,6 +144,8 @@ export const GlobalStyles = styled.createGlobalStyle`
       scroll-behavior: auto !important;
     }
   }
+
+  /* Add specific media queries for responsiveness */
 
   @media ${device.md} {
     .no-scroll {
