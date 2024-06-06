@@ -1,11 +1,8 @@
-import { Outlet, ScrollRestoration, useNavigation } from 'react-router-dom';
-import { Header, Footer, Loader } from './';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
+import { Header, Footer } from './';
 
 const Layout = () => {
-  const navigation = useNavigation();
-  return navigation.state === 'loading' ? (
-    <Loader />
-  ) : (
+  return (
     <>
       <ScrollRestoration />
       <Header />

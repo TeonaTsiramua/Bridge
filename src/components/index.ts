@@ -31,6 +31,7 @@ export { default as Carousel } from './shared/carousel/Carousel';
 export { default as Aside } from './products/aside/Aside';
 export { default as ProductSidebar } from './products/productSidebar/ProductSidebar';
 export { default as ProductCard } from './products/productCard/ProductCard';
+export { default as SearchFilterToggle } from './products/searchFilterToggle/SearchFilterToggle';
 
 // Contact page
 export { default as ContactUs } from './contact/contactUs/ContactUs';

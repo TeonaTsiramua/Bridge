@@ -1,9 +1,17 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { useMediaQuery } from 'react-responsive';
+import useBodyScrollLock from './useBodyScrollLock';
 
-const useShowFilter = (
-  setShowFilter: (value: boolean) => void,
-  isTablet: boolean
-) => {
+const useShowFilter = () => {
+  const [showFilter, setShowFilter] = useState(false);
+  const isTablet = useMediaQuery({ maxWidth: 900 });
+
+  const toggleShowFilter = () => {
+    if (isTablet) {
+      setShowFilter(!showFilter);
+    }
+  };
+
   useEffect(() => {
     if (!isTablet) {
       setShowFilter(true);
@@ -11,6 +19,10 @@ const useShowFilter = (
       setShowFilter(false);
     }
   }, [setShowFilter, isTablet]);
+
+  useBodyScrollLock(showFilter, isTablet);
+
+  return { showFilter, toggleShowFilter };
 };
 
 export default useShowFilter;

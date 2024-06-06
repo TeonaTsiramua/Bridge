@@ -10,7 +10,7 @@ import { GlobalStyles } from './styles/GlobalStyles';
 
 import { Layout, Loader } from './components';
 
-const Products = lazy(() => import('./pages/Products'));
+const Products = lazy(() => import('./pages/products/Products'));
 const Product = lazy(() => import('./pages/Product'));
 import { Contact, ErrorPage, Home } from './pages';
 

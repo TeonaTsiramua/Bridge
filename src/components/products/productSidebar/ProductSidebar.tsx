@@ -1,11 +1,6 @@
-import { useEffect, useState } from 'react';
-import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
-import { useMediaQuery } from 'react-responsive';
-import { Button, ProductCard } from '../..';
-import { Container, Input, ProductWrapper, Wrapper } from './styles';
+import { ProductCard } from '../..';
+import { Container, ProductWrapper } from './styles';
 import { Pagination } from '@mui/material';
-import ToggleButton from './ToggleButton';
-import SearchIcon from './SearchIcon';
 
 const data = [
   {
@@ -20,56 +15,42 @@ const data = [
 const itemsPerPage = 18;
 
 const ProductSidebar = ({
-  toggleShowFilter,
+  isGridView,
+  handlePageChange,
+  currentPage,
+  products,
 }: {
-  toggleShowFilter: () => void;
+  isGridView: boolean;
+  handlePageChange: (event: React.ChangeEvent<unknown>, page: number) => void;
+  currentPage: number;
+  products: typeof data;
 }) => {
-  const products = useLoaderData() as typeof data;
-  const [currentPage, setCurrentPage] = useState(1);
-  const [isGridView, setisGridView] = useState(true);
-  const navigate = useNavigate();
-  const { page } = useParams(); // Access the page parameter from the URL
-  const isTablet = useMediaQuery({ maxWidth: 900 });
-
-  useEffect(() => {
-    // Initialize the current page based on the page parameter in the URL
-    setCurrentPage(page ? parseInt(page) : 1);
-  }, [page]);
-
-  const handlePageChange = (_: unknown, page: number) => {
-    setCurrentPage(page);
-    navigate(`/products/page/${page}`); // Navigate to the corresponding page URL
-  };
-
-  const toggleView = () => {
-    setisGridView(!isGridView);
-  };
-
   return (
     <Container>
-      <Wrapper>
-        {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
-        <Input type='text' placeholder='Search...' />
-        <SearchIcon />
-        <ToggleButton toggleView={toggleView} isGridView={isGridView} />
-      </Wrapper>
       <ProductWrapper $primary={isGridView}>
-        {products
-          .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-          .map((product) => (
-            <ProductCard
-              key={product.id}
-              primary={isGridView}
-              product={product}
-            />
-          ))}
+        {products &&
+          products
+            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+            .map((product) => (
+              <ProductCard
+                key={product.id}
+                primary={isGridView}
+                product={product}
+              />
+            ))}
       </ProductWrapper>
-      <Pagination
-        count={Math.ceil(products.length / itemsPerPage)}
-        page={currentPage}
-        onChange={handlePageChange}
-        color='primary'
-      />
+      {
+        // Only show pagination if there are more than one page of products
+        products.length > itemsPerPage && (
+          <Pagination
+            count={Math.ceil(products.length / itemsPerPage)}
+            page={currentPage}
+            onChange={handlePageChange}
+            color='primary'
+          />
+        )
+      }
+      {products.length === 0 && <div>No products found.</div>}
     </Container>
   );
 };
