@@ -9,10 +9,6 @@ export const category = [
   },
   {
     name: 'სატვირთო',
-    img: '/assets/category/truck.png',
-  },
-  {
-    name: 'მისაბმელიანი',
     img: '/assets/category/trailer.png',
   },
   {
@@ -20,7 +16,11 @@ export const category = [
     img: '/assets/category/snowmobile.png',
   },
   {
+    name: 'ნაწილები',
+    img: '/assets/category/car-parts.png',
+  },
+  {
     name: 'წყლის ტრანსპორტი',
-    img: '/assets/category/jet-ski.png',
+    img: '/assets/category/yacht.png',
   },
 ];

@@ -21,7 +21,7 @@ export const category = [
   },
   {
     title: 'წყლის ტრანსპორტი',
-    img: '/assets/category/jet-ski.png',
+    img: '/assets/category/yacht.png',
   },
 ];
 
