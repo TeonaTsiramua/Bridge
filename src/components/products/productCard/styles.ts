@@ -12,6 +12,7 @@ export const Container = styled.div<{ $primary: boolean }>`
   border: 1px solid hsl(var(--clr-light));
   border-radius: 8px;
   cursor: pointer;
+  box-shadow: hsl(var(--clr-light)) 0px 2px 8px 0px;
 
   @media ${device.md} {
     height: ${({ $primary }) => ($primary ? '50vi' : '35vi')};

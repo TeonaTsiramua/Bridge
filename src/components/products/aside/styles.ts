@@ -6,7 +6,7 @@ export const Wrapper = styled(motion.aside)`
   display: flex;
   flex-direction: column;
   position: sticky;
-  top: clamp(5rem, 13vw, 7rem);
+  top: clamp(5rem, 13vw, 6rem);
   max-height: 80vh;
   margin-top: 3em;
   gap: 2rem;

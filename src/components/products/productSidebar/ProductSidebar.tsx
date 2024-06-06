@@ -5,6 +5,7 @@ import { Button, ProductCard } from '../..';
 import { Container, Input, ProductWrapper, Wrapper } from './styles';
 import { Pagination } from '@mui/material';
 import ToggleButton from './ToggleButton';
+import SearchIcon from './SearchIcon';
 
 const data = [
   {
@@ -49,6 +50,7 @@ const ProductSidebar = ({
       <Wrapper>
         {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
         <Input type='text' placeholder='Search...' />
+        <SearchIcon />
         <ToggleButton toggleView={toggleView} isGridView={isGridView} />
       </Wrapper>
       <ProductWrapper $primary={isGridView}>
