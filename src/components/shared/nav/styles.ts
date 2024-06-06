@@ -9,10 +9,10 @@ export const Navigation = styled.nav`
   justify-content: flex-end;
 `;
 
-export const NavUl = styled.div`
+export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.5rem;
   margin: 0;
 
   @media ${device.md} {
@@ -44,12 +44,15 @@ export const NavLi = styled.div`
 
 export const StyledLink = styled(NavLink)`
   color: hsl(var(--clr-blue));
-  font-size: var(--fs-base);
+  font-size: 1rem;
   font-weight: 500;
   border-radius: 8px;
   text-decoration: none;
   padding: 0.5rem 1rem;
   transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
 
   &:hover {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;

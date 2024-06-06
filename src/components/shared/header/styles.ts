@@ -9,7 +9,7 @@ export const StyledHeader = styled.header`
   justify-content: space-between;
   align-items: center;
   margin-top: 1rem;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   width: 90vw;
 
   background-color: hsl(var(--clr-white));
@@ -34,7 +34,7 @@ export const StyledHeader = styled.header`
 `;
 
 export const Logo = styled.img`
-  width: 9rem;
+  width: 8rem;
   @media ${device.md} {
     width: 6rem;
   }

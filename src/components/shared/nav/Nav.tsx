@@ -13,8 +13,7 @@ import { MenuToggle } from './MenuToggle';
 
 import {
   MobileMenuIcon,
-  NavLi,
-  NavUl,
+  Wrapper,
   Navigation,
   SOverlay,
   StyledLink,
@@ -39,21 +38,19 @@ function Nav({
         <MenuToggle isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
       </MobileMenuIcon>
 
-      <NavUl {...navAnimation}>
+      <Wrapper {...navAnimation}>
         {navData.map((item, index) => (
           <StyledLink key={index} onClick={toggleMenu} to={item.path}>
             {t(`nav.${item.text}`)}
           </StyledLink>
         ))}
 
-        <NavLi>
-          <LanguageSwitcher />
-        </NavLi>
-      </NavUl>
+        <LanguageSwitcher />
+      </Wrapper>
       <SOverlay
         {...overlayAnimation}
         animate={isMenuOpen ? 'open' : 'closed'}
-        onClick={toggleMenu}
+        onClick={isMenuOpen ? toggleMenu : undefined}
       />
     </Navigation>
   );

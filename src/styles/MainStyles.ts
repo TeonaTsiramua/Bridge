@@ -7,7 +7,7 @@ export const Main = styled.main`
   gap: 3rem;
   align-items: center;
   justify-content: center;
-  margin-top: clamp(5rem, 13vw, 7rem);
+  margin-top: 6rem;
   width: 100%;
 
   @media ${device.md} {
@@ -17,16 +17,21 @@ export const Main = styled.main`
 
 export const PMain = styled(Main)`
   flex-direction: row;
-  margin-top: clamp(5rem, 13vw, 7rem);
+  margin-top: 6rem;
   width: 90%;
   align-items: start;
   gap: 1rem;
 
   @media ${device.md} {
     flex-direction: column;
+    margin-top: 5rem;
   }
 `;
 
 export const CMain = styled(Main)`
-  margin-top: clamp(5rem, 13vw, 7rem);
+  margin-top: 6rem;
+
+  @media ${device.md} {
+    margin-top: 5rem;
+  }
 `;
