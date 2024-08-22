@@ -84,3 +84,10 @@ export const Icon = styled.svg`
     top: 0.4em;
   }
 `;
+
+export const FilterIcon = styled(motion.img)`
+  width: 40px;
+  filter: brightness(0) saturate(100%) invert(24%) sepia(10%) saturate(5646%)
+    hue-rotate(168deg) brightness(105%) contrast(94%);
+  cursor: pointer;
+`;

@@ -28,7 +28,8 @@ export default function ProductsPage() {
   const { currentPage, handlePageChange } = usePagination();
   const { showFilter, toggleShowFilter } = useShowFilter();
 
-  const filteredProducts = useProductFilter(productsData, debouncedSearchText);
+  const { filteredProducts, filters, handleFilterChange, handleClearFilters } =
+    useProductFilter(productsData, debouncedSearchText);
 
   const toggleView = () => setIsGridView(!isGridView);
 
@@ -42,7 +43,13 @@ export default function ProductsPage() {
         toggleShowFilter={toggleShowFilter}
       />
       <Wrapper>
-        <Aside toggleShowFilter={toggleShowFilter} showFilter={showFilter} />
+        <Aside
+          toggleShowFilter={toggleShowFilter}
+          showFilter={showFilter}
+          filters={filters}
+          onFilterChange={handleFilterChange}
+          handleClearFilters={handleClearFilters}
+        />
         <ProductSidebar
           isGridView={isGridView}
           handlePageChange={handlePageChange}

@@ -1,8 +1,8 @@
 import { useMediaQuery } from 'react-responsive';
-import { Button } from '../..';
 import SearchIcon from './SearchIcon';
 import ToggleButton from './ToggleButton';
-import { Input, Wrapper } from './styles';
+import { FilterIcon, Input, Wrapper } from './styles';
+import { clickAnimation } from '../../../utils/animations';
 
 const SearchFilterToggle = ({
   searchText,
@@ -27,7 +27,15 @@ const SearchFilterToggle = ({
         value={searchText}
         onChange={handleSearchChange}
       />
-      {isTablet && <Button onClick={toggleShowFilter} content='Filter' />}
+      {isTablet && (
+        <button onClick={toggleShowFilter}>
+          <FilterIcon
+            {...clickAnimation}
+            src='/assets/icons/filter.png'
+            alt='filter'
+          />
+        </button>
+      )}
       <SearchIcon />
       <ToggleButton toggleView={toggleView} isGridView={isGridView} />
     </Wrapper>
