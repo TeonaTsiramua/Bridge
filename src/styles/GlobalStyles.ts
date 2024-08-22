@@ -65,6 +65,9 @@ export const GlobalStyles = styled.createGlobalStyle`
   }
 
   body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     color: hsl(var(--clr-blue));
     background-color: hsl(var(--clr-white));
     font-size: var(--fs-base);
@@ -81,6 +84,8 @@ export const GlobalStyles = styled.createGlobalStyle`
     min-height: 100vh;
     justify-content: space-between;
     gap: 2rem;
+    width: 100%;
+    max-width: 1600px;
   }
 
   /* ------------------- */
