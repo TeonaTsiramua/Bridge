@@ -11,6 +11,7 @@ export const StyledHeader = styled.header`
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   width: 90vw;
+  max-width: 1600px;
 
   background-color: hsl(var(--clr-white));
 
