@@ -9,15 +9,14 @@ export default function AboutUs() {
         alt=''
       />
       <Div>
-        <H2>About Us</H2>
+        <H2>ჩვენს შესახებ</H2>
         <P>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum."
+          ბრიჯი არის კომერციული ავტომობილების, სპეც ტექნიკის, სამაცივრე
+          დანადგარებისა და სათადარიგო ნაწილების იმპორტიორი კომპანია. ახალი
+          სახელით კომპანია 2024 წელს დაარსდა, თუმცა მისი ისტორია 10 წლის წინ
+          იწყება, ამ პერიოდის განმავლობაში მიღებულმა გამოცდილებამ, ქართული
+          ბაზრის ტენდეციებზე დაკვირვებამ წარმოშვა იმპორტიორი კომპანიის შექმნის
+          იდეა და შესაძლებლობა.
         </P>
       </Div>
     </AboutContainer>

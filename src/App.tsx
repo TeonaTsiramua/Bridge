@@ -18,7 +18,14 @@ const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path='/' element={<Layout />}>
       <Route index element={<Home />} />
-      <Route path='contact' element={<Contact />} />
+      <Route
+        path='contact'
+        element={
+          <Suspense fallback={<Loader />}>
+            <Contact />
+          </Suspense>
+        }
+      />
       <Route
         path='products'
         element={
@@ -50,10 +57,10 @@ const router = createBrowserRouter(
 
 function App() {
   return (
-    <Suspense fallback={<Loader />}>
+    <>
       <GlobalStyles />
       <RouterProvider router={router} />
-    </Suspense>
+    </>
   );
 }
 

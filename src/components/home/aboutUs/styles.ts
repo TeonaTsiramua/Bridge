@@ -47,4 +47,6 @@ export const H2 = styled.h2`
 
 export const P = styled.p`
   font-size: var(--fs-base);
+  text-align: justify;
+  margin-top: 1rem;
 `;
