@@ -2,16 +2,31 @@ import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { device } from '../../../styles/breakpoints';
 
-export const HeroImg = styled(motion.img)`
-  width: 90vw;
+export const Wrapper = styled.div`
   border-radius: 8px;
-  height: 80vh;
-  object-fit: cover;
   position: relative;
+  height: 80vh;
+  width: 100%;
+  max-height: 800px;
+
+  @media (max-width: 1700px) {
+    width: 90%;
+  }
+
   @media ${device.md} {
     width: 100vw;
     border-radius: 0px;
     height: 90vh;
+  }
+`;
+
+export const HeroImg = styled(motion.img)`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  @media ${device.md} {
+    border-radius: 0px;
   }
 `;
 

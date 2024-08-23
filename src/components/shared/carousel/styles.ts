@@ -7,6 +7,7 @@ export const Container = styled.div`
   align-items: center;
   gap: 2rem;
   width: 90vw;
+  max-width: 1600px;
 `;
 
 export const H2 = styled.h2`

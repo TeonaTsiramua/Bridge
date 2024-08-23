@@ -10,7 +10,7 @@ export const StyledHeader = styled.header`
   align-items: center;
   margin-top: 1rem;
   padding: 0.5rem 1rem;
-  width: 90vw;
+  width: 90%;
   max-width: 1600px;
 
   background-color: hsl(var(--clr-white));

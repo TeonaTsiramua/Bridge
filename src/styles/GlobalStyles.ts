@@ -75,6 +75,7 @@ export const GlobalStyles = styled.createGlobalStyle`
     line-height: 1.5;
     overflow-x: hidden;
     margin: 0;
+    scroll-behavior: smooth;
   }
 
   #root {

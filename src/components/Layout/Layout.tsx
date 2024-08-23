@@ -1,5 +1,6 @@
 import { Outlet, ScrollRestoration } from 'react-router-dom';
-import { Header, Footer } from './';
+import { Header, Footer } from '..';
+import { BottomOverlay, TopOverlay } from './styles';
 
 const Layout = () => {
   return (
@@ -8,6 +9,8 @@ const Layout = () => {
       <Header />
       <Outlet />
       <Footer />
+      <TopOverlay />
+      <BottomOverlay />
     </>
   );
 };
