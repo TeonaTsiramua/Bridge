@@ -192,14 +192,19 @@ const useProductFilter = (products: Product[]) => {
       }
       // Delay URL update to avoid rendering issues
       setTimeout(() => {
+        const filterValue = updatedFilters[filterName];
+        let queryParamValue: string;
+
+        if (Array.isArray(filterValue)) {
+          queryParamValue = filterValue.join(',');
+        } else if (typeof filterValue === 'object' && filterValue !== null) {
+          queryParamValue = `${filterValue.min || ''},${filterValue.max || ''}`;
+        } else {
+          queryParamValue = filterValue as string;
+        }
+
         updateQueryParams({
-          [filterName]: Array.isArray(updatedFilters[filterName])
-            ? updatedFilters[filterName].join(',')
-            : typeof updatedFilters[filterName] === 'object'
-            ? `${updatedFilters[filterName].min || ''},${
-                updatedFilters[filterName].max || ''
-              }`
-            : updatedFilters[filterName],
+          [filterName]: queryParamValue,
         });
       }, 0);
       return updatedFilters;
