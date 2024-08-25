@@ -1,5 +1,5 @@
 // Shared
-export { default as Layout } from './Layout';
+export { default as Layout } from './Layout/Layout';
 export { default as Header } from './shared/header/Header';
 export { default as Footer } from './shared/footer/Footer';
 export { default as Form } from './shared/form/Form';
@@ -19,6 +19,8 @@ export { default as DropDown } from './ui/dropDown/DropDown';
 export { default as SendButton } from './ui/button/SendButton';
 export { default as Button } from './ui/button/Button';
 export { default as Image } from './ui/image/Image';
+export { default as RangeInput } from './ui/rangeInput/RangeInput';
+export { default as Select } from './ui/select/Select';
 
 // Home page
 export { default as Hero } from './home/hero/Hero';

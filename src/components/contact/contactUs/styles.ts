@@ -10,7 +10,7 @@ export const Container = styled.div`
   width: 100%;
 
   @media ${device.md} {
-    flex-direction: column-reverse;
+    flex-direction: column;
   }
 `;
 
@@ -20,11 +20,15 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: space-between;
   gap: 1em;
-  width: 50%;
+  width: 100%;
 
   @media ${device.md} {
     width: 100%;
   }
+`;
+
+export const Collumn = styled(Wrapper)`
+  flex-direction: column;
 `;
 
 export const H3 = styled.h3`

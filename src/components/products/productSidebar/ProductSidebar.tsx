@@ -1,16 +1,7 @@
 import { ProductCard } from '../..';
-import { Container, ProductWrapper } from './styles';
+import { useFilterContext } from '../../../hooks';
 import { Pagination } from '@mui/material';
-
-const data = [
-  {
-    albumId: 1,
-    id: 1,
-    title: 'accusamus beatae ad facilis cum similique qui sunt',
-    url: 'https://via.placeholder.com/600/92c952',
-    thumbnailUrl: 'https://via.placeholder.com/150/92c952',
-  },
-];
+import { Container, ProductWrapper } from './styles';
 
 const itemsPerPage = 18;
 
@@ -18,39 +9,37 @@ const ProductSidebar = ({
   isGridView,
   handlePageChange,
   currentPage,
-  products,
 }: {
   isGridView: boolean;
   handlePageChange: (event: React.ChangeEvent<unknown>, page: number) => void;
   currentPage: number;
-  products: typeof data;
 }) => {
+  const { filteredProducts } = useFilterContext();
   return (
     <Container>
       <ProductWrapper $primary={isGridView}>
-        {products &&
-          products
-            .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
-            .map((product) => (
-              <ProductCard
-                key={product.id}
-                primary={isGridView}
-                product={product}
-              />
-            ))}
+        {filteredProducts
+          .slice((currentPage - 1) * itemsPerPage, currentPage * itemsPerPage)
+          .map((product) => (
+            <ProductCard
+              key={product.id}
+              primary={isGridView}
+              product={product}
+            />
+          ))}
       </ProductWrapper>
       {
         // Only show pagination if there are more than one page of products
-        products.length > itemsPerPage && (
+        filteredProducts.length > itemsPerPage && (
           <Pagination
-            count={Math.ceil(products.length / itemsPerPage)}
+            count={Math.ceil(filteredProducts.length / itemsPerPage)}
             page={currentPage}
             onChange={handlePageChange}
-            color='primary'
+            color="primary"
           />
         )
       }
-      {products.length === 0 && <div>No products found.</div>}
+      {filteredProducts.length === 0 && <div>No products found.</div>}
     </Container>
   );
 };

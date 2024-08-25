@@ -13,10 +13,12 @@ const useQueryParams = (): [URLSearchParams, (params: Params) => void] => {
   );
 
   useEffect(() => {
+    // Update queryParams when location.search changes
     setQueryParams(new URLSearchParams(location.search));
   }, [location.search]);
 
   const updateQueryParams = (params: Params) => {
+    // Create a new URLSearchParams instance to avoid directly mutating state
     const newQueryParams = new URLSearchParams(location.search);
 
     Object.entries(params).forEach(([key, value]) => {
@@ -27,7 +29,10 @@ const useQueryParams = (): [URLSearchParams, (params: Params) => void] => {
       }
     });
 
-    navigate(`${location.pathname}?${newQueryParams.toString()}`);
+    // Use navigate to update the URL
+    navigate(`${location.pathname}?${newQueryParams.toString()}`, {
+      replace: true,
+    });
   };
 
   return [queryParams, updateQueryParams];

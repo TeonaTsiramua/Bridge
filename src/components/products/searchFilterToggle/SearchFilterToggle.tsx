@@ -1,29 +1,27 @@
 import { useMediaQuery } from 'react-responsive';
+import { useFilterContext } from '../../../hooks';
 import SearchIcon from './SearchIcon';
 import ToggleButton from './ToggleButton';
-import { FilterIcon, Input, Wrapper } from './styles';
 import { clickAnimation } from '../../../utils/animations';
+import { FilterIcon, Input, Wrapper } from './styles';
 
 const SearchFilterToggle = ({
-  searchText,
-  handleSearchChange,
   toggleView,
   isGridView,
   toggleShowFilter,
 }: {
-  searchText: string;
-  handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
   toggleView: () => void;
   isGridView: boolean;
   toggleShowFilter: () => void;
 }) => {
   const isTablet = useMediaQuery({ maxWidth: 900 });
+  const { searchText, handleSearchChange } = useFilterContext();
 
   return (
     <Wrapper>
       <Input
-        type='text'
-        placeholder='Search...'
+        type="text"
+        placeholder="Search..."
         value={searchText}
         onChange={handleSearchChange}
       />
@@ -31,8 +29,8 @@ const SearchFilterToggle = ({
         <button onClick={toggleShowFilter}>
           <FilterIcon
             {...clickAnimation}
-            src='/assets/icons/filter.png'
-            alt='filter'
+            src="/assets/icons/filter.png"
+            alt="filter"
           />
         </button>
       )}

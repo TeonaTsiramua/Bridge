@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom';
+import { Product } from '../../../interfaces';
 import { Container, Title, Wrapper } from './styles';
 import { Image } from '../..';
 
@@ -6,13 +7,7 @@ const ProductCard = ({
   product,
   primary = true,
 }: {
-  product: {
-    albumId: number;
-    id: number;
-    title: string;
-    url: string;
-    thumbnailUrl: string;
-  };
+  product: Product;
   primary?: boolean;
 }) => {
   const navigate = useNavigate(); // Use navigate from react-router-dom
@@ -25,9 +20,11 @@ const ProductCard = ({
   return (
     <Container onClick={handleClick} $primary={primary}>
       <Wrapper $primary={primary}>
-        <Image src={product.url} alt={product.title} />
+        <Image src={product.images[0]} alt={product.title} />
       </Wrapper>
-      <Title>{product.title}</Title>
+      <Title>
+        {product.brand} - {product.model}
+      </Title>
     </Container>
   );
 };

@@ -13,6 +13,7 @@ export const Container = styled.div<{ $primary: boolean }>`
   border-radius: 8px;
   cursor: pointer;
   box-shadow: hsl(var(--clr-light)) 0px 2px 8px 0px;
+  max-height: ${({ $primary }) => ($primary ? '500px' : '350px')};
 
   @media ${device.md} {
     height: ${({ $primary }) => ($primary ? '50vi' : '35vi')};
@@ -24,7 +25,8 @@ export const Container = styled.div<{ $primary: boolean }>`
 
   @media ${device.xs} {
     flex-direction: column;
-    height: 90vi;
+    height: 100vi;
+    max-height: 100vi;
   }
 `;
 

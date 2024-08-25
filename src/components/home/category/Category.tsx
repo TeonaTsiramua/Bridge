@@ -9,7 +9,7 @@ export default function Category() {
 
       <CategoryUl>
         {category.map((i) => (
-          <Li key={i.name} {...clickAnimation}>
+          <Li key={i.name} to={i.link || ''} {...clickAnimation}>
             <Img src={i.img} alt={i.name} />
             <P>{i.name}</P>
           </Li>

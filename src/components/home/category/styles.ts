@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { motion } from 'framer-motion';
 import { device } from '../../../styles/breakpoints';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   display: flex;
@@ -61,9 +62,10 @@ export const CategoryUl = styled.ul`
   }
 `;
 
-export const Li = styled(motion.li)`
+export const Li = styled(motion(Link))`
   font-weight: 500;
-
+  text-decoration: none;
+  color: var(--clr-blue);
   list-style: none;
   display: flex;
   flex-direction: column;

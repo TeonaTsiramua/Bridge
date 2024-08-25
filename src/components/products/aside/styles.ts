@@ -8,9 +8,10 @@ export const Wrapper = styled(motion.aside)`
   position: sticky;
   top: 6rem;
   max-height: 80vh;
-  gap: 2rem;
+  gap: 1.5rem;
   width: 30%;
   overflow-y: auto;
+  padding-bottom: 2rem;
 
   @media ${device.md} {
     background-color: hsl(var(--clr-light));
@@ -33,6 +34,7 @@ export const Section = styled.div`
   flex-direction: column;
   gap: 1rem;
   overflow-y: auto;
+  padding-bottom: 3rem;
 
   @media ${device.md} {
     padding: 1em;
@@ -115,4 +117,14 @@ export const Close = styled.button`
     font-size: var(--fs-xxl);
     padding: 0 1.5rem;
   }
+`;
+
+export const SButton = styled(motion.div)`
+  cursor: pointer;
+  min-height: 30px;
+  min-width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: flex-start;
 `;
