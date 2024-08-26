@@ -39,3 +39,5 @@ export { default as SearchFilterToggle } from './products/searchFilterToggle/Sea
 export { default as ContactUs } from './contact/contactUs/ContactUs';
 export { default as Posts } from './contact/posts/Posts';
 export { default as About } from './contact/about/About';
+
+export { default as Error } from './error/Error';
