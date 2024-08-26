@@ -3,7 +3,7 @@ import {
   getfilterAnimation,
   opacityAnimation,
 } from '../../../utils/animations';
-import { category } from '../../../data/data';
+import { category } from '../../../data';
 import { Product } from '../../../interfaces';
 import { DropDown, RangeInput, Select } from '../..';
 import ClearFilterButton from './ClearFilterButton';

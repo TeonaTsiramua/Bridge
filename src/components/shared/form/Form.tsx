@@ -22,6 +22,7 @@ import {
   StyledForm,
   TextArea,
 } from './styles';
+import { useTranslation } from 'react-i18next';
 
 interface FormData {
   name: string;
@@ -40,6 +41,7 @@ const Form: React.FC = () => {
   } = useForm<FormData>();
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
+  const { t } = useTranslation();
 
   const onSubmit = (data: FormData) => {
     setSubmitted(true);
@@ -60,77 +62,77 @@ const Form: React.FC = () => {
       {!submitted ? (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
           <FormElement {...opacityAnimation(0.1)}>
-            <Label htmlFor='name'>Name *</Label>
+            <Label htmlFor="name">{t('form.name')} *</Label>
             <FormIcons>
-              <FormIcon src='/assets/form/user.png' alt='name' />
+              <FormIcon src="/assets/form/user.png" alt="name" />
             </FormIcons>
             <Input
-              type='text'
-              id='name'
-              placeholder='Your name'
+              type="text"
+              id="name"
+              placeholder={t('placeholder.name')}
               {...register('name', { required: true })}
               onBlur={() => trigger('name')}
             />
-            {errors.name && <span>This field is required</span>}
+            {errors.name && <span>{t('form.error')}</span>}
           </FormElement>
 
           <FormElement {...opacityAnimation(0.2)}>
-            <Label htmlFor='email'>Email </Label>
+            <Label htmlFor="email">{t('form.email')} </Label>
             <FormIcons>
-              <FormIcon src='/assets/form/email.png' alt='email' />
+              <FormIcon src="/assets/form/email.png" alt="email" />
             </FormIcons>
             <Input
-              type='email'
-              id='email'
-              placeholder='Email'
+              type="email"
+              id="email"
+              placeholder={t('placeholder.email')}
               {...register('email')}
               onBlur={() => trigger('email')}
             />
           </FormElement>
 
           <FormElement {...opacityAnimation(0.3)}>
-            <Label htmlFor='phone'>Phone *</Label>
+            <Label htmlFor="phone">{t('form.phone')} *</Label>
             <FormIcons>
-              <FormIcon src='/assets/form/phone-call.png' alt='phone' />
+              <FormIcon src="/assets/form/phone-call.png" alt="phone" />
             </FormIcons>
             <Input
-              type='tel'
-              id='phone'
-              placeholder='Phone number'
+              type="tel"
+              id="phone"
+              placeholder={t('placeholder.phone')}
               {...register('phone', { required: true })}
               onBlur={() => trigger('phone')}
             />
-            {errors.phone && <span>This field is required</span>}
+            {errors.phone && <span>{t('form.error')}</span>}
           </FormElement>
 
           <FormElement {...opacityAnimation(0.4)}>
-            <Label htmlFor='description'>Description</Label>
+            <Label htmlFor="description">{t('form.description')}</Label>
             <TextArea
-              id='description'
-              placeholder='Describe product'
+              id="description"
+              placeholder={t('placeholder.description')}
               {...register('description')}
               onBlur={() => trigger('description')}
             />
           </FormElement>
 
-          <SendButton content='Submit' type='submit' />
+          <SendButton content={t('form.submit')} type="submit" />
         </StyledForm>
       ) : !sending ? (
         <MessageDiv>
           <Message>
-            <P>Order Received!</P>
+            <P>{t('order.success')}</P>
             <SendingImg
-              src='/assets/order/received.png'
-              alt='recieved'
+              src="/assets/order/received.png"
+              alt="recieved"
               {...recieveAnimation}
             />
           </Message>
-          <SendButton content='Order Another' onClick={resetForm} />
+          <SendButton content={t('order.another')} onClick={resetForm} />
         </MessageDiv>
       ) : (
         <SendingImg
-          src='/assets/order/sending.png'
-          alt='sending'
+          src="/assets/order/sending.png"
+          alt="sending"
           {...sendAnimation}
         />
       )}

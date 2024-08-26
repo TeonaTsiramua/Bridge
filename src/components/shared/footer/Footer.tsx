@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { StyledFooter, StLink, Logo, Wrapper, Hr, Ul, P, H3 } from './styles';
 
-import { contact, navData } from '../../../data/data';
+import { contact, navData } from '../../../data';
 import { ContactInfo, Socials } from '../..';
 
 function Footer() {
@@ -11,8 +11,8 @@ function Footer() {
   return contact.map((info) => (
     <StyledFooter key={info.email}>
       <Wrapper>
-        <Link to='/'>
-          <Logo src='/assets/main/logo1.svg' alt='logo' />
+        <Link to="/">
+          <Logo src="/assets/main/logo1.svg" alt="logo" />
         </Link>
         <Ul>
           <H3>{t('nav')}</H3>
@@ -34,7 +34,7 @@ function Footer() {
       <Wrapper>
         <P>
           {'Copyright © '}
-          <StLink to='/'>Bridge </StLink>
+          <StLink to="/">Bridge </StLink>
           {new Date().getFullYear()}
         </P>
         <Socials info={info} />

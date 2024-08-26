@@ -1,9 +1,57 @@
 {
-  "header.title": "My Bilingual Website",
+  "home.title": "BRIDGE",
+  "home.subtitle": "Global Vehicle Trader",
+  "home.slogan": "Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit..",
+
   "nav": "Navigation",
   "nav.home": "Home",
   "nav.contact": "About",
   "nav.products": "Products",
-  "home.welcome": "Welcome to my website!",
-  "contact": "Contact Us"
+
+  "home.categories": "Product Category",
+  "category.მაცივარი": "Refrigerator",
+  "category.სამშენებლო": "Construction",
+  "category.სატვირთო": "Truck",
+  "category.ზამთრის ტექნიკა": "Winter Equipment",
+  "category.მისაბმელიანი": "Trailer",
+  "category.წყლის ტრანსპორტი": "Water Transport",
+
+  "home.newProducts": "New Products",
+
+  "order.title": "Couldn't find what you are looking for?",
+  "order.description": "Order us any kind of heavy vehicle, our representative will contact you within 24 hours.",
+  "order.button": "Order Us",
+  "form.name": "Name",
+  "form.email": "Email",
+  "form.phone": "Phone",
+  "form.description": "Description",
+  "form.error": "This field is required",
+  "placeholder.name": "Enter your name",
+  "placeholder.email": "Enter your email",
+  "placeholder.phone": "Enter your phone number",
+  "placeholder.description": "Describe the product you are looking for",
+  "form.submit": "Submit",
+  "order.success": "Order Received",
+  "order.another": "Order Another",
+
+  "about": "About Us",
+  "about.description1": "Bridge is a company that has been operating in the Georgian market for 10 years. We offer a wide range of products and services. Our company is distinguished by high quality and affordable prices. We are always ready to help you and provide you with the best service.",
+  "about.description2": "Bridge is a company that has been operating in the Georgian market for 10 years. We offer a wide range of products and services. Our company is distinguished by high quality and affordable prices. We are always ready to help you and provide you with the best service.",
+  "about.description3": "Bridge is a company that has been operating in the Georgian market for 10 years. We offer a wide range of products and services. Our company is distinguished by high quality and affordable prices. We are always ready to help you and provide you with the best service.",
+  "about.description4": "Bridge is a company that has been operating in the Georgian market for 10 years. We offer a wide range of products and services. Our company is distinguished by high quality and affordable prices. We are always ready to help you and provide you with the best service.",
+
+  "about.services": "Services we offer",
+  "service1": "Vehicle selection",
+  "service1.description": "Selection of desired type of transport and special equipment across Europe.",
+  "service2": "Detailed inspection",
+  "service2.description": "A specialist will inspect the selected equipment and its technical condition on site.",
+  "service3": "Transportation",
+  "service3.description": "Ensuring safe and timely transportation to Georgia.",
+  "service4": "Leasing/Installment",
+  "service4.description": "Installment and leasing",
+  "service5": "Warranty on delivered vehicle",
+  "service5.description": "Full warranty on selected and delivered equipment",
+
+  "contact": "Contact Us",
+  "address": "25b Gobronidze Street"
 }

@@ -1,4 +1,5 @@
-import { services } from '../../../data/data';
+import { useTranslation } from 'react-i18next';
+import { services } from '../../../data';
 import { animationConfig } from '../../../utils/animations';
 
 import Accordion from '@mui/material/Accordion';
@@ -8,9 +9,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { Container, H2 } from './styles';
 
 const Services = () => {
+  const { t } = useTranslation();
+
   return (
     <Container {...animationConfig}>
-      <H2>ჩვენს მიერ შეთავაზებული სერვისები</H2>
+      <H2>{t('about.services')}</H2>
       {services.map((service) => (
         <Accordion
           key={service.title}
@@ -24,17 +27,17 @@ const Services = () => {
             expandIcon={
               <ExpandMoreIcon sx={{ color: 'hsl(var(--clr-light))' }} />
             }
-            aria-controls='panel-content'
-            id='panel-header'
+            aria-controls="panel-content"
+            id="panel-header"
             sx={{ color: 'hsl(var(--clr-light))' }}
           >
-            {service.title}
+            {t(`${service.title}`)}
           </AccordionSummary>
 
           <AccordionDetails
             sx={{ color: 'hsl(var(--clr-light))', fontWeight: '300' }}
           >
-            {service.description}
+            {t(`${service.description}`)}
           </AccordionDetails>
         </Accordion>
       ))}

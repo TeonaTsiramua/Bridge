@@ -6,7 +6,7 @@ import {
   getNavAnimationConfig,
   overlayAnimation,
 } from '../../../utils/animations';
-import { navData } from '../../../data/data';
+import { navData } from '../../../data';
 
 import { LanguageSwitcher } from '../..';
 import { MenuToggle } from './MenuToggle';

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { handleMarkerClick } from '../../../utils/index';
 
 import MailIcon from '@mui/icons-material/Mail';
@@ -8,6 +9,8 @@ import { A, Wrapper } from './styles';
 import { Props } from '../../../interfaces';
 
 const ContactInfo = ({ info }: Props) => {
+  const { t } = useTranslation();
+
   return (
     <Wrapper>
       <A href={`mailto:${info.email}`}>
@@ -19,7 +22,7 @@ const ContactInfo = ({ info }: Props) => {
       </A>
       <A onClick={handleMarkerClick}>
         <LocationOnIcon sx={{ alignSelf: 'center', fontSize: '20px' }} />
-        {info.address}
+        {t(`${info.address}`)}
       </A>
     </Wrapper>
   );

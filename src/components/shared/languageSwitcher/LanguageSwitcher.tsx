@@ -1,10 +1,9 @@
-import React from 'react';
 import { useTranslation } from 'react-i18next';
 
 import { clickAnimation } from '../../../utils/animations';
 import { LangButton, Wrapper } from './styles';
 
-const LanguageSwitcher: React.FC = () => {
+const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
 
   const changeLanguage = (lng: string) => {
@@ -16,14 +15,14 @@ const LanguageSwitcher: React.FC = () => {
       <LangButton
         onClick={() => changeLanguage('en')}
         {...clickAnimation}
-        src='/assets/main/gb.svg'
-        alt='Great Britan flag'
+        src="/assets/main/gb.svg"
+        alt="Great Britan flag"
       />
       <LangButton
         onClick={() => changeLanguage('ge')}
         {...clickAnimation}
-        src='/assets/main/ge.svg'
-        alt='Georgia flag'
+        src="/assets/main/ge.svg"
+        alt="Georgia flag"
       />
     </Wrapper>
   );
