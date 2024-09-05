@@ -28,19 +28,21 @@ const ToggleButton = ({
   return (
     <SButton onClick={toggleView} {...clickAnimation}>
       <svg
-        fill='hsl(203, 78%, 27%)'
-        viewBox='0 0 56 56'
-        xmlns='http://www.w3.org/2000/svg'
+        fill="hsl(203, 78%, 27%)"
+        viewBox="0 0 56 56"
+        width="35"
+        height="35"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <g id='SVGRepo_bgCarrier' strokeWidth='0'></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
-          id='SVGRepo_tracerCarrier'
-          strokeLinecap='round'
-          strokeLinejoin='round'
+          id="SVGRepo_tracerCarrier"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
-        <g id='SVGRepo_iconCarrier'>
+        <g id="SVGRepo_iconCarrier">
           <motion.path
-            key='toggle'
+            key="toggle"
             d={isGridView ? gridViewPath : listViewPath}
             initial={{ pathLength: 0, opacity: 0 }}
             animate={{ pathLength: 1, opacity: 1 }}
