@@ -5,7 +5,6 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  justify-content: center;
   margin-top: 6rem;
   width: 90%;
   min-height: 80vh;

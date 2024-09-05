@@ -132,4 +132,11 @@ export const SButton = styled(motion.div)`
   justify-content: center;
   align-items: center;
   align-self: flex-start;
+  margin-top: 1rem;
+
+  & > img {
+    width: 35px;
+    filter: brightness(0) saturate(100%) invert(13%) sepia(36%) saturate(7081%)
+      hue-rotate(346deg) brightness(101%) contrast(89%);
+  }
 `;
