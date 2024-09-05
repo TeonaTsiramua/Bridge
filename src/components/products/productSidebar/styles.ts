@@ -27,4 +27,5 @@ export const ProductWrapper = styled.div<{
       : '1fr'};
   gap: 1rem;
   width: 100%;
+  margin-bottom: 3rem;
 `;
