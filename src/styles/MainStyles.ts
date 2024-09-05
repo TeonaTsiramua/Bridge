@@ -15,19 +15,6 @@ export const Main = styled.main`
   }
 `;
 
-export const PMain = styled(Main)`
-  flex-direction: row;
-  margin-top: 6rem;
-  width: 90%;
-  align-items: start;
-  gap: 1rem;
-
-  @media ${device.md} {
-    flex-direction: column;
-    margin-top: 5rem;
-  }
-`;
-
 export const CMain = styled(Main)`
   margin-top: 6rem;
 
