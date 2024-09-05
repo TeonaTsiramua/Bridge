@@ -12,6 +12,7 @@
   "category.მაცივარი": "Refrigerator",
   "category.სამშენებლო": "Construction",
   "category.სატვირთო": "Truck",
+  "category.ზამთრის ტრანსპორტი": "Winter Equipment",
   "category.ზამთრის ტექნიკა": "Winter Equipment",
   "category.მისაბმელიანი": "Trailer",
   "category.წყლის ტრანსპორტი": "Water Transport",
@@ -53,5 +54,34 @@
   "service5.description": "Full warranty on selected and delivered equipment",
 
   "contact": "Contact Us",
-  "address": "25b Gobronidze Street"
+  "address": "25b Gobronidze Street",
+
+  "filter.category": "Category",
+  "filter.brand": "Brand",
+  "filter.model": "Model",
+  "filter.year": "Year",
+  "filter.mileage": "Mileage",
+  "filter.price": "Price",
+  "filter.fuel": "Fuel Type",
+  "filter.displacement": "Displacement",
+  "filter.engineOutput": "Engine Output",
+  "filter.cylinders": "Cylinders",
+  "filter.transmission": "Transmission",
+  "filter.wheel": "Wheel Diameter",
+  "filter.gross": "Gross Weight",
+  "filter.load": "Load Capacity",
+  "filter.axle": "Axle Configuration",
+  "filter.emission": "Emission Class",
+  "filter.reset": "Clear Filters",
+  "filter.search": "Search",
+
+  "ბენზინი": "Petrol",
+  "დიზელი": "Diesel",
+  "LPG": "LPG",
+  "CNG": "CNG",
+  "ელექტრო": "Electric",
+  "სხვა": "Other",
+  "მექანიკური": "Manual",
+  "ავტომატური": "Automatic",
+  "ნახევრად ავტომატური": "Semi-Automatic"
 }
