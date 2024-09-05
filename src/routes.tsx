@@ -8,28 +8,19 @@ import {
 import { Layout, Loader } from './components';
 
 const Products = lazy(() => import('./pages/products/Products'));
-const Product = lazy(() => import('./pages/Product'));
+const Product = lazy(() => import('./pages/product/Product'));
 import { Contact, ErrorPage, Home, ServerErrorPage } from './pages';
 
 const API = process.env.REACT_APP_API;
 
-const productsLoader = async () => {
-  try {
-    const response = await fetch(`${API}/test-product-route`);
-    if (!response.ok) {
-      throw new Error(`Failed to fetch products: ${response.status}`);
-    }
-    return await response.json();
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    throw new Response('Failed to load products', { status: 502 });
-  }
-};
-
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
+      <Route
+        index
+        element={<Home />}
+        loader={async () => fetch(`${API}/test-product-route`)}
+      />
       <Route
         path="contact"
         element={
@@ -46,9 +37,9 @@ export const router = createBrowserRouter(
             <Products />
           </Suspense>
         }
-        loader={productsLoader}
+        loader={async () => fetch(`${API}/test-product-route`)}
         errorElement={<ServerErrorPage />}
-      ></Route>
+      />
       <Route
         path="products/product/:id"
         element={
