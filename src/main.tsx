@@ -8,7 +8,7 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslations from './assets/translations/en.json';
 import geTranslations from './assets/translations/ge.json';
 
-import App from './App.tsx';
+import App from './inProgress/App';
 
 i18n
   .use(LanguageDetector)

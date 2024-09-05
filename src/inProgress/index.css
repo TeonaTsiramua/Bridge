@@ -1,0 +1,56 @@
+:root {
+  font-family: 'FiraGO', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0f527c;
+  background: linear-gradient(-45deg, #a2a2a2, #0f527c, #a2a2a2, #0f527c);
+  background-size: 400% 400%;
+  animation: gradient 20s ease infinite;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+a {
+  text-decoration: inherit;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  color: #9c2022;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: clamp(1.95rem, 1.56vi + 1.56rem, 2.81rem);
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+p {
+  margin: 0;
+  font-weight: 500;
+  font-size: clamp(1rem, 0.34vi + 0.91rem, 1.19rem);
+}
