@@ -1,17 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
-import { CarouselCard } from '../..';
+import { Product } from '../../../interfaces';
+import { ProductCard } from '../..';
 import { clickAnimation } from '../../../utils/animations';
 
 import { Item, Wrapper, Container, Ul, ButtonDiv, H2, SButton } from './styles';
 
 interface CarouselProps {
-  items: {
-    name: string;
-    description: string;
-    info: string;
-  }[];
+  items: Product[];
   visibleItems: number;
   header: string;
 }
@@ -88,14 +85,10 @@ const Carousel: React.FC<CarouselProps> = ({ items, visibleItems, header }) => {
         >
           {items.map((item) => (
             <Item
-              key={item.name}
+              key={item.id}
               style={{ width: `calc(100% / ${visibleItems} - 0.86rem)` }}
             >
-              <CarouselCard
-                name={item.name}
-                description={item.description}
-                info={item.info}
-              />
+              <ProductCard product={item} />
             </Item>
           ))}
         </Ul>

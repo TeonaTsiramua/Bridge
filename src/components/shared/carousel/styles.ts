@@ -27,6 +27,7 @@ export const Ul = styled(motion.ul)`
   margin: 0;
   padding: 0;
   gap: 1rem;
+  height: 100%;
 `;
 
 export const Item = styled.li`

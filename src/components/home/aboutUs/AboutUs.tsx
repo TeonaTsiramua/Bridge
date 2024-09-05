@@ -7,10 +7,7 @@ export default function AboutUs() {
 
   return (
     <AboutContainer {...animationConfig}>
-      <Img
-        src="https://dryeffect.com/wp-content/uploads/2021/09/iStock-858309414-scaled.jpg"
-        alt=""
-      />
+      <Img src="/assets/main/bridge.png" alt="bridge logo" />
       <Div>
         <H2>{t('about')}</H2>
         <P>{t('about.description1')}</P>
