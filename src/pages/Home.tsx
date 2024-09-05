@@ -1,20 +1,11 @@
-// import { useLoaderData } from 'react-router-dom';
-
+import { motion } from 'framer-motion';
 import { AboutUs, Category, Hero, NewProducts, OrderUs } from '../components';
+import { opacityAnimation } from '../utils/animations';
 import { Main } from '../styles/MainStyles';
 
-// interface CompanyInterface {
-//   description: string;
-//   slogan: string;
-//   title: string;
-// }
-
 function Home() {
-  // const company = useLoaderData() as CompanyInterface;
-  // console.log(company);
-
   return (
-    <Main>
+    <Main as={motion.main} {...opacityAnimation(0.5)}>
       <Hero />
       <Category />
       <AboutUs />
