@@ -2,7 +2,15 @@ import { useState } from 'react';
 import { loadingAnimation } from '../../../utils/animations';
 import { Img, ImgWrapper } from './styles';
 
-const Image = ({ src, alt }: { src: string; alt: string }) => {
+const Image = ({
+  src,
+  alt,
+  onClick,
+}: {
+  src: string;
+  alt: string;
+  onClick?: () => void;
+}) => {
   const [imageLoading, setImageLoading] = useState(true);
   const [pulsing, setPulsing] = useState(true);
 
@@ -11,7 +19,7 @@ const Image = ({ src, alt }: { src: string; alt: string }) => {
     setPulsing(false);
   };
   return (
-    <ImgWrapper $pulsing={pulsing}>
+    <ImgWrapper $pulsing={pulsing} onClick={onClick}>
       <Img
         {...loadingAnimation}
         animate={{

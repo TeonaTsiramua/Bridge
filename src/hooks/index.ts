@@ -8,3 +8,5 @@ export { default as useDebounce } from './useDebounce';
 export { default as useSearch } from './useSearch';
 export { default as usePagination } from './usePagination';
 export { default as useFilterContext } from './useFilterContext';
+export { default as useExchangeRate } from './useExchangeRate';
+export { useCurrency } from './useCurrency';

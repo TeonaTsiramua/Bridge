@@ -14,19 +14,17 @@ export const Container = styled.div`
   }
 `;
 
-export const ProductWrapper = styled.div<{ $primary: boolean }>`
+export const ProductWrapper = styled.div<{
+  $primary: boolean;
+  $onlyOne: boolean;
+}>`
   display: grid;
-  grid-template-columns: ${({ $primary }) =>
-    $primary ? 'repeat(3, 1fr)' : '1fr'};
+  grid-template-columns: ${({ $primary, $onlyOne }) =>
+    $primary
+      ? $onlyOne
+        ? '320px'
+        : 'repeat(auto-fit, minmax(300px, 1fr))'
+      : '1fr'};
   gap: 1rem;
   width: 100%;
-
-  @media ${device.lg} {
-    grid-template-columns: ${({ $primary }) =>
-      $primary ? 'repeat(2, 1fr)' : '1fr'};
-  }
-
-  @media ${device.sm} {
-    grid-template-columns: 1fr;
-  }
 `;

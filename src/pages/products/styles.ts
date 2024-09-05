@@ -8,6 +8,7 @@ export const Main = styled.main`
   justify-content: center;
   margin-top: 6rem;
   width: 90%;
+  min-height: 80vh;
 
   @media ${device.md} {
     flex-direction: column;
@@ -19,6 +20,6 @@ export const Wrapper = styled.div`
   display: flex;
   gap: 1rem;
   align-items: start;
-  justify-content: center;
+  justify-content: start;
   width: 100%;
 `;

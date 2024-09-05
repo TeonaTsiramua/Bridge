@@ -1,9 +1,9 @@
+import { useTranslation } from 'react-i18next';
 import { useFilterContext } from '../../../hooks';
 import {
   getfilterAnimation,
   opacityAnimation,
 } from '../../../utils/animations';
-import { category } from '../../../data';
 import { Product } from '../../../interfaces';
 import { DropDown, RangeInput, Select } from '../..';
 import ClearFilterButton from './ClearFilterButton';
@@ -20,26 +20,37 @@ const Aside = ({
 }) => {
   const { filters, handleFilterChange, handleClearFilters } =
     useFilterContext();
-
+  const { t } = useTranslation();
   const animate = getfilterAnimation(showFilter);
 
-  const brands = products.map((product) => product.brand);
-  const models = products.map((product) => product.model);
-  const years = products.map((product) => product.year);
-  const displacements = products.map((product) => product.displacement);
-  const engineOutputs = products.map((product) => product.engine_output);
-  const cylinders = products.map((product) => product.cylinders);
-  const wheelDiameters = products.map((product) => product.wheel_diameter);
-  const gross = products.map((product) => product.gross);
-  const loadCapacities = products.map((product) => product.load_capacity);
-  const prices = products.map((product) => product.price);
-  const mileages = products.map((product) => product.mileage);
-  const fuelTypes = products.map((product) => product.fuel_type);
-  const transmissions = products.map((product) => product.transmission);
-  const emissionClasses = products.map((product) => product.emission_class);
-  const axleConfigurations = products.map(
-    (product) => product.axle_configuration
+  const getUniqueStringValues = (key: keyof Product) => [
+    ...new Set(products.map((product) => String(product[key]))),
+  ];
+
+  // Derive filter values
+  const brands = getUniqueStringValues('brand');
+  const models = getUniqueStringValues('model').filter((model) =>
+    filters.brand
+      ? products.some(
+          (product) =>
+            product.brand === filters.brand && product.model === model
+        )
+      : true
   );
+  const category = getUniqueStringValues('category');
+  const years = getUniqueStringValues('year').map(Number);
+  const displacements = getUniqueStringValues('displacement').map(Number);
+  const engineOutputs = getUniqueStringValues('engine_output').map(Number);
+  const cylinders = getUniqueStringValues('cylinders').map(Number);
+  const wheelDiameters = getUniqueStringValues('wheel_diameter').map(Number);
+  const gross = getUniqueStringValues('gross').map(Number);
+  const loadCapacities = getUniqueStringValues('load_capacity').map(Number);
+  const prices = getUniqueStringValues('price').map(Number);
+  const mileages = getUniqueStringValues('mileage').map(Number);
+  const fuelTypes = getUniqueStringValues('fuel_type');
+  const transmissions = getUniqueStringValues('transmission');
+  const emissionClasses = getUniqueStringValues('emission_class');
+  const axleConfigurations = getUniqueStringValues('axle_configuration');
 
   return (
     <Wrapper {...animate}>
@@ -48,49 +59,48 @@ const Aside = ({
       <Section>
         <ClearFilterButton onClick={handleClearFilters} />
 
-        <DropDown title="Category" open>
+        <DropDown title={t('filter.category')} open>
           {category.map((item, index) => (
-            <Label
-              key={item.title}
-              htmlFor={item.title}
-              {...opacityAnimation(index * 0.1)}
-            >
+            <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
               <Checkbox
                 type="checkbox"
-                name={item.title}
-                id={item.title}
+                name={item}
+                id={item}
                 onChange={(e) =>
-                  handleFilterChange(
-                    'category',
-                    e.target.checked ? item.title : item.title
-                  )
+                  handleFilterChange('category', e.target.checked ? item : item)
                 }
-                checked={filters.category?.includes(item.title)}
+                checked={filters.category?.includes(item)}
               />
-              {item.title}
+              {t(`category.${item}`)}
             </Label>
           ))}
         </DropDown>
 
-        <DropDown title="Brand">
+        <DropDown title={t('filter.brand')}>
           <Select
             name="brands"
             value={filters.brand || ''}
-            onChange={(e) => handleFilterChange('brand', e.target.value)}
-            options={[...new Set(brands)]}
+            onChange={(e) => {
+              const selectedBrand = e.target.value;
+              handleFilterChange('brand', selectedBrand);
+              // Reset model filter only when brand changes
+              handleFilterChange('model', '');
+            }}
+            options={brands}
           />
         </DropDown>
 
-        <DropDown title="Model">
+        <DropDown title={t('filter.model')}>
           <Select
             name="models"
             value={filters.model || ''}
             onChange={(e) => handleFilterChange('model', e.target.value)}
-            options={[...new Set(models)]}
+            options={models}
+            disabled={!filters.brand}
           />
         </DropDown>
 
-        <DropDown title="Year">
+        <DropDown title={t('filter.year')}>
           <RangeInput
             name="year"
             min={Math.min(...years)}
@@ -99,7 +109,7 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Mileage">
+        <DropDown title={t('filter.mileage')}>
           <RangeInput
             name="mileage"
             min={Math.min(...mileages)}
@@ -108,7 +118,7 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Price">
+        <DropDown title={t('filter.price')}>
           <RangeInput
             name="price"
             min={Math.min(...prices)}
@@ -117,7 +127,7 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Fuel Type">
+        <DropDown title={t('filter.fuel')}>
           {fuelTypes.map((item, index) => (
             <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
               <Checkbox
@@ -132,12 +142,12 @@ const Aside = ({
                 }
                 checked={filters.fuel_type?.includes(item)}
               />
-              {item}
+              {t(`${item}`)}
             </Label>
           ))}
         </DropDown>
 
-        <DropDown title="Displacement">
+        <DropDown title={t('filter.displacement')}>
           <RangeInput
             name="displacement"
             min={Math.min(...displacements)}
@@ -146,7 +156,7 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Engine Output">
+        <DropDown title={t('filter.engineOutput')}>
           <RangeInput
             name="engine_output"
             min={Math.min(...engineOutputs)}
@@ -155,16 +165,16 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Cylinders">
+        <DropDown title={t('filter.cylinders')}>
           <RangeInput
             name="cylinders"
             min={Math.min(...cylinders)}
             max={Math.max(...cylinders)}
-            index="cylinders"
+            index=""
           />
         </DropDown>
 
-        <DropDown title="Transmission">
+        <DropDown title={t('filter.transmission')}>
           {transmissions.map((item, index) => (
             <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
               <Checkbox
@@ -179,21 +189,21 @@ const Aside = ({
                 }
                 checked={filters.transmission?.includes(item)}
               />
-              {item}
+              {item === 'სხვა' ? t(`${item}`) : item}
             </Label>
           ))}
         </DropDown>
 
-        <DropDown title="Wheel Diameter">
+        <DropDown title={t('filter.wheel')}>
           <RangeInput
             name="wheel_diameter"
             min={Math.min(...wheelDiameters)}
             max={Math.max(...wheelDiameters)}
-            index="inch"
+            index=""
           />
         </DropDown>
 
-        <DropDown title="Gross">
+        <DropDown title={t('filter.gross')}>
           <RangeInput
             name="gross"
             min={Math.min(...gross)}
@@ -202,7 +212,7 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Load Capacity">
+        <DropDown title={t('filter.load')}>
           <RangeInput
             name="load_capacity"
             min={Math.min(...loadCapacities)}
@@ -211,7 +221,7 @@ const Aside = ({
           />
         </DropDown>
 
-        <DropDown title="Emission Class">
+        <DropDown title={t('filter.emission')}>
           {emissionClasses.map((item, index) => (
             <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
               <Checkbox
@@ -231,7 +241,7 @@ const Aside = ({
           ))}
         </DropDown>
 
-        <DropDown title="Axle Configuration">
+        <DropDown title={t('filter.axle')}>
           {axleConfigurations.map((item, index) => (
             <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
               <Checkbox
@@ -246,7 +256,7 @@ const Aside = ({
                 }
                 checked={filters.axle_configuration?.includes(item)}
               />
-              {item}
+              {item === 'სხვა' ? t(`${item}`) : item}
             </Label>
           ))}
         </DropDown>

@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { motion } from 'framer-motion';
 import { FilterProvider } from '../../context/FilterContext';
 import { usePagination, useShowFilter } from '../../hooks';
+import { opacityAnimation } from '../../utils/animations';
 import { Product } from '../../interfaces';
 import { Aside, ProductSidebar, SearchFilterToggle } from '../../components';
 import { Main, Wrapper } from './styles';
@@ -16,7 +18,7 @@ export default function ProductsPage() {
 
   return (
     <FilterProvider products={productsData}>
-      <Main>
+      <Main as={motion.main} {...opacityAnimation(0.5)}>
         <SearchFilterToggle
           toggleView={toggleView}
           isGridView={isGridView}

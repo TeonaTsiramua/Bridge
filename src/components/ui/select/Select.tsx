@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import { opacityAnimation } from '../../../utils/animations';
 import { Select, MenuItem, SelectChangeEvent } from '@mui/material';
 
 interface SelectProps {
@@ -6,6 +8,7 @@ interface SelectProps {
   value: string;
   onChange: (event: SelectChangeEvent<string>) => void;
   options: string[];
+  disabled?: boolean;
 }
 
 const MUISelect: React.FC<SelectProps> = ({
@@ -13,55 +16,43 @@ const MUISelect: React.FC<SelectProps> = ({
   value,
   onChange,
   options,
+  disabled,
 }) => {
   return (
-    <Select
-      name={name}
-      onChange={onChange}
-      value={value || ''}
-      displayEmpty
-      inputProps={{ 'aria-label': 'Select' }}
-      fullWidth
-      disabled={options.length === 0}
-      sx={{
-        color: 'hsl(var(--clr-dark))',
-        border: `1px solid hsl(var(--clr-dark))`,
-        borderRadius: '0.25rem',
-        '&.Mui-focused': {
-          borderColor: 'hsl(var(--clr-blue))',
-          color: 'hsl(var(--clr-blue))',
-
-          '& .MuiSelect-icon': {
-            color: 'hsl(var(--clr-blue))',
-          },
-        },
-        '& .MuiSelect-select': {
-          padding: '8px 14px',
-        },
-        '& .MuiOutlinedInput-notchedOutline': {
-          border: 'none',
-        },
-        '& .MuiSelect-icon': {
-          color: 'hsl(var(--clr-dark))',
-        },
-      }}
-    >
-      <MenuItem
-        value=""
+    <motion.div {...opacityAnimation()}>
+      <Select
+        name={name}
+        onChange={onChange}
+        value={value || ''}
+        displayEmpty
+        inputProps={{ 'aria-label': 'Select' }}
+        fullWidth
+        disabled={options.length === 0 || disabled}
         sx={{
           color: 'hsl(var(--clr-dark))',
-
-          '&.Mui-selected': {
+          border: `1px solid hsl(var(--clr-dark))`,
+          borderRadius: '0.25rem',
+          '&.Mui-focused': {
+            borderColor: 'hsl(var(--clr-blue))',
             color: 'hsl(var(--clr-blue))',
+
+            '& .MuiSelect-icon': {
+              color: 'hsl(var(--clr-blue))',
+            },
+          },
+          '& .MuiSelect-select': {
+            padding: '8px 14px',
+          },
+          '& .MuiOutlinedInput-notchedOutline': {
+            border: 'none',
+          },
+          '& .MuiSelect-icon': {
+            color: 'hsl(var(--clr-dark))',
           },
         }}
       >
-        All
-      </MenuItem>
-      {options.map((option) => (
         <MenuItem
-          key={option}
-          value={option}
+          value=""
           sx={{
             color: 'hsl(var(--clr-dark))',
 
@@ -70,10 +61,25 @@ const MUISelect: React.FC<SelectProps> = ({
             },
           }}
         >
-          {option}
+          All
         </MenuItem>
-      ))}
-    </Select>
+        {options.map((option) => (
+          <MenuItem
+            key={option}
+            value={option}
+            sx={{
+              color: 'hsl(var(--clr-dark))',
+
+              '&.Mui-selected': {
+                color: 'hsl(var(--clr-blue))',
+              },
+            }}
+          >
+            {option}
+          </MenuItem>
+        ))}
+      </Select>
+    </motion.div>
   );
 };
 

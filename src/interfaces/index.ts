@@ -104,3 +104,11 @@ export interface FilterContextType {
   searchText: string;
   handleSearchChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
+
+export interface CurrencyContextType {
+  currency: 'USD' | 'GEL';
+  exchangeRate: number;
+  setCurrency: (currency: 'USD' | 'GEL') => void;
+  loading: boolean;
+  error: string | null;
+}

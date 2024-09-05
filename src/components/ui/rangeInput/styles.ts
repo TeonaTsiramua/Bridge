@@ -13,3 +13,9 @@ export const Value = styled.span`
   font-size: var(--fs-sm);
   margin: 0 1rem;
 `;
+
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`;

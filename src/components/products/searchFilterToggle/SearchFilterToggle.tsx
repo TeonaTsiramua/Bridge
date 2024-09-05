@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
 import { useFilterContext } from '../../../hooks';
 import SearchIcon from './SearchIcon';
@@ -16,12 +17,13 @@ const SearchFilterToggle = ({
 }) => {
   const isTablet = useMediaQuery({ maxWidth: 900 });
   const { searchText, handleSearchChange } = useFilterContext();
+  const { t } = useTranslation();
 
   return (
     <Wrapper>
       <Input
         type="text"
-        placeholder="Search..."
+        placeholder={t('filter.search') + '...'}
         value={searchText}
         onChange={handleSearchChange}
       />

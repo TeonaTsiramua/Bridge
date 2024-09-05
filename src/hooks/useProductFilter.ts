@@ -8,7 +8,6 @@ import { initialFilters } from '../utils';
 const useProductFilter = (products: Product[]) => {
   const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
   const [filters, setFilters] = useState<Filters>(initialFilters);
-
   const { searchText, debouncedSearchText, handleSearchChange } = useSearch();
   const [queryParams, updateQueryParams] = useQueryParams();
 
@@ -166,7 +165,9 @@ const useProductFilter = (products: Product[]) => {
       );
     }
 
-    setFilteredProducts(filtered);
+    setTimeout(() => {
+      setFilteredProducts(filtered);
+    }, 100);
   }, [products, debouncedSearchText, filters]);
 
   const handleFilterChange = (
@@ -175,7 +176,11 @@ const useProductFilter = (products: Product[]) => {
   ) => {
     setFilters((prevFilters) => {
       const updatedFilters = { ...prevFilters };
-      if (
+      if (filterName === 'brand') {
+        updatedFilters.brand = value;
+        // Reset model when brand changes
+        updatedFilters.model = '';
+      } else if (
         filterName === 'category' ||
         filterName === 'transmission' ||
         filterName === 'fuel_type' ||
@@ -192,20 +197,25 @@ const useProductFilter = (products: Product[]) => {
       }
       // Delay URL update to avoid rendering issues
       setTimeout(() => {
-        const filterValue = updatedFilters[filterName];
-        let queryParamValue: string;
+        const filterParams: { [key: string]: string } = {};
+        Object.keys(updatedFilters).forEach((key) => {
+          const filterValue = updatedFilters[key as keyof Filters];
+          let queryParamValue: string;
 
-        if (Array.isArray(filterValue)) {
-          queryParamValue = filterValue.join(',');
-        } else if (typeof filterValue === 'object' && filterValue !== null) {
-          queryParamValue = `${filterValue.min || ''},${filterValue.max || ''}`;
-        } else {
-          queryParamValue = filterValue as string;
-        }
+          if (Array.isArray(filterValue)) {
+            queryParamValue = filterValue.join(',');
+          } else if (typeof filterValue === 'object' && filterValue !== null) {
+            queryParamValue = `${filterValue.min || ''},${
+              filterValue.max || ''
+            }`;
+          } else {
+            queryParamValue = filterValue as string;
+          }
 
-        updateQueryParams({
-          [filterName]: queryParamValue,
+          filterParams[key] = queryParamValue;
         });
+
+        updateQueryParams(filterParams);
       }, 0);
       return updatedFilters;
     });

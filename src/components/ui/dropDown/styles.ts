@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const P = styled.p`
-  font-size: var(--fs-base);
+  font-size: var(--fs-sm);
   font-weight: 500;
   display: flex;
   align-items: center;

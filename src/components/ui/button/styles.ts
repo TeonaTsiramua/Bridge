@@ -53,14 +53,14 @@ export const SendBtn = styled.button`
   }
 `;
 
-export const Btn = styled.button`
+export const Btn = styled.button<{ $width: string }>`
   color: hsl(var(--clr-blue));
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid hsl(var(--clr-blue));
   border-radius: 8px;
-  width: 100%;
+  width: ${({ $width }) => $width};
   cursor: pointer;
   padding: 0.5em 1em;
   transition: all 0.3s ease-in-out;

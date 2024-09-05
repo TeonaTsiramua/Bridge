@@ -7,11 +7,13 @@ export const Wrapper = styled(motion.aside)`
   flex-direction: column;
   position: sticky;
   top: 6rem;
-  max-height: 80vh;
+  max-height: 75vh;
   gap: 1.5rem;
   width: 30%;
   overflow-y: auto;
-  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: inset 0px 9px 9px -11px hsl(var(--clr-grey), 0.5),
+    inset 0px -9px 9px -11px hsl(var(--clr-grey), 0.5);
 
   @media ${device.md} {
     background-color: hsl(var(--clr-light));
@@ -38,6 +40,9 @@ export const Section = styled.div`
 
   @media ${device.md} {
     padding: 1em;
+    margin-bottom: 2rem;
+    box-shadow: inset 0px 9px 9px -11px hsl(var(--clr-grey)),
+      inset 0px -9px 9px -11px hsl(var(--clr-grey));
   }
 
   /* width */
