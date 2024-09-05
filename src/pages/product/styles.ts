@@ -55,6 +55,7 @@ export const SliderContainer = styled.div`
     width: 100%;
     margin-right: 0;
     margin-bottom: 2rem;
+    padding: 0;
   }
 `;
 
