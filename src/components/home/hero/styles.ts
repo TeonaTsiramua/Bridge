@@ -25,6 +25,8 @@ export const HeroImg = styled(motion.img)`
   height: 100%;
   object-fit: cover;
   border-radius: 8px;
+  box-shadow: hsl(var(--clr-light)) 0px 2px 8px 0px;
+
   @media ${device.md} {
     border-radius: 0px;
   }
