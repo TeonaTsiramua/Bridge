@@ -28,25 +28,37 @@ const Aside = ({
   ];
 
   // Derive filter values
-  const brands = getUniqueStringValues('brand');
-  const models = getUniqueStringValues('model').filter((model) =>
-    filters.brand
-      ? products.some(
-          (product) =>
-            product.brand === filters.brand && product.model === model
-        )
-      : true
-  );
-  const category = getUniqueStringValues('category');
-  const years = getUniqueStringValues('year').map(Number);
-  const displacements = getUniqueStringValues('displacement').map(Number);
-  const engineOutputs = getUniqueStringValues('engine_output').map(Number);
-  const cylinders = getUniqueStringValues('cylinders').map(Number);
-  const wheelDiameters = getUniqueStringValues('wheel_diameter').map(Number);
-  const gross = getUniqueStringValues('gross').map(Number);
-  const loadCapacities = getUniqueStringValues('load_capacity').map(Number);
-  const prices = getUniqueStringValues('price').map(Number);
-  const mileages = getUniqueStringValues('mileage').map(Number);
+  const brands = getUniqueStringValues('brand').filter(Boolean);
+  const models = getUniqueStringValues('model')
+    .filter((model) =>
+      filters.brand
+        ? products.some(
+            (product) =>
+              product.brand === filters.brand && product.model === model
+          )
+        : true
+    )
+    .filter(Boolean);
+  const category = getUniqueStringValues('category').filter(Boolean);
+  const years = getUniqueStringValues('year').map(Number).filter(Boolean);
+  const displacements = getUniqueStringValues('displacement')
+    .map(Number)
+    .filter(Boolean);
+  const engineOutputs = getUniqueStringValues('engine_output')
+    .map(Number)
+    .filter(Boolean);
+  const cylinders = getUniqueStringValues('cylinders')
+    .map(Number)
+    .filter(Boolean);
+  const wheelDiameters = getUniqueStringValues('wheel_diameter')
+    .map(Number)
+    .filter(Boolean);
+  const gross = getUniqueStringValues('gross').map(Number).filter(Boolean);
+  const loadCapacities = getUniqueStringValues('load_capacity')
+    .map(Number)
+    .filter(Boolean);
+  const prices = getUniqueStringValues('price').map(Number).filter(Boolean);
+  const mileages = getUniqueStringValues('mileage').map(Number).filter(Boolean);
   const fuelTypes = getUniqueStringValues('fuel_type');
   const transmissions = getUniqueStringValues('transmission');
   const emissionClasses = getUniqueStringValues('emission_class');
@@ -128,23 +140,30 @@ const Aside = ({
         </DropDown>
 
         <DropDown title={t('filter.fuel')}>
-          {fuelTypes.map((item, index) => (
-            <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
-              <Checkbox
-                type="checkbox"
-                name={item}
-                id={item}
-                onChange={(e) =>
-                  handleFilterChange(
-                    'fuel_type',
-                    e.target.checked ? item : item
-                  )
-                }
-                checked={filters.fuel_type?.includes(item)}
-              />
-              {t(`${item}`)}
-            </Label>
-          ))}
+          {fuelTypes.map(
+            (item, index) =>
+              item !== 'undefined' && (
+                <Label
+                  key={item}
+                  htmlFor={item}
+                  {...opacityAnimation(index * 0.1)}
+                >
+                  <Checkbox
+                    type="checkbox"
+                    name={item}
+                    id={item}
+                    onChange={(e) =>
+                      handleFilterChange(
+                        'fuel_type',
+                        e.target.checked ? item : item
+                      )
+                    }
+                    checked={filters.fuel_type?.includes(item)}
+                  />
+                  {t(`${item}`)}
+                </Label>
+              )
+          )}
         </DropDown>
 
         <DropDown title={t('filter.displacement')}>
@@ -152,6 +171,7 @@ const Aside = ({
             name="displacement"
             min={Math.min(...displacements)}
             max={Math.max(...displacements)}
+            step={0.1}
             index="cm3"
           />
         </DropDown>
@@ -175,23 +195,30 @@ const Aside = ({
         </DropDown>
 
         <DropDown title={t('filter.transmission')}>
-          {transmissions.map((item, index) => (
-            <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
-              <Checkbox
-                type="checkbox"
-                name={item}
-                id={item}
-                onChange={(e) =>
-                  handleFilterChange(
-                    'transmission',
-                    e.target.checked ? item : item
-                  )
-                }
-                checked={filters.transmission?.includes(item)}
-              />
-              {item === 'სხვა' ? t(`${item}`) : item}
-            </Label>
-          ))}
+          {transmissions.map(
+            (item, index) =>
+              item !== 'undefined' && (
+                <Label
+                  key={item}
+                  htmlFor={item}
+                  {...opacityAnimation(index * 0.1)}
+                >
+                  <Checkbox
+                    type="checkbox"
+                    name={item}
+                    id={item}
+                    onChange={(e) =>
+                      handleFilterChange(
+                        'transmission',
+                        e.target.checked ? item : item
+                      )
+                    }
+                    checked={filters.transmission?.includes(item)}
+                  />
+                  {item === 'სხვა' ? t(`${item}`) : item}
+                </Label>
+              )
+          )}
         </DropDown>
 
         <DropDown title={t('filter.wheel')}>
@@ -222,43 +249,57 @@ const Aside = ({
         </DropDown>
 
         <DropDown title={t('filter.emission')}>
-          {emissionClasses.map((item, index) => (
-            <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
-              <Checkbox
-                type="checkbox"
-                name={item}
-                id={item}
-                onChange={(e) =>
-                  handleFilterChange(
-                    'emission_class',
-                    e.target.checked ? item : item
-                  )
-                }
-                checked={filters.emission_class?.includes(item)}
-              />
-              {item}
-            </Label>
-          ))}
+          {emissionClasses.map(
+            (item, index) =>
+              item !== 'undefined' && (
+                <Label
+                  key={item}
+                  htmlFor={item}
+                  {...opacityAnimation(index * 0.1)}
+                >
+                  <Checkbox
+                    type="checkbox"
+                    name={item}
+                    id={item}
+                    onChange={(e) =>
+                      handleFilterChange(
+                        'emission_class',
+                        e.target.checked ? item : item
+                      )
+                    }
+                    checked={filters.emission_class?.includes(item)}
+                  />
+                  {item}
+                </Label>
+              )
+          )}
         </DropDown>
 
         <DropDown title={t('filter.axle')}>
-          {axleConfigurations.map((item, index) => (
-            <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
-              <Checkbox
-                type="checkbox"
-                name={item}
-                id={item}
-                onChange={(e) =>
-                  handleFilterChange(
-                    'axle_configuration',
-                    e.target.checked ? item : item
-                  )
-                }
-                checked={filters.axle_configuration?.includes(item)}
-              />
-              {item === 'სხვა' ? t(`${item}`) : item}
-            </Label>
-          ))}
+          {axleConfigurations.map(
+            (item, index) =>
+              item !== 'undefined' && (
+                <Label
+                  key={item}
+                  htmlFor={item}
+                  {...opacityAnimation(index * 0.1)}
+                >
+                  <Checkbox
+                    type="checkbox"
+                    name={item}
+                    id={item}
+                    onChange={(e) =>
+                      handleFilterChange(
+                        'axle_configuration',
+                        e.target.checked ? item : item
+                      )
+                    }
+                    checked={filters.axle_configuration?.includes(item)}
+                  />
+                  {item === 'სხვა' ? t(`${item}`) : item}
+                </Label>
+              )
+          )}
         </DropDown>
       </Section>
     </Wrapper>

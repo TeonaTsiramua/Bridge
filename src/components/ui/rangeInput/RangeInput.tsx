@@ -9,11 +9,13 @@ const RangeInput = ({
   index,
   min,
   max,
+  step,
 }: {
   name: string;
   index: string;
   min: number;
   max: number;
+  step?: number;
 }) => {
   const { filters, handleFilterChange } = useFilterContext();
 
@@ -42,7 +44,7 @@ const RangeInput = ({
           min={min}
           max={max}
           onChange={handleSliderChange}
-          step={1}
+          step={step || 1}
           sx={{
             color: 'blue',
             '& .MuiSlider-thumb': {
