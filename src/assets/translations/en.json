@@ -9,6 +9,7 @@
   "nav.products": "Products",
 
   "home.categories": "Product Category",
+  "home.seeAll": "See All",
   "category.მაცივარი": "Refrigerator",
   "category.სამშენებლო": "Construction",
   "category.სატვირთო": "Truck",
@@ -74,6 +75,7 @@
   "filter.emission": "Emission Class",
   "filter.reset": "Clear Filters",
   "filter.search": "Search",
+  "filter.all": "All",
 
   "ბენზინი": "Petrol",
   "დიზელი": "Diesel",
