@@ -12,21 +12,13 @@ export const AboutContainer = styled.div`
   @media ${device.md} {
     flex-direction: column;
     gap: 2rem;
-    padding-top: 0;
   }
 `;
 
 export const Img = styled.img`
-  width: 40%;
+  width: 30%;
+  aspect-ratio: 1;
   object-fit: cover;
-  border-radius: 24px;
-
-  @media ${device.md} {
-    width: 100%;
-    max-height: 20rem;
-    object-fit: cover;
-    border-radius: 0;
-  }
 `;
 
 export const Div = styled.div`
@@ -49,4 +41,9 @@ export const P = styled.p`
   font-size: var(--fs-base);
   text-align: justify;
   margin-top: 1rem;
+
+  & > span > a {
+    color: hsl(var(--clr-red));
+    text-decoration: none;
+  }
 `;

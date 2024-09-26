@@ -14,6 +14,28 @@ export const Container = styled.div`
 export const H2 = styled.h2`
   font-size: var(--fs-lg);
   font-weight: 600;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+
+  & a {
+    text-decoration: none;
+    color: var(--clr-blue);
+    transition: color 0.3s ease-in-out;
+
+    &:hover {
+      color: hsl(var(--clr-red));
+    }
+  }
+
+  & span {
+    margin-left: 1em;
+    font-size: var(--fs-sm);
+    align-self: flex-end;
+    margin-top: -2.5rem;
+  }
 `;
 
 export const CategoryUl = styled.ul`

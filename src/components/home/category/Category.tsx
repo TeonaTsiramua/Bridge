@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { animationConfig, clickAnimation } from '../../../utils/animations';
 import { category } from '../../../data';
@@ -8,7 +9,12 @@ export default function Category() {
 
   return (
     <Container {...animationConfig}>
-      <H2>{t('home.categories')}</H2>
+      <H2>
+        {t('home.categories')}{' '}
+        <span>
+          <Link to='/products'>{t('home.seeAll')} →</Link>
+        </span>
+      </H2>
 
       <CategoryUl>
         {category.map((i) => (
