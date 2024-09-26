@@ -18,6 +18,8 @@ const Socials = ({ info }: Props) => {
       <IconButton
         href={info.fb}
         aria-label='Facebook'
+        target='_blank'
+        rel='noopener noreferrer'
         sx={{ alignSelf: 'center', color: '#1877F2' }}
       >
         <FacebookIcon sx={{ fontSize: '32px' }} />
@@ -25,6 +27,8 @@ const Socials = ({ info }: Props) => {
       <IconButton
         href={info.instagram}
         aria-label='Instagram'
+        target='_blank'
+        rel='noopener noreferrer'
         sx={{ alignSelf: 'center', color: '#833AB4' }}
       >
         <InstagramIcon sx={{ fontSize: '32px' }} />
@@ -32,6 +36,8 @@ const Socials = ({ info }: Props) => {
       <IconButton
         href={info.whatsApp}
         aria-label='WhatsApp'
+        target='_blank'
+        rel='noopener noreferrer'
         sx={{ alignSelf: 'center', color: '#25D366' }}
       >
         <WhatsAppIcon sx={{ fontSize: '32px' }} />
