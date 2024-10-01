@@ -1,14 +1,14 @@
 import { useTranslation } from 'react-i18next';
 import { useMediaQuery } from 'react-responsive';
-import { useLoaderData } from 'react-router-dom';
 import { animationConfig } from '../../../utils/animations';
 
 import { Carousel } from '../..';
 import { Container } from './styles';
 import { Product } from '../../../interfaces';
+import { useProducts } from '../../../context/ProductContext';
 
 const NewProducts = () => {
-  const products = useLoaderData() as Product[];
+  const products = useProducts() as Product[];
   const isMobile = useMediaQuery({ maxWidth: 600 });
   const isTablet = useMediaQuery({ maxWidth: 900 });
   const { t } = useTranslation();
