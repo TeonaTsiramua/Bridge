@@ -4,7 +4,7 @@ import { ProductCard } from '../..';
 import { Pagination, CircularProgress } from '@mui/material';
 import { Container, ProductWrapper } from './styles';
 
-const itemsPerPage = 18;
+const itemsPerPage = 3;
 
 const ProductSidebar = ({
   isGridView,

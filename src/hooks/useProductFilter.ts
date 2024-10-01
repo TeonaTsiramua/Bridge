@@ -224,7 +224,7 @@ const useProductFilter = (products: Product[]) => {
         filterParams[key] = queryParamValue;
       });
 
-      updateQueryParams(filterParams);
+      updateQueryParams({ ...filterParams, page: '1' });
 
       return updatedFilters;
     });
