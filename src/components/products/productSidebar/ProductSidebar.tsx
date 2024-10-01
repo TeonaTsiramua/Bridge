@@ -68,11 +68,11 @@ const ProductSidebar = ({
                   '& .MuiPaginationItem-root': {
                     color: 'hsl(var(--clr-blue))',
                   },
-                  '& .Mui-selected': {
+                  '& .MuiPaginationItem-root.Mui-selected': {
                     backgroundColor: 'hsl(var(--clr-blue))',
                     color: 'hsl(var(--clr-light))',
                   },
-                  '& .Mui-selected:hover': {
+                  '& .MuiPaginationItem-root.Mui-selected:hover': {
                     backgroundColor: 'hsl(203, 78%, 37%)',
                   },
                 }}
