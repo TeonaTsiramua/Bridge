@@ -6,9 +6,10 @@ import { Filters, Product } from '../interfaces';
 import { initialFilters } from '../utils';
 
 const useProductFilter = (products: Product[]) => {
-  const [filteredProducts, setFilteredProducts] = useState<Product[]>([]);
+  const [filteredProducts, setFilteredProducts] = useState<Product[]>(products); // Initially display all products
   const [filters, setFilters] = useState<Filters>(initialFilters);
-  const { searchText, debouncedSearchText, handleSearchChange } = useSearch();
+  const { searchText, setSearchText, debouncedSearchText, handleSearchChange } =
+    useSearch();
   const [queryParams, updateQueryParams] = useQueryParams();
 
   // Sync filters with URL query parameters
@@ -165,9 +166,7 @@ const useProductFilter = (products: Product[]) => {
       );
     }
 
-    setTimeout(() => {
-      setFilteredProducts(filtered);
-    }, 100);
+    setFilteredProducts(filtered);
   }, [products, debouncedSearchText, filters]);
 
   const handleFilterChange = (
@@ -176,6 +175,7 @@ const useProductFilter = (products: Product[]) => {
   ) => {
     setFilters((prevFilters) => {
       const updatedFilters = { ...prevFilters };
+
       if (filterName === 'brand') {
         updatedFilters.brand = value;
         // Reset model when brand changes
@@ -195,45 +195,58 @@ const useProductFilter = (products: Product[]) => {
       } else {
         updatedFilters[filterName] = value;
       }
-      // Delay URL update to avoid rendering issues
-      setTimeout(() => {
-        const filterParams: { [key: string]: string } = {};
-        Object.keys(updatedFilters).forEach((key) => {
-          const filterValue = updatedFilters[key as keyof Filters];
-          let queryParamValue: string;
 
-          if (Array.isArray(filterValue)) {
-            queryParamValue = filterValue.join(',');
-          } else if (typeof filterValue === 'object' && filterValue !== null) {
-            queryParamValue = `${filterValue.min || ''},${
-              filterValue.max || ''
-            }`;
-          } else {
-            queryParamValue = filterValue as string;
+      const filterParams: { [key: string]: string } = {};
+      Object.keys(updatedFilters).forEach((key) => {
+        const filterValue = updatedFilters[key as keyof Filters];
+        let queryParamValue: '' | string = '';
+
+        if (Array.isArray(filterValue) && filterValue.length > 0) {
+          queryParamValue = filterValue.join(',');
+        } else if (typeof filterValue === 'object' && filterValue !== null) {
+          if (
+            typeof filterValue === 'object' &&
+            filterValue !== null &&
+            'min' in filterValue &&
+            'max' in filterValue
+          ) {
+            const min = filterValue.min !== null ? filterValue.min : '';
+            const max = filterValue.max !== null ? filterValue.max : '';
+            // Only set if at least one of min or max is defined
+            if (min || max) {
+              queryParamValue = `${min},${max}`;
+            }
           }
+        } else if (filterValue) {
+          queryParamValue = filterValue as string;
+        }
 
-          filterParams[key] = queryParamValue;
-        });
+        filterParams[key] = queryParamValue;
+      });
 
-        updateQueryParams(filterParams);
-      }, 0);
+      updateQueryParams(filterParams);
+
       return updatedFilters;
     });
   };
 
   const handleClearFilters = () => {
+    // Reset filters to their initial values
     setFilters(initialFilters);
+
+    // Clear the query parameters in the URL
     updateQueryParams(
       Object.keys(initialFilters).reduce(
         (acc, key) => {
           acc[key] = '';
           return acc;
         },
-        {} as {
-          [key: string]: string;
-        }
+        { page: '1', search: '' } as { [key: string]: string }
       )
     );
+    setSearchText('');
+    // Reset filtered products to the original product list
+    setFilteredProducts(products);
   };
 
   return {

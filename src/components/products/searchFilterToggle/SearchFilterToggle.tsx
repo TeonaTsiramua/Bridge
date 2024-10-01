@@ -22,7 +22,7 @@ const SearchFilterToggle = ({
   return (
     <Wrapper>
       <Input
-        type="text"
+        type='text'
         placeholder={t('filter.search') + '...'}
         value={searchText}
         onChange={handleSearchChange}
@@ -31,8 +31,8 @@ const SearchFilterToggle = ({
         <button onClick={toggleShowFilter}>
           <FilterIcon
             {...clickAnimation}
-            src="/assets/icons/filter.png"
-            alt="filter"
+            src='/assets/icons/filter.png'
+            alt='filter'
           />
         </button>
       )}

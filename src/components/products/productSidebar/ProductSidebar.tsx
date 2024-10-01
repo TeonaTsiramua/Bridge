@@ -17,13 +17,14 @@ const ProductSidebar = ({
 }) => {
   const { filteredProducts } = useFilterContext();
   const [loading, setLoading] = useState(false);
+  const [products, setProducts] = useState(filteredProducts);
 
   useEffect(() => {
     setLoading(true);
-
+    setProducts(filteredProducts);
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 500);
+    }, 800);
 
     return () => clearTimeout(timer);
   }, [filteredProducts]);
@@ -31,14 +32,19 @@ const ProductSidebar = ({
   return (
     <Container>
       {loading ? (
-        <CircularProgress />
+        <CircularProgress
+          sx={{
+            color: 'hsl(var(--clr-blue))',
+            margin: '2rem 0',
+          }}
+        />
       ) : (
         <>
           <ProductWrapper
             $primary={isGridView}
-            $onlyOne={filteredProducts.length === 1}
+            $onlyOne={products.length === 1}
           >
-            {filteredProducts
+            {products
               .slice(
                 (currentPage - 1) * itemsPerPage,
                 currentPage * itemsPerPage
@@ -53,16 +59,16 @@ const ProductSidebar = ({
           </ProductWrapper>
           {
             // Only show pagination if there are more than one page of products
-            filteredProducts.length > itemsPerPage && (
+            products.length > itemsPerPage && (
               <Pagination
-                count={Math.ceil(filteredProducts.length / itemsPerPage)}
+                count={Math.ceil(products.length / itemsPerPage)}
                 page={currentPage}
                 onChange={handlePageChange}
-                color="primary"
+                color='primary'
               />
             )
           }
-          {filteredProducts.length === 0 && <div>No products found.</div>}
+          {products.length === 0 && <div>No products found.</div>}
         </>
       )}
     </Container>

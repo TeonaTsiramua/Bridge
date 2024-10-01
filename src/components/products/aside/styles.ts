@@ -30,11 +30,25 @@ export const Wrapper = styled(motion.aside)`
   }
 `;
 
+export const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid hsl(var(--clr-light));
+  padding: 1rem 0;
+`;
+
+export const P = styled.p`
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: hsl(var(--clr-red));
+`;
+
 export const Section = styled.div`
   padding-right: 1em;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.7rem;
   overflow-y: auto;
   padding-bottom: 3rem;
 
@@ -126,16 +140,35 @@ export const Close = styled.button`
 
 export const SButton = styled(motion.div)`
   cursor: pointer;
-  min-height: 30px;
-  min-width: 30px;
+  height: 30px;
+  width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
   align-self: flex-start;
-  margin-top: 1rem;
+  position: relative;
+
+  &::before {
+    content: attr(aria-label);
+    position: absolute;
+    background: hsl(var(--clr-red));
+    color: hsl(var(--clr-light));
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.65rem;
+    top: 2px;
+    right: 35px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  &:hover::before {
+    opacity: 1;
+  }
 
   & > img {
-    width: 35px;
+    width: 30px;
     filter: brightness(0) saturate(100%) invert(13%) sepia(36%) saturate(7081%)
       hue-rotate(346deg) brightness(101%) contrast(89%);
   }

@@ -17,7 +17,7 @@ const useSearch = (initialText = '') => {
     updateQueryParams({ page: '1', search: value });
   };
 
-  return { searchText, debouncedSearchText, handleSearchChange };
+  return { searchText, setSearchText, debouncedSearchText, handleSearchChange };
 };
 
 export default useSearch;

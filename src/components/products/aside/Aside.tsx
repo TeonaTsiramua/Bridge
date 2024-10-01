@@ -7,7 +7,15 @@ import {
 import { Product } from '../../../interfaces';
 import { DropDown, RangeInput, Select } from '../..';
 import ClearFilterButton from './ClearFilterButton';
-import { Checkbox, Close, Label, Section, Wrapper } from './styles';
+import {
+  Checkbox,
+  Close,
+  Container,
+  Label,
+  P,
+  Section,
+  Wrapper,
+} from './styles';
 
 const Aside = ({
   showFilter,
@@ -69,13 +77,16 @@ const Aside = ({
       <Close onClick={toggleShowFilter}>×</Close>
 
       <Section>
-        <ClearFilterButton onClick={handleClearFilters} />
+        <Container>
+          <P>{t('filter.title')}</P>
+          <ClearFilterButton onClick={handleClearFilters} />
+        </Container>
 
         <DropDown title={t('filter.category')} open>
           {category.map((item, index) => (
             <Label key={item} htmlFor={item} {...opacityAnimation(index * 0.1)}>
               <Checkbox
-                type="checkbox"
+                type='checkbox'
                 name={item}
                 id={item}
                 onChange={(e) =>
@@ -90,7 +101,7 @@ const Aside = ({
 
         <DropDown title={t('filter.brand')}>
           <Select
-            name="brands"
+            name='brands'
             value={filters.brand || ''}
             onChange={(e) => {
               const selectedBrand = e.target.value;
@@ -104,7 +115,7 @@ const Aside = ({
 
         <DropDown title={t('filter.model')}>
           <Select
-            name="models"
+            name='models'
             value={filters.model || ''}
             onChange={(e) => handleFilterChange('model', e.target.value)}
             options={models}
@@ -114,28 +125,28 @@ const Aside = ({
 
         <DropDown title={t('filter.year')}>
           <RangeInput
-            name="year"
+            name='year'
             min={Math.min(...years)}
             max={Math.max(...years)}
-            index="year"
+            index='year'
           />
         </DropDown>
 
         <DropDown title={t('filter.mileage')}>
           <RangeInput
-            name="mileage"
+            name='mileage'
             min={Math.min(...mileages)}
             max={Math.max(...mileages)}
-            index="km"
+            index='km'
           />
         </DropDown>
 
         <DropDown title={t('filter.price')}>
           <RangeInput
-            name="price"
+            name='price'
             min={Math.min(...prices)}
             max={Math.max(...prices)}
-            index="$"
+            index='$'
           />
         </DropDown>
 
@@ -149,7 +160,7 @@ const Aside = ({
                   {...opacityAnimation(index * 0.1)}
                 >
                   <Checkbox
-                    type="checkbox"
+                    type='checkbox'
                     name={item}
                     id={item}
                     onChange={(e) =>
@@ -168,29 +179,29 @@ const Aside = ({
 
         <DropDown title={t('filter.displacement')}>
           <RangeInput
-            name="displacement"
+            name='displacement'
             min={Math.min(...displacements)}
             max={Math.max(...displacements)}
             step={0.1}
-            index="cm3"
+            index='cm3'
           />
         </DropDown>
 
         <DropDown title={t('filter.engineOutput')}>
           <RangeInput
-            name="engine_output"
+            name='engine_output'
             min={Math.min(...engineOutputs)}
             max={Math.max(...engineOutputs)}
-            index="hp"
+            index='hp'
           />
         </DropDown>
 
         <DropDown title={t('filter.cylinders')}>
           <RangeInput
-            name="cylinders"
+            name='cylinders'
             min={Math.min(...cylinders)}
             max={Math.max(...cylinders)}
-            index=""
+            index=''
           />
         </DropDown>
 
@@ -204,7 +215,7 @@ const Aside = ({
                   {...opacityAnimation(index * 0.1)}
                 >
                   <Checkbox
-                    type="checkbox"
+                    type='checkbox'
                     name={item}
                     id={item}
                     onChange={(e) =>
@@ -223,28 +234,28 @@ const Aside = ({
 
         <DropDown title={t('filter.wheel')}>
           <RangeInput
-            name="wheel_diameter"
+            name='wheel_diameter'
             min={Math.min(...wheelDiameters)}
             max={Math.max(...wheelDiameters)}
-            index=""
+            index=''
           />
         </DropDown>
 
         <DropDown title={t('filter.gross')}>
           <RangeInput
-            name="gross"
+            name='gross'
             min={Math.min(...gross)}
             max={Math.max(...gross)}
-            index="kg"
+            index='kg'
           />
         </DropDown>
 
         <DropDown title={t('filter.load')}>
           <RangeInput
-            name="load_capacity"
+            name='load_capacity'
             min={Math.min(...loadCapacities)}
             max={Math.max(...loadCapacities)}
-            index="kg"
+            index='kg'
           />
         </DropDown>
 
@@ -258,7 +269,7 @@ const Aside = ({
                   {...opacityAnimation(index * 0.1)}
                 >
                   <Checkbox
-                    type="checkbox"
+                    type='checkbox'
                     name={item}
                     id={item}
                     onChange={(e) =>
@@ -285,7 +296,7 @@ const Aside = ({
                   {...opacityAnimation(index * 0.1)}
                 >
                   <Checkbox
-                    type="checkbox"
+                    type='checkbox'
                     name={item}
                     id={item}
                     onChange={(e) =>
