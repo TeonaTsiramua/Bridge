@@ -31,7 +31,7 @@ export const CurrencyProvider: React.FC<{ children: React.ReactNode }> = ({
     };
 
     fetchExchangeRate();
-  }, [currency]);
+  }, []);
 
   const value = { currency, exchangeRate, setCurrency, loading, error };
 
