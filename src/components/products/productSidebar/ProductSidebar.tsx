@@ -64,7 +64,18 @@ const ProductSidebar = ({
                 count={Math.ceil(products.length / itemsPerPage)}
                 page={currentPage}
                 onChange={handlePageChange}
-                color='primary'
+                sx={{
+                  '& .MuiPaginationItem-root': {
+                    color: 'hsl(var(--clr-blue))',
+                  },
+                  '& .Mui-selected': {
+                    backgroundColor: 'hsl(var(--clr-blue))',
+                    color: 'hsl(var(--clr-light))',
+                  },
+                  '& .Mui-selected:hover': {
+                    backgroundColor: 'hsl(203, 78%, 37%)',
+                  },
+                }}
               />
             )
           }
