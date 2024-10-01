@@ -14,7 +14,7 @@ export default function AboutUs() {
         <P>
           {t('about.description1')} <br />
           <span>
-            <Link to='/contact'>სრულად ნახვა...</Link>
+            <Link to='/contact'>{t('home.seeMore')}...</Link>
           </span>
         </P>
       </Div>

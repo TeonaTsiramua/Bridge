@@ -10,6 +10,7 @@
 
   "home.categories": "Product Category",
   "home.seeAll": "See All",
+  "home.seeMore": "See More",
   "category.მაცივარი": "Refrigerator",
   "category.სამშენებლო": "Construction",
   "category.სატვირთო": "Truck",
@@ -57,6 +58,7 @@
   "contact": "Contact Us",
   "address": "25b Gobronidze Street",
 
+  "filter.title": "Filter",
   "filter.category": "Category",
   "filter.brand": "Brand",
   "filter.model": "Model",
@@ -76,6 +78,7 @@
   "filter.reset": "Clear Filters",
   "filter.search": "Search",
   "filter.all": "All",
+  "filter.clear": "Clear",
 
   "ბენზინი": "Petrol",
   "დიზელი": "Diesel",
