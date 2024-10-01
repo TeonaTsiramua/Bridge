@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { FilterProvider } from '../../context/FilterContext';
 import { usePagination, useShowFilter } from '../../hooks';
@@ -7,9 +6,10 @@ import { opacityAnimation } from '../../utils/animations';
 import { Product } from '../../interfaces';
 import { Aside, ProductSidebar, SearchFilterToggle } from '../../components';
 import { Main, Wrapper } from './styles';
+import { useProducts } from '../../context/ProductContext';
 
 export default function ProductsPage() {
-  const productsData = useLoaderData() as Product[];
+  const productsData = useProducts() as Product[];
   const [isGridView, setIsGridView] = useState(true);
   const { currentPage, handlePageChange } = usePagination();
   const { showFilter, toggleShowFilter } = useShowFilter();

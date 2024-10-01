@@ -15,14 +15,10 @@ const API = process.env.REACT_APP_API;
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route path="/" element={<Layout />}>
+    <Route path='/' element={<Layout />}>
+      <Route index element={<Home />} />
       <Route
-        index
-        element={<Home />}
-        loader={async () => fetch(`${API}/test-product-route`)}
-      />
-      <Route
-        path="contact"
+        path='contact'
         element={
           <Suspense fallback={<Loader />}>
             <Contact />
@@ -31,17 +27,16 @@ export const router = createBrowserRouter(
       />
 
       <Route
-        path="products"
+        path='products'
         element={
           <Suspense fallback={<Loader />}>
             <Products />
           </Suspense>
         }
-        loader={async () => fetch(`${API}/test-product-route`)}
         errorElement={<ServerErrorPage />}
       />
       <Route
-        path="products/product/:id"
+        path='products/product/:id'
         element={
           <Suspense fallback={<Loader />}>
             <Product />
@@ -51,7 +46,7 @@ export const router = createBrowserRouter(
           fetch(`${API}/test-product-route/${params.id}`)
         }
       />
-      <Route path="*" element={<ErrorPage />} />
+      <Route path='*' element={<ErrorPage />} />
     </Route>
   )
 );
