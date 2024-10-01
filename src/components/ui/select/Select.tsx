@@ -36,6 +36,7 @@ const MUISelect: React.FC<SelectProps> = ({
         }}
         sx={{
           color: 'hsl(var(--clr-dark),0.9)',
+          fontSize: 'var(--fs-sm)',
           border: `1px solid hsl(var(--clr-grey))`,
           borderRadius: '0.25rem',
           fontFamily: 'inherit',
@@ -62,6 +63,7 @@ const MUISelect: React.FC<SelectProps> = ({
           value=''
           sx={{
             color: 'hsl(var(--clr-dark))',
+            fontSize: 'var(--fs-sm)',
 
             '&.Mui-selected': {
               color: 'hsl(var(--clr-blue))',
@@ -76,6 +78,7 @@ const MUISelect: React.FC<SelectProps> = ({
             value={option}
             sx={{
               color: 'hsl(var(--clr-dark))',
+              fontSize: 'var(--fs-sm)',
 
               '&.Mui-selected': {
                 color: 'hsl(var(--clr-blue))',

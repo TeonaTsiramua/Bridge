@@ -34,7 +34,7 @@ export const FormElement = styled(motion.div)`
 `;
 
 export const Label = styled.label`
-  font-size: var(--fs-base);
+  font-size: var(--fs-sm);
   font-weight: 500;
 `;
 
@@ -65,7 +65,7 @@ export const Input = styled.input`
   }
 
   &::placeholder {
-    font-size: var(--fs-base);
+    font-size: var(--fs-sm);
     font-weight: 300;
     color: hsl(var(--clr-grey));
   }
@@ -98,7 +98,7 @@ export const TextArea = styled.textarea`
   }
 
   &::placeholder {
-    font-size: var(--fs-base);
+    font-size: var(--fs-sm);
     font-weight: 300;
     color: hsl(var(--clr-grey));
   }

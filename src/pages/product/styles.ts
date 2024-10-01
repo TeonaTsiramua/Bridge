@@ -16,13 +16,14 @@ export const Main = styled.main`
 
 export const Btn = styled.button`
   color: hsl(var(--clr-blue));
+  font-size: var(--fs-sm);
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid hsl(var(--clr-blue));
   border-radius: 999px;
   cursor: pointer;
-  padding: 0.3em;
+  padding: 0.2em;
   aspect-ratio: 1;
   transition: all 0.3s ease-in-out;
 
@@ -49,9 +50,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  align-items: center;
   gap: 3rem;
-  flex-direction: column;
   width: 100%;
 
   @media ${device.md} {
@@ -93,24 +92,25 @@ export const ArrowButton = styled.button<{ direction: string }>`
   top: 50%;
   ${({ direction }) => (direction === 'left' ? 'left: 0;' : 'right: 0;')}
   transform: translateY(-50%);
-  background: rgba(0, 0, 0, 0.5);
+  background: hsl(var(--clr-blue), 0.5);
   border: none;
   color: white;
   font-size: 2rem;
   padding: 0.5rem;
   cursor: pointer;
-  transition: background 0.3s;
+  border-radius: ${({ direction }) =>
+    direction === 'left' ? '0 8px 8px 0' : '8px 0 0 8px'};
+  transition: background 0.3s ease-in-out;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: hsl(var(--clr-blue), 0.7);
   }
 `;
 
 export const Thumbnails = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
   gap: 0.3rem;
-  overflow-x: auto;
 
   img {
     width: 100%;
@@ -160,17 +160,18 @@ export const CloseButton = styled.button`
   position: absolute;
   top: 1rem;
   right: 1rem;
-  background: rgba(0, 0, 0, 0.5);
+  background: hsl(var(--clr-blue), 0.5);
   color: white;
   border: none;
   font-size: 1rem;
+  font-weight: 500;
   cursor: pointer;
-  padding: 0.3rem 0.5rem;
+  padding: 0.2rem 0.6rem;
   border-radius: 4px;
-  transition: background 0.3s;
+  transition: all 0.3s;
 
   &:hover {
-    background: rgba(0, 0, 0, 0.7);
+    background: hsl(var(--clr-blue), 0.7);
   }
 `;
 

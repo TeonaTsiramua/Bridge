@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Product } from '../../interfaces';
 import { opacityAnimation } from '../../utils/animations';
-import { Image, InfoContent } from '../../components';
+import { Image, MainSpecifications } from '../../components';
 
 import {
   Container,
@@ -58,16 +58,15 @@ export default function ProductPage() {
     <Main as={motion.main} {...opacityAnimation(0.5)}>
       <Wrapper>
         <Btn onClick={() => navigate(-1)}>&#10094;</Btn>
-
-        <Title>
-          {product.brand} - {product.model}
-        </Title>
       </Wrapper>
 
       <Container>
         <SliderContainer>
+          <Title>
+            {product.brand} - {product.model}
+          </Title>
           <MainImage>
-            <ArrowButton onClick={handlePrevImage} direction="left">
+            <ArrowButton onClick={handlePrevImage} direction='left'>
               &#10094;
             </ArrowButton>
             <Image
@@ -75,7 +74,7 @@ export default function ProductPage() {
               alt={`${product.brand} ${product.model}`}
               onClick={openModal}
             />
-            <ArrowButton onClick={handleNextImage} direction="right">
+            <ArrowButton onClick={handleNextImage} direction='right'>
               &#10095;
             </ArrowButton>
           </MainImage>
@@ -92,14 +91,15 @@ export default function ProductPage() {
           </Thumbnails>
         </SliderContainer>
 
-        <InfoContent product={product} />
+        <MainSpecifications product={product} />
       </Container>
+      {/* <InfoContent product={product} /> */}
 
       {isModalOpen && (
         <>
           <Overlay onClick={closeModal} />
           <Modal>
-            <ArrowButton onClick={handlePrevImage} direction="left">
+            <ArrowButton onClick={handlePrevImage} direction='left'>
               &#10094;
             </ArrowButton>
             <ModalContent>
@@ -108,10 +108,10 @@ export default function ProductPage() {
                 alt={`${product.brand} ${product.model}`}
               />
             </ModalContent>
-            <ArrowButton onClick={handleNextImage} direction="right">
+            <ArrowButton onClick={handleNextImage} direction='right'>
               &#10095;
             </ArrowButton>
-            <CloseButton onClick={closeModal}>X</CloseButton>
+            <CloseButton onClick={closeModal}>✖</CloseButton>
           </Modal>
         </>
       )}
