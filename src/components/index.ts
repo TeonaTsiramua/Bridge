@@ -36,6 +36,7 @@ export { default as Aside } from './products/aside/Aside';
 export { default as ProductSidebar } from './products/productSidebar/ProductSidebar';
 export { default as SearchFilterToggle } from './products/searchFilterToggle/SearchFilterToggle';
 export { default as InfoContent } from './products/infoContent/InfoContent';
+export { default as MainSpecifications } from './products/mainSpecifications/MainSpecifications';
 
 // Contact page
 export { default as ContactUs } from './contact/contactUs/ContactUs';

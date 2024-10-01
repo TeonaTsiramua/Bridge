@@ -11,7 +11,7 @@ export const category = [
   },
   {
     title: 'სატვირთო',
-    img: '/assets/category/trailer.png',
+    img: '/assets/category/truck.png',
     link: '/products?category=სატვირთო',
   },
   {
