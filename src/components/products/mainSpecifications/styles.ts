@@ -37,6 +37,7 @@ export const Div = styled.div`
   gap: 0.5rem;
   width: 100%;
   align-items: center;
+  justify-content: center;
   background-color: hsl(var(--clr-light));
   color: hsl(var(--clr-blue));
   padding: 0.8rem;
