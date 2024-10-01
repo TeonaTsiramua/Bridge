@@ -5,7 +5,7 @@ export const InfoContainer = styled.div`
   display: flex;
   gap: 0.5rem;
   flex-direction: column;
-  width: 50%;
+  width: 60%;
   border: 1px solid hsl(var(--clr-blue), 0.5);
   border-radius: 8px;
   padding: 1rem;

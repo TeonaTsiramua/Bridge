@@ -24,6 +24,7 @@ export const Wrapper = styled.div`
 
   @media ${device.md} {
     width: 100%;
+    flex-direction: column-reverse;
   }
 `;
 
@@ -43,4 +44,8 @@ export const Div = styled.div`
   justify-content: space-between;
   gap: 1em;
   width: 50%;
+
+  @media ${device.md} {
+    width: 100%;
+  }
 `;

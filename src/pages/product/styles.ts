@@ -4,7 +4,6 @@ import { device } from '../../styles/breakpoints';
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   align-items: start;
   justify-content: center;
   margin-top: 6rem;
@@ -15,12 +14,29 @@ export const Main = styled.main`
   }
 `;
 
+export const Btn = styled.button`
+  color: hsl(var(--clr-blue));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid hsl(var(--clr-blue));
+  border-radius: 999px;
+  cursor: pointer;
+  padding: 0.3em;
+  aspect-ratio: 1;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background: hsl(var(--clr-blue));
+    color: hsl(var(--clr-light));
+  }
+`;
+
 export const Title = styled.h2`
   font-size: var(--fs-md);
   font-weight: 500;
   width: 100%;
   text-align: center;
-  margin-bottom: 1rem;
 `;
 
 export const Wrapper = styled.div`
@@ -33,8 +49,10 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   display: flex;
-  justify-content: flex-end;
-  align-items: start;
+  align-items: center;
+  gap: 3rem;
+  flex-direction: column;
+  width: 100%;
 
   @media ${device.md} {
     flex-direction: column;
@@ -47,22 +65,17 @@ export const SliderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  width: 50%;
-  margin-right: 3rem;
-  padding: 2rem;
+  width: 800px;
 
   @media ${device.md} {
     width: 100%;
-    margin-right: 0;
-    margin-bottom: 2rem;
-    padding: 0;
   }
 `;
 
 export const MainImage = styled.div`
   position: relative;
   width: 100%;
-  aspect-ratio: 1;
+  aspect-ratio: 5/3;
   object-fit: cover;
   display: flex;
   align-items: center;
@@ -70,7 +83,7 @@ export const MainImage = styled.div`
   cursor: pointer;
 
   img {
-    aspect-ratio: 1;
+    aspect-ratio: 5/3;
     object-fit: cover;
   }
 `;
@@ -95,8 +108,8 @@ export const ArrowButton = styled.button<{ direction: string }>`
 
 export const Thumbnails = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  gap: 0.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  gap: 0.3rem;
   overflow-x: auto;
 
   img {

@@ -1,4 +1,5 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { motion } from 'framer-motion';
 import { opacityAnimation } from '../../../utils/animations';
 import { Select, MenuItem, SelectChangeEvent } from '@mui/material';
@@ -18,6 +19,8 @@ const MUISelect: React.FC<SelectProps> = ({
   options,
   disabled,
 }) => {
+  const { t } = useTranslation();
+
   return (
     <motion.div {...opacityAnimation()}>
       <Select
@@ -28,10 +31,14 @@ const MUISelect: React.FC<SelectProps> = ({
         inputProps={{ 'aria-label': 'Select' }}
         fullWidth
         disabled={options.length === 0 || disabled}
+        MenuProps={{
+          disableScrollLock: true,
+        }}
         sx={{
-          color: 'hsl(var(--clr-dark))',
-          border: `1px solid hsl(var(--clr-dark))`,
+          color: 'hsl(var(--clr-dark),0.9)',
+          border: `1px solid hsl(var(--clr-grey))`,
           borderRadius: '0.25rem',
+          fontFamily: 'inherit',
           '&.Mui-focused': {
             borderColor: 'hsl(var(--clr-blue))',
             color: 'hsl(var(--clr-blue))',
@@ -52,7 +59,7 @@ const MUISelect: React.FC<SelectProps> = ({
         }}
       >
         <MenuItem
-          value=""
+          value=''
           sx={{
             color: 'hsl(var(--clr-dark))',
 
@@ -61,7 +68,7 @@ const MUISelect: React.FC<SelectProps> = ({
             },
           }}
         >
-          All
+          {t('filter.all')}
         </MenuItem>
         {options.map((option) => (
           <MenuItem

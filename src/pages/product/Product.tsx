@@ -3,7 +3,7 @@ import { useLoaderData, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Product } from '../../interfaces';
 import { opacityAnimation } from '../../utils/animations';
-import { Button, Image, InfoContent } from '../../components';
+import { Image, InfoContent } from '../../components';
 
 import {
   Container,
@@ -18,6 +18,7 @@ import {
   SliderContainer,
   MainImage,
   Thumbnails,
+  Btn,
 } from './styles';
 
 export default function ProductPage() {
@@ -56,7 +57,7 @@ export default function ProductPage() {
   return (
     <Main as={motion.main} {...opacityAnimation(0.5)}>
       <Wrapper>
-        <Button width="auto" onClick={() => navigate(-1)} content="&#10094;" />
+        <Btn onClick={() => navigate(-1)}>&#10094;</Btn>
 
         <Title>
           {product.brand} - {product.model}

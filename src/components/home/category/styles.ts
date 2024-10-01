@@ -35,6 +35,10 @@ export const H2 = styled.h2`
     font-size: var(--fs-sm);
     align-self: flex-end;
     margin-top: -2.5rem;
+
+    @media ${device.md} {
+      margin-top: 0;
+    }
   }
 `;
 
