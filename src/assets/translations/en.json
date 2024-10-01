@@ -88,5 +88,8 @@
   "სხვა": "Other",
   "მექანიკური": "Manual",
   "ავტომატური": "Automatic",
-  "ნახევრად ავტომატური": "Semi-Automatic"
+  "ნახევრად ავტომატური": "Semi-Automatic",
+
+  "mainSpecs": "Main Specifications",
+  "close": "Close"
 }

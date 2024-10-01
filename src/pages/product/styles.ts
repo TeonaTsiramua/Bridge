@@ -23,7 +23,7 @@ export const Btn = styled.button`
   border: 1px solid hsl(var(--clr-blue));
   border-radius: 999px;
   cursor: pointer;
-  padding: 0.2em;
+  padding: 0.4em;
   aspect-ratio: 1;
   transition: all 0.3s ease-in-out;
 

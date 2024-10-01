@@ -33,7 +33,7 @@ const MainSpecifications = ({ product }: { product: Product }) => {
 
   return (
     <Container>
-      <Title>ძირითადი მახასიათებლები</Title>
+      <Title>{t('mainSpecs')}</Title>
       <Wrapper>
         <Div>
           <P>{t('filter.price')}</P>{' '}
@@ -118,11 +118,11 @@ const MainSpecifications = ({ product }: { product: Product }) => {
       </Wrapper>
       {!showMore ? (
         <Btn onClick={handleShowMore} {...clickAnimation}>
-          სრულად ნახვა <DownArrow showSection={showMore} />
+          {t('home.seeMore')} <DownArrow showSection={showMore} />
         </Btn>
       ) : (
         <Btn onClick={handleShowLess} {...clickAnimation}>
-          დახურვა <DownArrow showSection={showMore} />
+          {t('close')} <DownArrow showSection={showMore} />
         </Btn>
       )}
     </Container>
